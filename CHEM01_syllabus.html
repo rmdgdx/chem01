@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enhanced student-friendly syllabus for CHEM01 at Rizal Technological University.">
+  <title>CHEM01 — Enhanced Course Syllabus</title>
+  <style>
+    :root{
+      --navy:#040084;--navy-2:#0A1FA8;--navy-3:#1B3BC9;--gold:#FD6600;--gold-2:#FF8A3D;
+      --cream:#FFEBDD;--paper:#fff;--ink:#141a33;--muted:#555b73;--line:#DDE1F0;
+      --pale:#F1F3FC;--shadow:0 16px 42px rgba(4,0,132,.11);--radius:16px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:linear-gradient(135deg,#F1F3FC 0,#FFF6F0 52%,#F1F3FC 100%);color:var(--ink);font:16px/1.65 Georgia,"Times New Roman",serif}
+    a{color:var(--navy-3)} a:hover{color:#FD6600}
+    .sans,button,nav,h1,h2,h3,h4,th,.eyebrow,.chip,.meta dt,.week,.label{font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .progress{position:fixed;z-index:100;top:0;left:0;width:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2));box-shadow:0 0 10px rgba(253,102,0,.55)}
+    .masthead{position:relative;overflow:hidden;background:radial-gradient(circle at 90% 0,rgba(253,102,0,.55),transparent 38%),linear-gradient(125deg,#030066,var(--navy) 48%,#1B3BC9);color:white;padding:58px max(24px,calc((100vw - 1180px)/2)) 54px;border-bottom:7px solid var(--gold)}
+    .masthead:after{content:"CHEM";position:absolute;right:-24px;bottom:-70px;font:900 clamp(7rem,19vw,15rem)/1 Inter,"Segoe UI",sans-serif;color:rgba(255,255,255,.035);letter-spacing:-.08em}
+    .eyebrow{color:var(--gold-2);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+    h1{position:relative;margin:.45rem 0 .55rem;max-width:900px;font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.04em}
+    .masthead p{position:relative;max-width:820px;margin:0;color:#DDE3FB;font-size:1.05rem}.masthead strong{color:var(--gold-2)}
+    .hero-meta{position:relative;display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 11px;background:rgba(255,255,255,.07);color:#fff;font-size:.79rem;font-weight:700}
+    nav{position:sticky;z-index:50;top:0;background:rgba(4,0,132,.97);border-bottom:1px solid rgba(253,102,0,.55);box-shadow:0 8px 22px rgba(4,0,132,.22)}
+    nav .inner{max-width:1180px;margin:auto;display:flex;align-items:center;padding:0 16px;overflow-x:auto;scrollbar-width:none}nav .inner::-webkit-scrollbar{display:none}
+    nav a{flex:0 0 auto;color:#DDE3FB;text-decoration:none;padding:17px 13px;font-size:.78rem;font-weight:700;letter-spacing:.02em;border-bottom:3px solid transparent}nav a:hover,nav a.active{color:var(--gold-2);border-bottom-color:var(--gold)}nav a.home{color:var(--gold-2);border-right:1px solid rgba(255,255,255,.18);margin-right:4px}
+    .print-btn{margin-left:auto;flex:0 0 auto;border:0;border-radius:8px;background:var(--gold);color:#fff;padding:8px 12px;font-weight:800;cursor:pointer}.print-btn:hover{background:var(--gold-2)}
+    main{max-width:1180px;margin:34px auto 70px;padding:0 20px}
+    section{background:rgba(255,255,255,.97);border:1px solid rgba(4,0,132,.12);border-top:5px solid var(--navy);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(22px,4vw,42px);margin:0 0 30px}
+    h2{color:var(--navy);font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.15;margin:0 0 22px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+    h3{color:var(--navy-2);font-size:1.15rem;margin:28px 0 9px}h4{color:var(--navy);margin:16px 0 5px}p{margin:8px 0 12px}
+    .lead{font-size:1.08rem;color:#3a4160;max-width:920px}.gold{color:#FF8A3D}
+    .info-grid{display:grid;grid-template-columns:190px 1fr 190px 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:20px 0}
+    .info-grid dt,.info-grid dd{margin:0;padding:12px 14px;border-bottom:1px solid var(--line)}.info-grid dt{background:var(--pale);color:var(--navy);font-weight:800}.info-grid dd{background:#fff;border-left:1px solid var(--line)}
+    .callout{margin:18px 0;padding:16px 18px;border-left:5px solid var(--gold);border-radius:0 12px 12px 0;background:var(--cream)}.callout.navy{background:var(--pale);border-color:var(--navy-3)}.callout .label{display:block;color:var(--navy);font-weight:900;font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:linear-gradient(160deg,#fff,#F6F7FD)}.card .code{display:inline-block;background:var(--navy);color:var(--gold-2);font:800 .78rem Inter,"Segoe UI",sans-serif;border-radius:6px;padding:4px 8px;margin-bottom:8px}.card h3{margin:0 0 7px}.card p{margin:0}
+    .roadmap{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:22px 0}.road{position:relative;min-height:138px;padding:14px 12px;border-radius:12px;background:var(--navy);color:white;border-bottom:5px solid var(--gold)}.road b{font-family:Inter,"Segoe UI",sans-serif;color:var(--gold-2);font-size:.78rem}.road span{display:block;font-size:.84rem;line-height:1.4;margin-top:6px}
+    table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0 8px;font-size:.9rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}th{background:var(--navy);color:white;padding:11px 12px;text-align:left;line-height:1.3}td{padding:11px 12px;vertical-align:top;border-top:1px solid var(--line);border-right:1px solid var(--line);background:white}td:last-child,th:last-child{border-right:0}tbody tr:nth-child(even) td{background:#F6F7FD}.week{white-space:nowrap;color:var(--navy);font-weight:900}.exam td{background:var(--cream)!important;color:var(--navy);font-family:Inter,"Segoe UI",sans-serif;font-weight:800}.unit td{background:#E4E8FA!important;color:var(--navy);font-family:Inter,"Segoe UI",sans-serif;font-weight:900;letter-spacing:.04em}
+    .badge{display:inline-block;border-radius:999px;padding:2px 7px;margin-left:4px;background:#FFEBDD;color:#8C3600;font:800 .68rem Inter,"Segoe UI",sans-serif;vertical-align:middle}
+    ul.checks{list-style:none;padding:0;margin:12px 0}.checks li{position:relative;padding:7px 0 7px 29px}.checks li:before{content:"✓";position:absolute;left:0;top:6px;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:var(--gold-2);font:bold .72rem Arial}
+    ol.steps{counter-reset:item;list-style:none;padding:0}.steps li{counter-increment:item;position:relative;margin:10px 0;padding:12px 14px 12px 50px;border:1px solid var(--line);border-radius:10px;background:#fff}.steps li:before{content:counter(item);position:absolute;left:12px;top:11px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#fff;font:bold .8rem Inter,"Segoe UI",sans-serif}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{border-radius:12px;padding:18px;background:var(--pale);border:1px solid #C9CFEC}.panel h3{margin-top:0}.small{font-size:.86rem;color:var(--muted)}
+    /* Interactive chapter lectures: each link activates when its HTML file is posted. */
+    table.lectures td{vertical-align:middle}.chapter-title{min-width:290px}
+    a.lec{color:var(--navy-3);font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:850;text-decoration:none}
+    a.lec:hover{text-decoration:underline;color:#FD6600}a.lec.lec-soon{color:#8A8FA8;cursor:default;text-decoration:none;font-weight:750}
+    .pill{display:inline-block;margin-left:7px;padding:3px 8px;border-radius:999px;font:850 .64rem Inter,"Segoe UI",Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+    .pill.live{background:#e4f4e9;color:#17643b;border:1px solid #9bcfae}.pill.soon{background:#EEF0F8;color:#5b5f75;border:1px solid #D7DBEC}
+    .chapter-status{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:12px 0;color:var(--muted);font:.82rem Inter,"Segoe UI",Arial,sans-serif}
+    code{padding:2px 6px;border-radius:5px;background:#E4E8FA;color:var(--navy);font: .86em Consolas,"Courier New",monospace}
+    footer{background:var(--navy);color:#C9CFEC;border-top:6px solid var(--gold);text-align:center;padding:28px 20px;font-family:Inter,"Segoe UI",sans-serif;font-size:.82rem}footer strong{color:var(--gold-2)}
+    .backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border:0;border-radius:50%;background:var(--gold);color:#fff;font-size:1.2rem;font-weight:900;box-shadow:0 10px 24px rgba(4,0,132,.25);cursor:pointer;opacity:0;transform:translateY(10px);transition:.25s}.backtop.show{opacity:1;transform:none}
+    @media(max-width:900px){.info-grid{grid-template-columns:150px 1fr}.roadmap{grid-template-columns:repeat(2,1fr)}.table-wrap{overflow:auto}.table-wrap table{min-width:900px}.two-col,.cards{grid-template-columns:1fr}}
+    @media(max-width:600px){body{font-size:15px}.masthead{padding:40px 22px 38px}.info-grid{grid-template-columns:1fr}.info-grid dd{border-left:0}.roadmap{grid-template-columns:1fr}.road{min-height:0}section{padding:22px 17px}.print-btn{display:none}}
+    @media print{.progress,nav,.backtop{display:none!important}body{background:white;font-size:10.5pt}main{max-width:none;margin:0;padding:0}section{box-shadow:none;border:0;border-top:3px solid var(--navy);border-radius:0;margin:0 0 12px;padding:20px 6px;break-inside:auto}.masthead{padding:35px}.card,.panel,.callout,table{break-inside:avoid}a{text-decoration:none;color:inherit}.table-wrap{overflow:visible}.table-wrap table{min-width:0}}
+  </style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="masthead" id="top">
+  <div class="eyebrow">Republic of the Philippines · Rizal Technological University · CHEMAPHY</div>
+  <h1>CHEM01<br><span class="gold">Enhanced Course Syllabus</span></h1>
+  <p><strong>Chemistry for Engineers</strong> — a student-friendly, Grade 12-accessible learning guide for energy, materials, fuels, environmental chemistry, and safe chemical practice.</p>
+  <div class="hero-meta">
+    <span class="chip">3 units</span><span class="chip">3 hours per week</span><span class="chip">18 weeks</span><span class="chip">Enhanced August 2026</span><a class="chip" href="index.html" style="text-decoration:none;background:var(--gold);border-color:var(--gold)">⌂ Back to Course Home</a>
+  </div>
+</header>
+
+<nav aria-label="Syllabus sections"><div class="inner">
+  <a href="index.html" class="home">⌂ Course Home</a><a href="#overview">Overview</a><a href="#outcomes">Outcomes</a><a href="#roadmap">Road Map</a><a href="#plan">Learning Plan</a><a href="#grading">Grading</a><a href="#lectures">Chapter Lectures</a><a href="#resources">Resources</a><a href="#policies">Policies</a><a href="#consultation">Consultation</a>
+  <button class="print-btn" onclick="window.print()" aria-label="Print syllabus">Print / PDF</button>
+</div></nav>
+
+<main>
+  <section id="overview">
+    <h2>Course Overview</h2>
+    <dl class="info-grid">
+      <dt>Program</dt><dd>All Engineering Programs</dd><dt>Course Code</dt><dd><strong>CHEM01</strong></dd>
+      <dt>Course Title</dt><dd>Chemistry for Engineers</dd><dt>Course Credit</dt><dd>3 units</dd>
+      <dt>Contact Hours</dt><dd>3 hours per week</dd><dt>Prerequisite</dt><dd>None</dd>
+      <dt>Co-requisite</dt><dd>As prescribed by the program</dd><dt>Department</dt><dd>CHEMAPHY</dd>
+      <dt>Created / Updated</dt><dd>June 2018 / April 2022</dd><dt>Enhanced Version</dt><dd>August 2026</dd>
+      <dt>Instructor</dt><dd>To be supplied</dd><dt>Semester / AY</dt><dd>To be supplied</dd>
+    </dl>
+    <h3>Course Description</h3>
+    <p class="lead">This course introduces the chemistry ideas that engineers use to understand energy, materials, fuels, the environment, and chemical safety. Lessons begin with familiar Grade 12 chemistry concepts and then move toward engineering applications through worked examples, short investigations, simulations, calculations, and evidence-based activities.</p>
+    <div class="callout navy"><span class="label">Student Learning Promise</span>You will not be asked only to memorize. You will explain ideas in your own words, solve problems step by step, interpret real or simulated data, and use chemical evidence to make practical engineering decisions.</div>
+    <h3>How to Use This Syllabus</h3>
+    <ol class="steps">
+      <li><strong>Before class:</strong> preview the key terms or short video and answer the readiness question.</li>
+      <li><strong>During class:</strong> participate in a mini-lesson, worked example, guided practice, and application task.</li>
+      <li><strong>After class:</strong> complete a short check for understanding and update the e-portfolio.</li>
+      <li><strong>Before practical or simulation work:</strong> read the procedure, safety notes, and data requirements.</li>
+      <li><strong>After practical or simulation work:</strong> organize the data, explain the result using evidence, and submit the required output.</li>
+    </ol>
+  </section>
+
+  <section id="outcomes">
+    <h2>Course Outcomes</h2>
+    <p>By the end of the course, students should be able to:</p>
+    <div class="cards">
+      <article class="card"><span class="code">CO1 · ENERGY</span><h3>Explain chemical energy systems</h3><p>Explain how chemical reactions produce, store, or transform energy, including electrochemical and nuclear processes.</p></article>
+      <article class="card"><span class="code">CO2 · MATERIALS</span><h3>Connect structure with performance</h3><p>Relate atomic structure, bonding, and material structure to the properties and uses of engineering materials.</p></article>
+      <article class="card"><span class="code">CO3 · ENVIRONMENT</span><h3>Evaluate environmental processes</h3><p>Explain chemical processes in air, water, and soil and evaluate basic pollution-prevention and control approaches.</p></article>
+      <article class="card"><span class="code">CO4 · APPLICATION</span><h3>Solve engineering-context problems</h3><p>Apply chemistry concepts, calculations, evidence, and safety practices to a selected engineering field.</p></article>
+    </div>
+    <h3>Learning Supports and Success Habits</h3>
+    <ul class="checks"><li>Each unit begins with essential terms, symbols, and a guiding question.</li><li>Calculations follow the Given–Required–Equation–Solution–Answer format.</li><li>Particle diagrams, reaction maps, graphs, and labeled set-ups support visual learning.</li><li>Recordings, simulations, practice sets, and consultation provide flexible review.</li><li>Students cite sources, show their own solution process, and report actual data.</li></ul>
+  </section>
+
+  <section id="roadmap">
+    <h2>Unit Road Map</h2>
+    <div class="roadmap">
+      <div class="road"><b>UNIT 1</b><span><strong>Basic Concepts</strong><br>How do particle ideas and equations explain observable changes?</span></div>
+      <div class="road"><b>UNIT 2</b><span><strong>Electrochemistry</strong><br>How can electron transfer produce electricity or corrosion?</span></div>
+      <div class="road"><b>UNIT 3</b><span><strong>Nuclear Chemistry</strong><br>How can nuclear changes release useful energy?</span></div>
+      <div class="road"><b>UNIT 4</b><span><strong>Fuels</strong><br>How should engineers compare fuel options?</span></div>
+      <div class="road"><b>UNIT 5</b><span><strong>Materials</strong><br>How do bonding and structure affect performance?</span></div>
+      <div class="road"><b>UNIT 6</b><span><strong>Environment</strong><br>How does chemistry affect air, water, and soil?</span></div>
+      <div class="road"><b>UNIT 7</b><span><strong>Safety</strong><br>How does hazard information guide safe choices?</span></div>
+    </div>
+    <h3>Course Outline and Timeframe</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Weeks</th><th>Unit / Topic</th><th>Key Coverage</th></tr></thead>
+      <tbody>
+        <tr><td class="week">1–3</td><td><strong>Orientation and Unit 1</strong></td><td>RTU orientation, LMS, laboratory rules; atomic structure, isotopes, ions, oxidation numbers, matter and change, balancing equations, energy, nomenclature, measurements, dimensional analysis, mole concept, and simple stoichiometry.</td></tr>
+        <tr><td class="week">4–5</td><td><strong>Unit 2: Electrochemistry</strong></td><td>Redox reactions, half-reaction balancing, voltaic cells, standard and nonstandard cell potential, Gibbs free energy, equilibrium, batteries, fuel cells, and corrosion.</td></tr>
+        <tr class="exam"><td class="week">6</td><td colspan="2">Preliminary Examination</td></tr>
+        <tr><td class="week">7–8</td><td><strong>Unit 3: Nuclear Chemistry and Energy</strong></td><td>Radioactivity, nuclear transmutations, decay modes and rates, half-life, detection, mass–energy, fission, fusion, and radioisotope applications.</td></tr>
+        <tr><td class="week">9–10</td><td><strong>Unit 4: Fuels</strong></td><td>Solid, liquid, and gaseous fuels; qualities of good fuel; calorific value; engineering applications; efficiency, emissions, and sustainability.</td></tr>
+        <tr><td class="week">11</td><td><strong>Unit 5: Engineering Materials</strong></td><td>Crystal structure, metals, extraction and refining, polymers, engineered nanomaterials, structure–property relationships, uses, benefits, and risks.</td></tr>
+        <tr class="exam"><td class="week">12</td><td colspan="2">Midterm Examination</td></tr>
+        <tr><td class="week">13–15</td><td><strong>Units 6–7: Environment and Safety</strong></td><td>Atmosphere, ozone, greenhouse effect, pollutants and controls; water chemistry and treatment; soil chemistry, nutrient cycles and pollution; labels, laboratory signs, SDS/MSDS, and waste handling.</td></tr>
+        <tr><td class="week">16–17</td><td><strong>Special Topics and e-Portfolio</strong></td><td>Field-specific engineering chemistry problem, evidence-based solution, mini-project, presentation, peer feedback, and portfolio completion.</td></tr>
+        <tr class="exam"><td class="week">18</td><td colspan="2">Final Examination and e-Portfolio Check</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="plan">
+    <h2>18-Week Learning Plan</h2>
+    <p class="lead">This detailed learning plan follows the enhanced course document and retains the original sequence and chemistry topics. The outcomes are written in student-friendly language and matched with learning activities, assessments, and required outputs.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Week</th><th>Learning Outcomes</th><th>Content / Topic</th><th>Teaching–Learning Activities</th><th>Assessment Tasks</th><th>Required Output</th></tr></thead>
+      <tbody>
+        <tr class="unit"><td colspan="6">FOUNDATION · ORIENTATION AND UNIT 1: BASIC CONCEPTS OF CHEMISTRY</td></tr>
+        <tr><td class="week">1–3</td><td>Explain the University's mission, vision, and philosophy; use the LMS and course guide; explain atomic structure, atomic and mass numbers, isotopes, ions, oxidation numbers, matter and its changes, chemical equations, energy, measurements, the mole concept, and simple stoichiometry.</td><td><strong>Orientation</strong>: RTU history, vision, mission, LMS, course guide, policies, requirements, and grading.<br><strong>Unit 1</strong>: Development of atomic structure; atomic and mass numbers; isotopes and ions; oxidation numbers; matter and its changes; balancing equations; energy; nomenclature; measurement, units, dimensional analysis, mole relationships, and simple stoichiometry.</td><td>Orientation and LMS walkthrough; diagnostic pretest; short mini-lessons; particle models; worked examples; guided balancing and calculation stations; videos, modules, hyperlinks, and synchronous discussion.</td><td>Diagnostic pretest; class work; worksheets; problem solving; short post-unit assessment.</td><td>Completed introductory activities, Unit 1 worksheets, and first e-portfolio entry.</td></tr>
+
+        <tr class="unit"><td colspan="6">ENERGY · UNIT 2: ELECTROCHEMISTRY</td></tr>
+        <tr><td class="week">4–5</td><td>Distinguish oxidation from reduction; identify electron gain or loss using oxidation numbers; balance redox half-reactions; calculate standard and nonstandard cell potentials; predict spontaneity; relate cell potential to Gibbs free energy and equilibrium; explain batteries, fuel cells, and corrosion.</td><td>Oxidation states and oxidation–reduction; balancing redox equations; voltaic cells; standard cell electromotive force; free energy and redox reactions; nonstandard cell potential; batteries, fuel cells, and corrosion.</td><td>Electron-transfer diagrams; half-reaction method; worked calculations; simulations; battery and corrosion case analysis; problem-solving workshop; module, videos, hyperlinks, and synchronous discussion.</td><td>Class work; problem set; recitation; application task; post-unit assessment.</td><td>Completed redox and cell-potential problem set, engineering application task, and e-portfolio update.</td></tr>
+        <tr class="exam"><td class="week">6</td><td colspan="5">PRELIMINARY EXAMINATION · Structured review, retrieval practice, and assessment covering Units 1–2.</td></tr>
+
+        <tr class="unit"><td colspan="6">NUCLEAR PROCESSES · UNIT 3: NUCLEAR CHEMISTRY AND ENERGY</td></tr>
+        <tr><td class="week">7–8</td><td>Interpret simple nuclear equations; distinguish alpha decay, beta decay, positron emission, and electron capture; use half-life and decay relationships; calculate simple binding-energy or mass–energy changes; compare fission and fusion; explain medical and industrial uses of radioisotopes.</td><td>Radioactivity; nuclear transmutations; rates of radioactive decay; half-life; detection of radioactivity; energy changes; fission, fusion, and radioisotope applications.</td><td>Decay cards and timelines; nuclear-equation practice; half-life graphing; guided calculations; risk–benefit discussion; safe simulation or supplied-data investigation.</td><td>Class work; quiz; graph or data task; guided calculations; post-unit assessment.</td><td>Nuclear-equation exercises, half-life analysis, evidence-based application brief, and e-portfolio update.</td></tr>
+
+        <tr class="unit"><td colspan="6">ENGINEERING ENERGY · UNIT 4: FUELS</td></tr>
+        <tr><td class="week">9–10</td><td>Define fuel; classify solid, liquid, and gaseous fuels; identify the qualities of a good fuel; compare engineering applications; distinguish gross and net calorific values; solve calorific-value problems; consider efficiency, emissions, and sustainability.</td><td>Introduction to chemical fuels; characteristics of good fuel; solid, liquid, and gaseous fuels; determination of calorific value; efficiency, emissions, and sustainability.</td><td>Fuel-comparison matrix; heating-value calculations; engineering energy-system case; interactive demonstration or simulation; guided problem solving.</td><td>Class work; problem set; quiz; evidence-based fuel comparison.</td><td>Completed calorific-value problem set, fuel recommendation, and e-portfolio update.</td></tr>
+
+        <tr class="unit"><td colspan="6">STRUCTURE–PROPERTY RELATIONSHIPS · UNIT 5: CHEMISTRY OF ENGINEERING MATERIALS</td></tr>
+        <tr><td class="week">11</td><td>Explain basic crystal structures; connect bonding and structure with material properties; outline metal extraction, production, and refining; examine periodic trends in metallic properties; compare metals and polymers; define nanomaterials and explain their processing, properties, applications, benefits, and risks.</td><td>Basic crystal structures; metals and metallurgy; periodic trends; polymers; engineered nanomaterials; synthesis and processing; engineering applications.</td><td>Structure–property models; material identification; engineering design scenario; guided reading; brainstorming; safe demonstration or supplied material dataset.</td><td>Class work; recitation; quiz; problem set; concept map; material-selection task.</td><td>Material-selection analysis, concept map, and e-portfolio update.</td></tr>
+        <tr class="exam"><td class="week">12</td><td colspan="5">MIDTERM EXAMINATION · Guided synthesis review and assessment covering Units 3–5.</td></tr>
+
+        <tr class="unit"><td colspan="6">SUSTAINABILITY · UNIT 6: CHEMISTRY OF THE ENVIRONMENT AND UNIT 7: CHEMICAL SAFETY</td></tr>
+        <tr><td class="week">13–15</td><td>Describe atmospheric regions and composition; explain plume behavior, ozone chemistry, greenhouse effect, global warming, pollutants, inversions, and control strategies; explain water structure, hydrologic processes, freshwater, groundwater, and treatment; explain soil formation, nutrients, biogeochemical cycles, and soil pollution; interpret labels, signs, and Safety Data Sheets and apply chemical-safety measures.</td><td><strong>Atmosphere</strong>: Composition and layers, plume types, ozone, greenhouse gases, air pollutants, temperature inversions, and control.<br><strong>Water</strong>: Structure, surface properties, hydrologic cycle, freshwater, groundwater, and treatment.<br><strong>Soil</strong>: Formation, nutrients, nutrient cycles, and pollution.<br><strong>Safety</strong>: Importance of safety, laboratory guides, hazard signs, labels, SDS/MSDS, handling, emergency response, and waste.</td><td>Local air, water, and soil cases; pollutant-source maps; treatment-flow diagram; data interpretation; safety-label activity; control-strategy comparison; SDS search; waste-segregation and emergency-response practice.</td><td>Class work; recitation; live quiz; problem set; environmental case analysis; control proposal; safety check.</td><td>Environmental chemistry case report, pollution-control proposal, completed safety task, and e-portfolio update.</td></tr>
+
+        <tr class="unit"><td colspan="6">INTEGRATION · SPECIAL TOPICS FOR THE ENGINEERING FIELD</td></tr>
+        <tr><td class="week">16–17</td><td>Integrate chemistry with a selected engineering field; define a problem; choose relevant chemistry concepts; interpret evidence; propose a defensible solution; communicate limitations and uncertainty.</td><td>Special topics specific to the field of expertise; integration of chemistry principles; engineering problem solving; submission and presentation of the e-portfolio.</td><td>Field-specific readings; focus-group discussion; consultation; mini-project workshop; approved investigation, design check, simulation, or dataset analysis; peer feedback.</td><td>Class work; recitation; live quiz; problem set; mini-project review; presentation.</td><td>Field-specific mini-project or presentation and completed e-portfolio.</td></tr>
+        <tr class="exam"><td class="week">18</td><td colspan="5">FINAL EXAMINATION · Synthesis and application of chemistry across energy, materials, environment, safety, and engineering practice.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="grading">
+    <h2>Requirements, Assessment, and Grading</h2>
+    <div class="panel"><h3>CHEM01 Course Requirements</h3><ul class="checks"><li>Pass the preliminary, midterm, and final examinations.</li><li>Complete quizzes, worksheets, problem sets, class work, and application tasks.</li><li>Submit the field-specific mini-project or presentation.</li><li>Maintain and submit a complete e-portfolio.</li><li>Participate in recitation, review, discussion, and peer-feedback activities.</li><li>Demonstrate responsible data use, chemical safety awareness, and academic honesty.</li></ul></div>
+    <h3>CHEM01 Grading System</h3>
+    <table><thead><tr><th>Component</th><th style="width:160px">Weight</th></tr></thead><tbody><tr><td>Major examinations</td><td class="week">40%</td></tr><tr><td>Quizzes</td><td class="week">25%</td></tr><tr><td>Worksheets / problem sets</td><td class="week">20%</td></tr><tr><td>Assignments and project</td><td class="week">15%</td></tr><tr class="exam"><td>Total</td><td>100%</td></tr></tbody></table>
+    <div class="callout"><span class="label">Institutional Rule</span>The institutional or college grading system and approved class policies remain controlling if they differ from the distribution shown here.</div>
+    <h3>Assessment Guide</h3>
+    <div class="table-wrap"><table><thead><tr><th>Type</th><th>Purpose</th><th>Examples</th></tr></thead><tbody><tr><td><strong>Diagnostic</strong></td><td>Shows what you already know and helps plan review.</td><td>Pretest, readiness question</td></tr><tr><td><strong>Formative</strong></td><td>Helps you improve before a major grade.</td><td>Exit ticket, guided problem, recitation, draft</td></tr><tr><td><strong>Summative</strong></td><td>Shows what you can independently explain, calculate, or produce.</td><td>Quiz, examination, project, case report</td></tr><tr><td><strong>Authentic / Application</strong></td><td>Uses chemistry evidence to make or defend an engineering decision.</td><td>Case analysis, material or fuel choice, control proposal</td></tr></tbody></table></div>
+  </section>
+
+  <section id="lectures">
+    <h2>Interactive Chapter Lectures</h2>
+    <p class="lead">Each chapter is published as a separate interactive lecture. Posted chapters open directly from the table below; chapters marked <em>Coming soon</em> will be released as the course progresses.</p>
+    <div class="chapter-status"><span class="pill live">Posted</span> available to open <span class="pill soon">Coming soon</span> not yet released</div>
+    <div class="table-wrap"><table class="lectures">
+      <thead><tr><th>Weeks</th><th>Chapter</th><th class="chapter-title">Interactive Lecture</th><th>Aligned CHEM01 Coverage</th></tr></thead>
+      <tbody>
+        <tr><td class="week">1–3</td><td>Chapter 1</td><td><a class="lec" data-chapter="1" href="chapters/chapter-01.html">Foundations of Engineering Chemistry</a> <span class="pill soon">Checking…</span></td><td>Atomic structure, isotopes and ions, oxidation numbers, matter and change, equation balancing, energy, nomenclature, measurement, mole concept, and simple stoichiometry.</td></tr>
+        <tr><td class="week">4–5</td><td>Chapter 2</td><td><a class="lec" data-chapter="2" href="chapters/chapter-02.html">Electrochemistry: Redox, Cells, and Corrosion</a> <span class="pill soon">Checking…</span></td><td>Redox equations, voltaic cells, standard and nonstandard cell potential, Gibbs free energy, equilibrium, batteries, fuel cells, and corrosion.</td></tr>
+        <tr><td class="week">7–8</td><td>Chapter 3</td><td><a class="lec" data-chapter="3" href="chapters/chapter-03.html">Nuclear Chemistry and Energy</a> <span class="pill soon">Checking…</span></td><td>Nuclear equations, decay modes, half-life, mass–energy, fission, fusion, detection, and radioisotope applications.</td></tr>
+        <tr><td class="week">9–10</td><td>Chapter 4</td><td><a class="lec" data-chapter="4" href="chapters/chapter-04.html">Fuels, Calorific Value, and Sustainable Energy</a> <span class="pill soon">Checking…</span></td><td>Fuel classification and quality, calorific value, engineering use, efficiency, emissions, and sustainability.</td></tr>
+        <tr><td class="week">11</td><td>Chapter 5</td><td><a class="lec" data-chapter="5" href="chapters/chapter-05.html">Chemistry of Engineering Materials</a> <span class="pill soon">Checking…</span></td><td>Crystal structures, metals, extraction and refining, polymers, nanomaterials, and structure–property relationships.</td></tr>
+        <tr><td class="week">13</td><td>Chapter 6</td><td><a class="lec" data-chapter="6" href="chapters/chapter-06.html">Atmospheric Chemistry and Air Pollution</a> <span class="pill soon">Checking…</span></td><td>Atmospheric composition, plume behavior, ozone, greenhouse gases, inversions, air pollutants, and control strategies.</td></tr>
+        <tr><td class="week">14–15</td><td>Chapter 7</td><td><a class="lec" data-chapter="7" href="chapters/chapter-07.html">Water, Soil, and Environmental Chemistry</a> <span class="pill soon">Checking…</span></td><td>Water properties and treatment, hydrologic cycle, groundwater, soil formation, nutrients, biogeochemical cycles, and pollution.</td></tr>
+        <tr><td class="week">15–17</td><td>Chapter 8</td><td><a class="lec" data-chapter="8" href="chapters/chapter-08.html">Chemical Safety and Special Topics</a> <span class="pill soon">Checking…</span></td><td>Laboratory signs, Safety Data Sheets, PPE, chemical handling and waste, plus special topics and applications in the student's engineering field.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="resources">
+    <h2>References and Learning Resources</h2>
+    <div class="two-col">
+      <div><h3>Core References</h3><ul><li>Brown, T. L., et al. (2012). <em>Chemistry: The Central Science</em> (12th ed.). Pearson.</li><li>Brown, L., &amp; Holme, T. (2012). <em>Chemistry for Engineering Students</em> (2nd ed.). Cengage.</li><li>Callister, W. D., &amp; Rethwisch, D. G. (2010). <em>Materials Science and Engineering</em> (8th ed.). Wiley.</li><li>Chang, R., &amp; Goldsby, K. A. (2016). <em>Chemistry</em> (12th ed.). McGraw-Hill.</li><li>Masterton, W. L., et al. (2012). <em>Chemistry: Principles and Reactions</em> (7th ed.). Cengage.</li><li>Petrucci, R. H., et al. (2011). <em>General Chemistry</em> (10th ed.). Pearson.</li></ul></div>
+      <div><h3>Suggested Open Resources</h3><ul><li>Chemistry LibreTexts modules on general chemistry, electrochemistry, thermochemistry, water, and materials.</li><li>UCAR atmospheric chemistry learning resources.</li><li>Institution-provided LMS modules, recordings, simulations, activity guides, and report-writing guide.</li><li>Current manufacturer or institution-approved Safety Data Sheets.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="policies">
+    <h2>Flexible and Digital Learning Policies</h2>
+    <h3>Academic Honesty and Responsible AI Use</h3>
+    <p>Students must submit their own work and acknowledge sources. Misconduct includes copying or sharing answers, using unapproved materials, impersonation, inventing or changing laboratory data, submitting another person's work, or using digital/AI tools in ways not permitted by the instructor. When a tool is allowed, the student remains responsible for checking the science, showing the solution process, and declaring how the tool was used.</p>
+    <div class="two-col">
+      <div class="panel"><h3>Submission and Communication</h3><ul class="checks"><li>Use the approved LMS or submission channel.</li><li>Follow announced file names, formats, and deadlines.</li><li>Report access, health, or connectivity problems early.</li><li>Use respectful language in discussions and peer review.</li></ul></div>
+      <div class="panel"><h3>Laboratory Safety</h3><ul class="checks"><li>Pass the orientation and pre-lab check.</li><li>Wear required PPE and follow instructions.</li><li>Read labels and SDS information.</li><li>Report spills, injuries, breakage, and unsafe conditions immediately.</li><li>Use only approved waste streams.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="consultation">
+    <h2>Consultation and Course Committee</h2>
+    <h3>Consultation Schedule</h3>
+    <table><thead><tr><th>Day</th><th>Time</th><th>Mode / Venue</th></tr></thead><tbody><tr><td><strong>Tuesday</strong></td><td>3:00–6:00 PM</td><td>To be supplied</td></tr><tr><td><strong>Thursday</strong></td><td>4:00–6:00 PM</td><td>To be supplied</td></tr></tbody></table>
+    <h3>Course Committee and Approval</h3>
+    <div class="table-wrap"><table><thead><tr><th>Role</th><th>Name / Office</th></tr></thead><tbody><tr><td>Enhanced by</td><td>Dr. Ryan Manuel D. Guido</td></tr><tr><td>Checked by</td><td>Curriculum Revision Committee — Chair, CRC</td></tr><tr><td>Recommending Approval</td><td>Ma. Virginia B. Carreon — Program Chair / Department Head</td></tr><tr><td>Approved by</td><td>Dr. Wilfredo Timajo — Dean</td></tr></tbody></table></div>
+  </section>
+</main>
+
+<footer><strong>CHEM01</strong> · Enhanced student-friendly course syllabus · Rizal Technological University<br><span>Chemistry for Engineers · CHEMAPHY · <a href="index.html" style="color:var(--gold-2)">Course Home</a></span></footer>
+<button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const progress=document.getElementById('progress');
+  const backtop=document.getElementById('backtop');
+  const links=[...document.querySelectorAll('nav a')];
+  const sections=[...document.querySelectorAll('main section')];
+  function update(){
+    const h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    progress.style.width=(max?100*h.scrollTop/max:0)+'%';
+    backtop.classList.toggle('show',h.scrollTop>500);
+    let current=sections[0]?.id;
+    for(const s of sections){if(s.getBoundingClientRect().top<=115)current=s.id}
+    links.forEach(a=>{if(!a.classList.contains('home'))a.classList.toggle('active',a.getAttribute('href')==='#'+current)});
+  }
+  addEventListener('scroll',update,{passive:true}); addEventListener('resize',update); update();
+
+  /* Automatically activate chapters as their files are uploaded.
+     Candidate locations and spellings:
+       chapters/chapter-01.html, chapters/chapter01.html,
+       chapter-01.html, chapter01.html (also unpadded 1–8 variants).
+     A link marked class="lec posted" is treated as a manual override. */
+  (function activatePostedChapters(){
+    const chapterLinks=[...document.querySelectorAll('a.lec[data-chapter]')];
+
+    async function firstExisting(candidates){
+      for(const url of candidates){
+        try{
+          const response=await fetch(url,{method:'GET',cache:'no-store'});
+          if(response.ok) return url;
+        }catch(error){ /* Try the next accepted filename. */ }
+      }
+      return null;
+    }
+
+    chapterLinks.forEach(async function(link){
+      const status=link.parentElement.querySelector('.pill');
+      if(link.classList.contains('posted')){
+        status.className='pill live'; status.textContent='Posted'; return;
+      }
+      const number=Number(link.dataset.chapter);
+      const nn=String(number).padStart(2,'0');
+      const n=String(number);
+      const candidates=[
+        'chapters/chapter-'+nn+'.html','chapters/chapter'+nn+'.html',
+        'chapters/chapter-'+n+'.html','chapters/chapter'+n+'.html',
+        'chapter-'+nn+'.html','chapter'+nn+'.html',
+        'chapter-'+n+'.html','chapter'+n+'.html'
+      ];
+      const found=await firstExisting(candidates);
+      if(found){
+        link.href=found; link.classList.add('posted'); link.removeAttribute('aria-disabled');
+        status.className='pill live'; status.textContent='Posted';
+      }else{
+        link.removeAttribute('href'); link.setAttribute('aria-disabled','true'); link.classList.add('lec-soon');
+        status.className='pill soon'; status.textContent='Coming soon';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

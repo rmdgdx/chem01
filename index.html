@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CHEM01 Chemistry for Engineers — interactive course landing page, Rizal Technological University.">
+<title>Chemistry for Engineers · CHEM01 · RTU · Interactive Course</title>
+<style>
+:root{
+  --blue:#040084; --blue-2:#0A1FA8; --blue-3:#1B3BC9; --blue-ink:#030066; --blue-soft:#E4E8FA; --blue-pale:#F1F3FC;
+  --orange:#FD6600; --orange-2:#FF8A3D; --orange-ink:#8C3600; --orange-soft:#FFEBDD; --orange-grad:linear-gradient(135deg,#FF8A3D,#FD6600);
+  --ok:#1f7a46; --ok-bg:#e2f4ea; --ok-bd:#9fd4b6;
+  --no:#b23140; --no-bg:#fde7e9; --no-bd:#e6a9b1;
+  --part:#8C3600; --part-bg:#FFEBDD; --part-bd:#FFC69C;
+  --neu:#5b5f75; --neu-bg:#EEF0F8; --neu-bd:#D7DBEC;
+  --ink:#141a33; --ink-soft:#555b73; --line:#DDE1F0; --bg:#F7F8FD;
+  --card:#fff; --shadow:0 1px 2px rgba(4,0,132,.06),0 10px 30px rgba(4,0,132,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:var(--blue-ink);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px 90px;}
+
+/* ---------- Hero ---------- */
+header.hero{position:relative;overflow:hidden;border-radius:0 0 30px 30px;margin-bottom:8px;padding:56px 34px 62px;color:#fff;
+  background:radial-gradient(circle at 92% 6%,rgba(253,102,0,.55) 0,transparent 42%),radial-gradient(circle at 4% 96%,rgba(255,138,61,.28) 0,transparent 40%),linear-gradient(135deg,#030066 0%,#040084 48%,#1B3BC9 100%);}
+header.hero::after{content:"CHEM";position:absolute;right:-18px;bottom:-64px;font-size:clamp(7rem,18vw,14rem);font-weight:900;line-height:1;letter-spacing:-.08em;color:rgba(255,255,255,.05);pointer-events:none;}
+.hero .inner{position:relative;max-width:1120px;margin:0 auto;padding:0 12px;}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#FFD9BF;font-weight:800;font-size:.74rem;letter-spacing:1.3px;text-transform:uppercase;padding:6px 15px;border-radius:999px;}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;margin:16px 0 8px;letter-spacing:-1px;color:#fff;font-weight:850;}
+.hero h1 em{font-style:normal;color:var(--orange-2);}
+.hero p{max-width:70ch;color:#DDE3FB;font-size:1.06rem;margin:0 0 20px;}
+.hchips{display:flex;flex-wrap:wrap;gap:9px;align-items:center;}
+.hchips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:700;color:#fff;}
+.hero .cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:850;font-size:.92rem;padding:11px 20px;border-radius:12px;background:var(--orange-grad);color:#fff;box-shadow:0 8px 22px rgba(253,102,0,.35);}
+.hero .cta:hover{filter:brightness(1.06);}
+.hero .cta.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);box-shadow:none;}
+
+/* ---------- Stats strip ---------- */
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:26px 0 8px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);border-top:4px solid var(--orange);}
+.stat b{display:block;font-size:1.7rem;font-weight:850;color:var(--blue);letter-spacing:-.5px;line-height:1.1;}
+.stat span{font-size:.8rem;color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:.6px;}
+
+/* ---------- Sections ---------- */
+h2.section{font-size:1.5rem;font-weight:840;letter-spacing:-.4px;margin:44px 0 4px;display:flex;align-items:center;gap:12px;color:var(--blue);}
+h2.section::before{content:"";width:26px;height:26px;border-radius:8px;background:var(--orange-grad);flex:0 0 auto;}
+.sub{color:var(--ink-soft);margin:0 0 14px;max-width:80ch;}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 22px;font-size:.85rem;color:var(--ink-soft);align-items:center;}
+.legend b{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;}
+.dot.g{background:var(--ok);} .dot.o{background:var(--orange);} .dot.r{background:var(--no);}
+
+/* ---------- Chapter cards ---------- */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));}
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 21px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px;transition:.15s;border-left-width:6px;border-left-color:var(--neu-bd);}
+.chapter:hover{transform:translateY(-2px);box-shadow:0 3px 6px rgba(4,0,132,.08),0 16px 36px rgba(4,0,132,.14);}
+.chapter.ready{border-left-color:var(--ok);}
+.chapter.partial{border-left-color:var(--orange);}
+.chapter.todo{border-left-color:var(--no);background:linear-gradient(180deg,#fffaf7,#fff);}
+.cnum{font-size:1.35rem;display:flex;align-items:center;gap:9px;}
+.cnum>span:first-of-type{font-size:.72rem;font-weight:850;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange-ink);}
+.status{margin-left:auto;font-size:.64rem;font-weight:850;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap;}
+.status.g{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-bd);}
+.status.o{background:var(--part-bg);color:var(--part);border:1px solid var(--part-bd);}
+.status.r{background:var(--no-bg);color:var(--no);border:1px solid var(--no-bd);}
+.status.checking,.status.neutral{background:var(--neu-bg);color:var(--neu);border:1px solid var(--neu-bd);}
+.chapter h3{margin:0;font-size:1.16rem;font-weight:820;letter-spacing:-.2px;color:var(--blue-ink);}
+.chapter .wk{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:800;color:var(--blue);background:var(--blue-soft);padding:3px 10px;border-radius:999px;width:max-content;}
+.chapter p{margin:0;color:#48505A;font-size:.93rem;flex:1;}
+.clinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:5px;}
+.cl{text-decoration:none;font-weight:800;font-size:.85rem;padding:9px 15px;border-radius:11px;transition:.15s;}
+.cl.orange{background:var(--orange-grad);color:#fff;}
+.cl.blue{background:var(--blue-soft);color:var(--blue-ink);}
+.cl:hover{filter:brightness(.97);}
+.cl.disabled{background:#F0F1F6;color:#9A9DB0;cursor:not-allowed;border:1px dashed #D0D3E2;pointer-events:none;}
+
+/* ---------- Outcomes ---------- */
+.co-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.co{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);}
+.co .code{display:inline-block;background:var(--blue);color:#FFD9BF;font-weight:800;font-size:.72rem;letter-spacing:1px;border-radius:6px;padding:4px 9px;margin-bottom:8px;}
+.co h3{margin:0 0 6px;font-size:1.05rem;color:var(--blue-ink);}
+.co p{margin:0;font-size:.9rem;color:#48505A;}
+
+/* ---------- Timeline ---------- */
+.timeline{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));}
+.tl{background:var(--blue);color:#fff;border-radius:14px;padding:14px 13px;border-bottom:5px solid var(--orange);min-height:110px;}
+.tl b{display:block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--orange-2);}
+.tl strong{display:block;font-size:.95rem;margin-top:4px;}
+.tl span{display:block;font-size:.8rem;color:#DDE3FB;margin-top:4px;line-height:1.4;}
+.tl.exam{background:var(--orange-grad);border-bottom-color:var(--blue);}
+.tl.exam b{color:#fff3ea;} .tl.exam span{color:#fff5ee;}
+
+/* ---------- Grading ---------- */
+.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);}
+.panel h3{margin:0 0 12px;color:var(--blue-ink);font-size:1.08rem;}
+.bar{margin:10px 0;}
+.bar .lbl{display:flex;justify-content:space-between;font-size:.88rem;font-weight:700;margin-bottom:4px;}
+.bar .lbl span:last-child{color:var(--orange-ink);}
+.bar .track{height:10px;border-radius:999px;background:var(--blue-soft);overflow:hidden;}
+.bar .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--blue-3));}
+.bar.hi .fill{background:var(--orange-grad);}
+ul.checks{list-style:none;padding:0;margin:0;}
+.checks li{position:relative;padding:6px 0 6px 30px;font-size:.92rem;}
+.checks li::before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#FFD9BF;font-size:.7rem;font-weight:900;}
+.note{margin-top:14px;padding:12px 14px;border-left:4px solid var(--orange);background:var(--orange-soft);border-radius:0 10px 10px 0;font-size:.86rem;color:#5a3a22;}
+
+/* ---------- Footer ---------- */
+footer{margin-top:48px;padding-top:26px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.86rem;}
+footer b{color:var(--blue-ink);}
+.pal{display:flex;gap:5px;margin:10px 0 0;} .pal i{width:34px;height:34px;border-radius:8px;border:1px solid rgba(0,0,0,.07);display:block;}
+@media(max-width:600px){header.hero{padding:42px 22px 48px;border-radius:0 0 22px 22px;} .hero .cta{width:100%;justify-content:center;}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="inner">
+  <span class="eyebrow">⚗️ Rizal Technological University · CHEMAPHY · CHEM01</span>
+  <h1>Chemistry for <em>Engineers</em></h1>
+  <p>An eight-chapter interactive course for all engineering programs — energy, materials, fuels, environmental chemistry, and safe chemical practice. Lessons start from familiar Grade 12 concepts and move toward engineering applications through worked examples, simulations, calculations, and evidence-based activities. Built entirely as standalone HTML.</p>
+  <div class="hchips">
+    <a class="cta" href="CHEM01_syllabus.html">📄 Enhanced Course Syllabus</a>
+    <a class="cta ghost" href="#chapters">📚 Browse Chapters</a>
+    <span>3 units</span><span>3 hours / week</span><span>18 weeks</span><span>7 units · 8 chapters</span><span>Enhanced August 2026</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>8</b><span>Interactive chapters</span></div>
+    <div class="stat"><b>4</b><span>Course outcomes</span></div>
+    <div class="stat"><b>3</b><span>Major examinations</span></div>
+    <div class="stat"><b>1</b><span>Field mini-project</span></div>
+    <div class="stat"><b>e-Portfolio</b><span>Maintained all term</span></div>
+  </div>
+
+  <h2 class="section" id="chapters">Chapters</h2>
+  <p class="sub">Each chapter has a <b>Lecture &amp; Notes</b> page and an <b>Exercises &amp; Problem Sets</b> page. Chapters are released as the course progresses — <b>green</b> means both pages are open, <b>orange</b> means the lecture is available and exercises will follow, <b>red</b> means the chapter is coming soon.</p>
+  <div class="legend">
+    <b><span class="dot g"></span> Ready (<span id="nready">…</span>)</b>
+    <b><span class="dot o"></span> Lecture only (<span id="npart">…</span>)</b>
+    <b><span class="dot r"></span> Coming soon (<span id="ntodo">…</span>)</b>
+  </div>
+  <div class="grid">
+    <article class="chapter" data-num="01">
+      <div class="cnum">⚛️ <span>Chapter 1</span> <span class="status checking">Checking…</span></div>
+      <h3>Foundations of Engineering Chemistry</h3>
+      <span class="wk">📅 Weeks 1–3 · Unit 1</span>
+      <p>Atomic structure, isotopes and ions, oxidation numbers, matter and change, balancing equations, energy, nomenclature, measurement, the mole concept, and simple stoichiometry.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-01.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-01-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="02">
+      <div class="cnum">🔋 <span>Chapter 2</span> <span class="status checking">Checking…</span></div>
+      <h3>Electrochemistry: Redox, Cells, and Corrosion</h3>
+      <span class="wk">📅 Weeks 4–5 · Unit 2</span>
+      <p>Redox equations and half-reactions, voltaic cells, standard and nonstandard cell potential, Gibbs free energy, equilibrium, batteries, fuel cells, and corrosion.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-02.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-02-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="03">
+      <div class="cnum">☢️ <span>Chapter 3</span> <span class="status checking">Checking…</span></div>
+      <h3>Nuclear Chemistry and Energy</h3>
+      <span class="wk">📅 Weeks 7–8 · Unit 3</span>
+      <p>Nuclear equations, decay modes, half-life, detection, mass–energy relationships, fission, fusion, and medical and industrial uses of radioisotopes.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-03.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-03-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="04">
+      <div class="cnum">🔥 <span>Chapter 4</span> <span class="status checking">Checking…</span></div>
+      <h3>Fuels, Calorific Value, and Sustainable Energy</h3>
+      <span class="wk">📅 Weeks 9–10 · Unit 4</span>
+      <p>Solid, liquid, and gaseous fuels; qualities of a good fuel; gross and net calorific value; engineering applications; efficiency, emissions, and sustainability.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-04.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-04-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="05">
+      <div class="cnum">🧱 <span>Chapter 5</span> <span class="status checking">Checking…</span></div>
+      <h3>Chemistry of Engineering Materials</h3>
+      <span class="wk">📅 Week 11 · Unit 5</span>
+      <p>Crystal structures, metals and metallurgy, extraction and refining, periodic trends, polymers, engineered nanomaterials, and structure–property relationships.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-05.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-05-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="06">
+      <div class="cnum">🌫️ <span>Chapter 6</span> <span class="status checking">Checking…</span></div>
+      <h3>Atmospheric Chemistry and Air Pollution</h3>
+      <span class="wk">📅 Week 13 · Unit 6</span>
+      <p>Atmospheric composition and layers, plume behavior, ozone, greenhouse gases and global warming, temperature inversions, air pollutants, and control strategies.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-06.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-06-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="07">
+      <div class="cnum">💧 <span>Chapter 7</span> <span class="status checking">Checking…</span></div>
+      <h3>Water, Soil, and Environmental Chemistry</h3>
+      <span class="wk">📅 Weeks 14–15 · Unit 6</span>
+      <p>Water structure and properties, hydrologic cycle, freshwater and groundwater, water treatment, soil formation, nutrients, biogeochemical cycles, and soil pollution.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-07.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-07-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+    <article class="chapter" data-num="08">
+      <div class="cnum">🧪 <span>Chapter 8</span> <span class="status checking">Checking…</span></div>
+      <h3>Chemical Safety and Special Topics</h3>
+      <span class="wk">📅 Weeks 15–17 · Unit 7 &amp; Special Topics</span>
+      <p>Laboratory signs, labels, Safety Data Sheets, PPE, chemical handling and waste, emergency response, plus chemistry applied to the student's own engineering field and the e-portfolio mini-project.</p>
+      <div class="clinks">
+        <a class="cl orange lec" href="chapters/chapter-08.html">📖 Lecture</a>
+        <a class="cl blue exo" href="chapters/chapter-08-exercises.html">✍️ Exercises</a>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="section" id="outcomes">Course Outcomes</h2>
+  <p class="sub">By the end of the course, students should be able to:</p>
+  <div class="co-grid">
+    <div class="co"><span class="code">CO1 · ENERGY</span><h3>Explain chemical energy systems</h3><p>Explain how chemical reactions produce, store, or transform energy, including electrochemical and nuclear processes.</p></div>
+    <div class="co"><span class="code">CO2 · MATERIALS</span><h3>Connect structure with performance</h3><p>Relate atomic structure, bonding, and material structure to the properties and uses of engineering materials.</p></div>
+    <div class="co"><span class="code">CO3 · ENVIRONMENT</span><h3>Evaluate environmental processes</h3><p>Explain chemical processes in air, water, and soil and evaluate basic pollution-prevention and control approaches.</p></div>
+    <div class="co"><span class="code">CO4 · APPLICATION</span><h3>Solve engineering-context problems</h3><p>Apply chemistry concepts, calculations, evidence, and safety practices to a selected engineering field.</p></div>
+  </div>
+
+  <h2 class="section" id="roadmap">18-Week Road Map</h2>
+  <p class="sub">The course runs in three assessment blocks. Each unit opens with essential terms, symbols, and a guiding question; calculations follow the Given–Required–Equation–Solution–Answer format.</p>
+  <div class="timeline">
+    <div class="tl"><b>Weeks 1–3</b><strong>Unit 1 · Basic Concepts</strong><span>Orientation, LMS, atomic structure, equations, mole concept.</span></div>
+    <div class="tl"><b>Weeks 4–5</b><strong>Unit 2 · Electrochemistry</strong><span>Redox, cells, potentials, batteries, corrosion.</span></div>
+    <div class="tl exam"><b>Week 6</b><strong>Preliminary Exam</strong><span>Units 1–2.</span></div>
+    <div class="tl"><b>Weeks 7–8</b><strong>Unit 3 · Nuclear</strong><span>Decay, half-life, fission, fusion.</span></div>
+    <div class="tl"><b>Weeks 9–10</b><strong>Unit 4 · Fuels</strong><span>Fuel types, calorific value, sustainability.</span></div>
+    <div class="tl"><b>Week 11</b><strong>Unit 5 · Materials</strong><span>Crystals, metals, polymers, nanomaterials.</span></div>
+    <div class="tl exam"><b>Week 12</b><strong>Midterm Exam</strong><span>Units 3–5.</span></div>
+    <div class="tl"><b>Weeks 13–15</b><strong>Units 6–7 · Environment &amp; Safety</strong><span>Air, water, soil; labels, SDS, waste.</span></div>
+    <div class="tl"><b>Weeks 16–17</b><strong>Special Topics</strong><span>Field mini-project, presentation, e-portfolio.</span></div>
+    <div class="tl exam"><b>Week 18</b><strong>Final Exam</strong><span>Synthesis + e-portfolio check.</span></div>
+  </div>
+
+  <h2 class="section" id="grading">Requirements &amp; Grading</h2>
+  <div class="two">
+    <div class="panel">
+      <h3>Grading System</h3>
+      <div class="bar hi"><div class="lbl"><span>Major examinations</span><span>40%</span></div><div class="track"><div class="fill" style="width:40%"></div></div></div>
+      <div class="bar"><div class="lbl"><span>Quizzes</span><span>25%</span></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
+      <div class="bar"><div class="lbl"><span>Worksheets / problem sets</span><span>20%</span></div><div class="track"><div class="fill" style="width:20%"></div></div></div>
+      <div class="bar"><div class="lbl"><span>Assignments and project</span><span>15%</span></div><div class="track"><div class="fill" style="width:15%"></div></div></div>
+      <div class="note">The institutional or college grading system and approved class policies remain controlling if they differ from this distribution.</div>
+    </div>
+    <div class="panel">
+      <h3>Course Requirements</h3>
+      <ul class="checks">
+        <li>Pass the preliminary, midterm, and final examinations.</li>
+        <li>Complete quizzes, worksheets, problem sets, class work, and application tasks.</li>
+        <li>Submit the field-specific mini-project or presentation.</li>
+        <li>Maintain and submit a complete e-portfolio.</li>
+        <li>Participate in recitation, review, discussion, and peer feedback.</li>
+        <li>Demonstrate responsible data use, chemical safety awareness, and academic honesty.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p><b>CHEM01 · Chemistry for Engineers</b> — Department of Chemistry and Physics (CHEMAPHY), Rizal Technological University. Enhanced by Dr. Ryan Manuel D. Guido; student-friendly edition, August 2026. Consultation: Tuesdays 3:00–6:00 PM and Thursdays 4:00–6:00 PM.</p>
+  </footer>
+</div>
+
+<script>
+/* Live file detection — works when served over http(s) (e.g. GitHub Pages).
+   Each chapter tries several accepted filenames, in a chapters/ subfolder first
+   and then beside this page. Opened from the local filesystem (file://) fetch
+   is blocked, so we fall back to an optimistic "Open" state with working links. */
+(function(){
+  async function exists(url){
+    try{ var r = await fetch(url, {method:'HEAD', cache:'no-store'}); return r.ok; }
+    catch(e){ return null; }
+  }
+  async function firstThatExists(cands){
+    var blocked=false;
+    for(var i=0;i<cands.length;i++){ var ok=await exists(cands[i]); if(ok===true) return cands[i]; if(ok===null) blocked=true; }
+    return blocked ? undefined : null;
+  }
+  function lectureNames(nn){
+    var n=String(Number(nn));
+    var base=['chapter-'+nn,'chapter'+nn,'chapter-'+n,'chapter'+n,'Chapter'+nn];
+    var out=[];
+    base.forEach(function(b){ out.push('chapters/'+b+'.html'); });
+    base.forEach(function(b){ out.push(b+'.html'); });
+    return out;
+  }
+  function exerciseNames(nn){
+    var n=String(Number(nn));
+    var base=['chapter-'+nn+'-exercises','chapter'+nn+'-exercises','chapter-'+n+'-exercises','chapter-'+nn+'_exercises','Chapter'+nn+'_Exercises'];
+    var out=[];
+    base.forEach(function(b){ out.push('chapters/'+b+'.html'); });
+    base.forEach(function(b){ out.push(b+'.html'); });
+    return out;
+  }
+  async function run(){
+    var cards=[].slice.call(document.querySelectorAll('.chapter'));
+    var ready=0, part=0, todo=0, blockedMode=false;
+    for(var c=0;c<cards.length;c++){
+      var card=cards[c], nn=card.dataset.num, st=card.querySelector('.status');
+      var lecA=card.querySelector('a.lec'), exoA=card.querySelector('a.exo');
+      var lecU=await firstThatExists(lectureNames(nn));
+      var exoU=await firstThatExists(exerciseNames(nn));
+      if(lecU===undefined || exoU===undefined){ blockedMode=true; st.className='status neutral'; st.textContent='Open'; continue; }
+      if(lecU){ lecA.href=lecU; } else { lecA.classList.add('disabled'); lecA.textContent='📖 Lecture · coming soon'; }
+      if(exoU){ exoA.href=exoU; } else { exoA.classList.add('disabled'); exoA.textContent='✍️ Exercises · coming soon'; }
+      if(lecU && exoU){ card.classList.add('ready'); st.className='status g'; st.textContent='🟢 Ready'; ready++; }
+      else if(lecU){ card.classList.add('partial'); st.className='status o'; st.textContent='🟠 Lecture only'; part++; }
+      else { card.classList.add('todo'); st.className='status r'; st.textContent='🔴 Coming soon'; todo++; }
+    }
+    var set=function(id,v){ document.getElementById(id).textContent=v; };
+    if(blockedMode){ set('nready','—'); set('npart','—'); set('ntodo','—'); }
+    else { set('nready',ready); set('npart',part); set('ntodo',todo); }
+  }
+  run();
+})();
+</script>
+</body>
+</html>
