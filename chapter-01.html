@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CHEM01 Chapter 1 — Foundations of Engineering Chemistry: atomic structure, isotopes, ions, oxidation numbers, matter and change, chemical equations, energy, nomenclature, measurement, the mole, and stoichiometry.">
+<title>Chapter 1 · Foundations of Engineering Chemistry · CHEM01</title>
+<style>
+:root{
+  --blue:#040084; --blue-2:#0A1FA8; --blue-3:#1B3BC9; --blue-ink:#030066; --blue-soft:#E4E8FA; --blue-pale:#F1F3FC;
+  --orange:#FD6600; --orange-2:#FF8A3D; --orange-ink:#8C3600; --orange-soft:#FFEBDD; --orange-grad:linear-gradient(135deg,#FF8A3D,#FD6600);
+  --ok:#1f7a46; --ok-bg:#e2f4ea; --no:#b23140; --no-bg:#fde7e9;
+  --ink:#141a33; --ink-soft:#555b73; --line:#DDE1F0; --bg:#F7F8FD; --card:#fff;
+  --shadow:0 1px 2px rgba(4,0,132,.06),0 10px 30px rgba(4,0,132,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:var(--blue-3);}
+.progress{position:fixed;z-index:100;top:0;left:0;width:0;height:4px;background:var(--orange-grad);box-shadow:0 0 10px rgba(253,102,0,.5);}
+
+/* Hero */
+header.hero{position:relative;overflow:hidden;color:#fff;padding:52px 34px 54px;border-radius:0 0 30px 30px;
+  background:radial-gradient(circle at 92% 6%,rgba(253,102,0,.55) 0,transparent 42%),radial-gradient(circle at 4% 96%,rgba(255,138,61,.28) 0,transparent 40%),linear-gradient(135deg,#030066 0%,#040084 48%,#1B3BC9 100%);}
+header.hero::after{content:"01";position:absolute;right:-10px;bottom:-70px;font-size:clamp(8rem,20vw,16rem);font-weight:900;line-height:1;letter-spacing:-.08em;color:rgba(255,255,255,.06);pointer-events:none;}
+.hero .inner{position:relative;max-width:1080px;margin:0 auto;}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;font-weight:700;margin-bottom:14px;}
+.crumbs a{color:#FFD9BF;text-decoration:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:999px;}
+.crumbs a:hover{background:rgba(255,255,255,.2);}
+.eyebrow{display:inline-block;color:#FFD9BF;font-weight:800;font-size:.74rem;letter-spacing:1.3px;text-transform:uppercase;}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08;margin:10px 0 10px;letter-spacing:-1px;font-weight:850;}
+.hero h1 em{font-style:normal;color:var(--orange-2);}
+.hero p{max-width:72ch;color:#DDE3FB;font-size:1.05rem;margin:0 0 18px;}
+.hchips{display:flex;flex-wrap:wrap;gap:9px;}
+.hchips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+
+/* Sticky nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(4,0,132,.97);border-bottom:2px solid var(--orange);box-shadow:0 8px 22px rgba(4,0,132,.2);}
+nav.top .in{max-width:1080px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;padding:0 12px;}
+nav.top .in::-webkit-scrollbar{display:none;}
+nav.top a{flex:0 0 auto;color:#DDE3FB;text-decoration:none;padding:14px 11px;font-size:.76rem;font-weight:700;border-bottom:3px solid transparent;white-space:nowrap;}
+nav.top a:hover,nav.top a.active{color:var(--orange-2);border-bottom-color:var(--orange);}
+nav.top a.home{color:#FFD9BF;border-right:1px solid rgba(255,255,255,.18);margin-right:4px;}
+
+/* Layout */
+main{max-width:1080px;margin:30px auto 80px;padding:0 20px;}
+section.ch{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:18px;box-shadow:var(--shadow);padding:clamp(22px,4vw,40px);margin:0 0 28px;}
+section.ch.accent{border-top-color:var(--orange);}
+h2{color:var(--blue);font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.15;margin:0 0 6px;letter-spacing:-.4px;display:flex;gap:12px;align-items:baseline;}
+h2 .num{font-size:.8em;color:var(--orange);font-weight:900;}
+h3{color:var(--blue-2);font-size:1.15rem;margin:26px 0 8px;}
+h4{color:var(--blue);margin:16px 0 6px;font-size:1rem;}
+p{margin:8px 0 12px;}
+.lead{font-size:1.05rem;color:#3a4160;}
+.goal{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;}
+.goal span{background:var(--blue-soft);color:var(--blue-ink);font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px;}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.threecol{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.panel{background:var(--blue-pale);border:1px solid #C9CFEC;border-radius:14px;padding:16px 18px;}
+.panel h4{margin-top:0;}
+.callout{margin:16px 0;padding:14px 18px;border-left:5px solid var(--orange);background:var(--orange-soft);border-radius:0 12px 12px 0;}
+.callout.blue{border-color:var(--blue-3);background:var(--blue-pale);}
+.callout .label{display:block;color:var(--blue);font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.callout.eng .label{color:var(--orange-ink);}
+.keyterm{font-weight:800;color:var(--blue-ink);}
+.formula{display:inline-block;background:var(--blue-soft);color:var(--blue-ink);padding:2px 8px;border-radius:6px;font-family:"Cambria Math",Cambria,Georgia,serif;font-size:1.02em;}
+.eq{display:block;text-align:center;margin:12px auto;padding:12px 16px;background:var(--blue-pale);border:1px solid #C9CFEC;border-radius:12px;font-family:"Cambria Math",Cambria,Georgia,serif;font-size:1.12rem;color:var(--blue-ink);overflow-x:auto;}
+sub,sup{line-height:0;}
+code{padding:2px 6px;border-radius:5px;background:var(--blue-soft);color:var(--blue-ink);font:.88em Consolas,"Courier New",monospace;}
+
+/* Figures */
+figure{margin:18px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 14px 10px;box-shadow:var(--shadow);}
+figure svg{width:100%;height:auto;display:block;}
+figcaption{font-size:.84rem;color:var(--ink-soft);margin-top:8px;line-height:1.5;}
+figcaption b{color:var(--blue);}
+svg text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;}
+
+/* Tables */
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:12px 0;font-size:.9rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+th{background:var(--blue);color:#fff;padding:10px 12px;text-align:left;line-height:1.3;}
+td{padding:9px 12px;vertical-align:top;border-top:1px solid var(--line);border-right:1px solid var(--line);background:#fff;}
+td:last-child,th:last-child{border-right:0;}
+tbody tr:nth-child(even) td{background:#F6F7FD;}
+td.c,th.c{text-align:center;}
+
+/* Worked example */
+.we{margin:18px 0;border:1px solid #C9CFEC;border-radius:14px;overflow:hidden;background:#fff;}
+.we .head{background:var(--blue);color:#fff;padding:10px 16px;font-weight:800;font-size:.9rem;display:flex;gap:10px;align-items:center;}
+.we .head .tag{background:var(--orange);color:#fff;font-size:.66rem;letter-spacing:.1em;padding:3px 8px;border-radius:999px;}
+.we .body{padding:14px 18px;}
+.gresa{display:grid;grid-template-columns:110px 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0;}
+.gresa div{padding:8px 12px;border-bottom:1px solid var(--line);}
+.gresa div:nth-child(odd){background:var(--blue-soft);color:var(--blue-ink);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;}
+.gresa div:nth-last-child(-n+2){border-bottom:0;}
+.ans{background:var(--orange-soft);color:var(--orange-ink);font-weight:800;padding:2px 8px;border-radius:6px;}
+
+/* Steps + checks */
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0;}
+.steps li{counter-increment:s;position:relative;margin:8px 0;padding:10px 14px 10px 48px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.steps li::before{content:counter(s);position:absolute;left:11px;top:10px;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.8rem;}
+ul.checks{list-style:none;padding:0;margin:8px 0;}
+.checks li{position:relative;padding:5px 0 5px 28px;}
+.checks li::before{content:"✓";position:absolute;left:0;top:6px;width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#FFD9BF;font-size:.68rem;font-weight:900;}
+
+/* Self-check reveal */
+details.check{margin:12px 0;border:1px solid #FFC69C;border-radius:12px;background:#FFF8F3;padding:0;}
+details.check summary{cursor:pointer;padding:12px 16px 12px 50px;font-weight:800;color:var(--orange-ink);list-style:none;position:relative;}
+details.check summary::-webkit-details-marker{display:none;}
+details.check summary::before{content:"?";position:absolute;left:16px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:.8rem;}
+details.check[open] summary::before{content:"✓";background:var(--ok);}
+details.check .a{padding:0 16px 14px 50px;color:#3a4160;}
+
+/* Quiz */
+.quiz .q{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;background:#fff;}
+.quiz .q p{margin:0 0 8px;font-weight:700;}
+.quiz label{display:block;padding:6px 10px;border-radius:8px;cursor:pointer;font-size:.95rem;}
+.quiz label:hover{background:var(--blue-pale);}
+.quiz .q.right{border-color:#9fd4b6;background:#f3fbf6;}
+.quiz .q.wrong{border-color:#e6a9b1;background:#fff5f6;}
+.btn{display:inline-block;border:0;border-radius:11px;background:var(--orange-grad);color:#fff;font-weight:800;padding:11px 20px;cursor:pointer;font-size:.92rem;box-shadow:0 8px 22px rgba(253,102,0,.3);}
+.btn.ghost{background:var(--blue-soft);color:var(--blue-ink);box-shadow:none;}
+#score{font-weight:800;color:var(--blue);margin-left:12px;}
+
+/* Summary cards */
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+.sum .s{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:linear-gradient(160deg,#fff,#F6F7FD);border-top:4px solid var(--orange);}
+.sum .s b{display:block;color:var(--blue);margin-bottom:4px;}
+.sum .s p{margin:0;font-size:.88rem;}
+
+/* Chapter nav footer */
+.chnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.chnav a{text-decoration:none;font-weight:800;padding:12px 18px;border-radius:12px;background:var(--blue-soft);color:var(--blue-ink);}
+.chnav a.next{background:var(--orange-grad);color:#fff;}
+footer{max-width:1080px;margin:0 auto;padding:0 20px 40px;color:var(--ink-soft);font-size:.84rem;}
+.backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border:0;border-radius:50%;background:var(--orange);color:#fff;font-size:1.2rem;font-weight:900;box-shadow:0 10px 24px rgba(4,0,132,.25);cursor:pointer;opacity:0;transform:translateY(10px);transition:.25s;}
+.backtop.show{opacity:1;transform:none;}
+@media(max-width:820px){.twocol,.threecol{grid-template-columns:1fr;} .gresa{grid-template-columns:1fr;} .gresa div:nth-child(odd){border-bottom:0;padding-bottom:2px;}}
+@media print{.progress,nav.top,.backtop,.btn{display:none!important;} body{background:#fff;font-size:11pt;} section.ch{box-shadow:none;break-inside:auto;} figure,.we,.panel,.callout{break-inside:avoid;} details.check{display:block;} details.check .a{display:block;}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="hero"><div class="inner">
+  <div class="crumbs"><a href="../index.html">⌂ Course Home</a><a href="../CHEM01_syllabus.html">📄 Syllabus</a><span style="color:#DDE3FB">Chapter 1 of 8</span></div>
+  <span class="eyebrow">CHEM01 · Chemistry for Engineers · Unit 1 · Weeks 1–3</span>
+  <h1>Chapter 1 · Foundations of <em>Engineering Chemistry</em></h1>
+  <p>Everything an engineer builds, burns, purifies, or protects is made of atoms. This chapter rebuilds the Grade 12 foundations — atomic structure, isotopes, ions, oxidation numbers, matter and its changes, chemical equations, energy, naming, measurement, the mole, and stoichiometry — and points each idea at an engineering use.</p>
+  <div class="hchips"><span>⚛️ 12 lessons</span><span>🖼️ 14 figures</span><span>🧮 8 worked examples</span><span>✅ Self-checks + quiz</span><span>📚 Chang Ch. 1–3 · Silberberg Ch. 1–3</span></div>
+</div></header>
+
+<nav class="top" aria-label="Chapter sections"><div class="in">
+  <a href="../index.html" class="home">⌂ Home</a>
+  <a href="#s1">1.1 Atom</a><a href="#s2">1.2 Nucleus</a><a href="#s3">1.3 Isotopes</a><a href="#s4">1.4 Ions</a><a href="#s5">1.5 Ox. Numbers</a><a href="#s6">1.6 Matter</a><a href="#s7">1.7 Equations</a><a href="#s8">1.8 Energy</a><a href="#s9">1.9 Naming</a><a href="#s10">1.10 Measurement</a><a href="#s11">1.11 Mole</a><a href="#s12">1.12 Stoichiometry</a><a href="#summary">Summary</a><a href="#quiz">Quiz</a>
+</div></nav>
+
+<main>
+<!-- ============ INTRO ============ -->
+<section class="ch accent" id="intro">
+  <h2><span class="num">§</span>Before You Start</h2>
+  <p class="lead">Chemistry for engineers is not a list of facts to memorize. It is a way of reading the world at the particle level so you can predict how much material a process needs, how much energy it will release, and whether it will be safe. By the end of Chapter 1 you should be able to:</p>
+  <div class="goal"><span>Describe how the atomic model developed</span><span>Read and write nuclear symbols</span><span>Compute average atomic mass from isotopes</span><span>Predict ions and assign oxidation numbers</span><span>Classify matter and its changes</span><span>Balance chemical equations</span><span>Relate reactions to energy</span><span>Name inorganic compounds</span><span>Use SI units and dimensional analysis</span><span>Convert mass ↔ moles ↔ particles</span><span>Solve simple stoichiometry problems</span></div>
+  <div class="callout blue"><span class="label">How this chapter works</span>Each lesson opens with a <b>guiding question</b>, builds the idea with a figure, then shows a <b>worked example</b> in the Given–Required–Equation–Solution–Answer (GRESA) format you will use in every problem set. Orange <b>Engineering Connection</b> boxes show where the idea appears in practice. Tap any <b>Check yourself</b> box to reveal the answer after you try it.</div>
+  <div class="callout eng"><span class="label">Aligned readings</span>Chang &amp; Goldsby, <em>Chemistry</em> — Ch. 1 (Chemistry: The Study of Change), Ch. 2 (Atoms, Molecules, and Ions), Ch. 3 (Mass Relationships in Chemical Reactions). Silberberg, <em>Chemistry: The Molecular Nature of Matter and Change</em> — Ch. 1 (Keys to Studying Chemistry), Ch. 2 (The Components of Matter), Ch. 3 (Stoichiometry of Formulas and Equations).</div>
+</section>
+<!-- ============ 1.1 ATOMIC STRUCTURE ============ -->
+<section class="ch" id="s1">
+  <h2><span class="num">1.1</span>Development of Atomic Structure</h2>
+  <p class="lead"><b>Guiding question:</b> How did we come to believe that matter is made of atoms with a tiny, dense, positive nucleus surrounded by electrons?</p>
+  <p>The modern picture of the atom was built one experiment at a time. Each model fixed a problem the previous one could not explain, and each is still useful at the right level of detail — an engineer estimating the mass of a steel beam uses Dalton's atom; an engineer designing a semiconductor needs the quantum atom.</p>
+
+  <figure>
+    <svg viewBox="0 0 1000 250" role="img" aria-label="Five atomic models from Dalton to the quantum model">
+      <defs>
+        <radialGradient id="g1" cx="40%" cy="35%"><stop offset="0" stop-color="#6d7fe0"/><stop offset="1" stop-color="#040084"/></radialGradient>
+        <radialGradient id="cloud" cx="50%" cy="50%"><stop offset="0" stop-color="#1B3BC9" stop-opacity=".9"/><stop offset=".6" stop-color="#1B3BC9" stop-opacity=".25"/><stop offset="1" stop-color="#1B3BC9" stop-opacity="0"/></radialGradient>
+      </defs>
+      <line x1="60" y1="215" x2="940" y2="215" stroke="#DDE1F0" stroke-width="3"/>
+      <!-- Dalton -->
+      <g transform="translate(100,100)">
+        <circle r="46" fill="url(#g1)"/>
+        <text y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Dalton · 1803</text>
+        <text y="98" text-anchor="middle" font-size="12" fill="#555b73">Solid, indivisible sphere</text>
+        <circle cy="115" r="6" fill="#FD6600"/>
+      </g>
+      <!-- Thomson -->
+      <g transform="translate(300,100)">
+        <circle r="46" fill="#C9CFEC"/>
+        <g fill="#FD6600"><circle cx="-20" cy="-14" r="6"/><circle cx="16" cy="-22" r="6"/><circle cx="24" cy="12" r="6"/><circle cx="-6" cy="20" r="6"/><circle cx="-26" cy="16" r="6"/><circle cx="2" cy="-2" r="6"/></g>
+        <text y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Thomson · 1897</text>
+        <text y="98" text-anchor="middle" font-size="12" fill="#555b73">Electrons in a positive "pudding"</text>
+        <circle cy="115" r="6" fill="#FD6600"/>
+      </g>
+      <!-- Rutherford -->
+      <g transform="translate(500,100)">
+        <circle r="46" fill="none" stroke="#C9CFEC" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle r="9" fill="#FD6600"/>
+        <g fill="#040084"><circle cx="-38" cy="-18" r="5"/><circle cx="30" cy="-30" r="5"/><circle cx="40" cy="16" r="5"/><circle cx="-14" cy="42" r="5"/></g>
+        <text y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Rutherford · 1911</text>
+        <text y="98" text-anchor="middle" font-size="12" fill="#555b73">Tiny dense nucleus, mostly empty space</text>
+        <circle cy="115" r="6" fill="#FD6600"/>
+      </g>
+      <!-- Bohr -->
+      <g transform="translate(700,100)">
+        <circle r="20" fill="none" stroke="#040084" stroke-width="1.6"/><circle r="34" fill="none" stroke="#040084" stroke-width="1.6"/><circle r="48" fill="none" stroke="#040084" stroke-width="1.6"/>
+        <circle r="7" fill="#FD6600"/>
+        <g fill="#040084"><circle cx="20" cy="0" r="5"/><circle cx="-24" cy="-24" r="5"/><circle cx="34" cy="34" r="5"/><circle cx="-48" cy="0" r="5"/></g>
+        <text y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Bohr · 1913</text>
+        <text y="98" text-anchor="middle" font-size="12" fill="#555b73">Electrons in fixed energy levels</text>
+        <circle cy="115" r="6" fill="#FD6600"/>
+      </g>
+      <!-- Quantum -->
+      <g transform="translate(900,100)">
+        <circle r="52" fill="url(#cloud)"/>
+        <circle r="7" fill="#FD6600"/>
+        <text y="80" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Quantum · 1926</text>
+        <text y="98" text-anchor="middle" font-size="12" fill="#555b73">Electron probability clouds (orbitals)</text>
+        <circle cy="115" r="6" fill="#FD6600"/>
+      </g>
+      <text x="500" y="242" text-anchor="middle" font-size="12" fill="#8A8FA8">Each model kept what worked and fixed what the evidence contradicted</text>
+    </svg>
+    <figcaption><b>Figure 1.1</b> The evolution of the atomic model. Orange marks the positive charge (nucleus after 1911); blue marks electrons.</figcaption>
+  </figure>
+
+  <div class="tw"><table>
+    <thead><tr><th>Scientist / Year</th><th>Key experiment or idea</th><th>What it added</th><th>What it could not explain</th></tr></thead>
+    <tbody>
+      <tr><td><b>Dalton</b> (1803)</td><td>Mass laws: conservation of mass, definite proportions, multiple proportions</td><td>Matter is made of indivisible atoms; atoms of one element are identical; compounds have fixed ratios</td><td>Why atoms bond; electrical behavior of matter</td></tr>
+      <tr><td><b>Thomson</b> (1897)</td><td>Cathode-ray tube — rays bent by electric and magnetic fields</td><td>The electron: a negative particle far lighter than any atom; charge-to-mass ratio</td><td>Where the positive charge sits</td></tr>
+      <tr><td><b>Millikan</b> (1909)</td><td>Oil-drop experiment</td><td>Charge of the electron (−1.602 × 10<sup>−19</sup> C), hence its mass</td><td>—</td></tr>
+      <tr><td><b>Rutherford</b> (1911)</td><td>Gold-foil experiment — most α particles pass through, a few bounce back</td><td>Small, dense, positive nucleus; atom is mostly empty space</td><td>Why electrons do not spiral into the nucleus; line spectra</td></tr>
+      <tr><td><b>Chadwick</b> (1932)</td><td>Neutral radiation from beryllium bombarded by α particles</td><td>The neutron — explains isotopes and nuclear mass</td><td>—</td></tr>
+      <tr><td><b>Bohr</b> (1913)</td><td>Hydrogen line spectrum</td><td>Electrons occupy discrete energy levels; light emitted when they drop levels</td><td>Spectra of multi-electron atoms</td></tr>
+      <tr><td><b>Schrödinger, Heisenberg</b> (1926)</td><td>Wave mechanics; uncertainty principle</td><td>Orbitals as probability regions; explains bonding, periodicity, and spectra</td><td>Current model</td></tr>
+    </tbody>
+  </table></div>
+
+  <figure>
+    <svg viewBox="0 0 900 260" role="img" aria-label="Rutherford gold foil experiment">
+      <rect x="40" y="95" width="90" height="70" rx="8" fill="#040084"/>
+      <text x="85" y="125" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">α source</text>
+      <text x="85" y="142" text-anchor="middle" font-size="11" fill="#FFD9BF">(radium)</text>
+      <rect x="150" y="105" width="60" height="50" fill="#C9CFEC"/><rect x="176" y="125" width="8" height="10" fill="#fff"/>
+      <text x="180" y="180" text-anchor="middle" font-size="11" fill="#555b73">lead slit</text>
+      <!-- foil -->
+      <rect x="470" y="40" width="6" height="180" fill="#FD6600"/><text x="473" y="238" text-anchor="middle" font-size="12" fill="#8C3600" font-weight="700">gold foil (~2000 atoms thick)</text>
+      <!-- screen -->
+      <path d="M560 30 A200 200 0 0 1 560 230" fill="none" stroke="#040084" stroke-width="6" stroke-linecap="round"/>
+      <path d="M420 30 A200 200 0 0 0 420 230" fill="none" stroke="#040084" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 8"/>
+      <text x="600" y="22" font-size="12" fill="#040084" font-weight="700">ZnS detecting screen (fluoresces where α strikes)</text>
+      <!-- beams -->
+      <g stroke="#FD6600" stroke-width="2.5" fill="none">
+        <line x1="210" y1="130" x2="640" y2="130"/>
+        <line x1="210" y1="130" x2="470" y2="130"/>
+        <line x1="473" y1="130" x2="620" y2="60"/>
+        <line x1="473" y1="130" x2="625" y2="200"/>
+        <line x1="473" y1="130" x2="330" y2="60" stroke-dasharray="6 4"/>
+      </g>
+      <g fill="#FD6600"><circle cx="640" cy="130" r="5"/><circle cx="620" cy="60" r="5"/><circle cx="625" cy="200" r="5"/><circle cx="330" cy="60" r="5"/></g>
+      <text x="640" y="152" text-anchor="middle" font-size="11" fill="#555b73">most pass straight through</text>
+      <text x="560" y="45" font-size="11" fill="#555b73">a few deflect</text>
+      <text x="245" y="55" font-size="11" fill="#555b73">~1 in 20 000 bounces back</text>
+      <!-- inset atom -->
+      <g transform="translate(820,150)">
+        <circle r="42" fill="none" stroke="#C9CFEC" stroke-width="1.5" stroke-dasharray="3 3"/><circle r="5" fill="#FD6600"/>
+        <text y="62" text-anchor="middle" font-size="11" fill="#555b73">nucleus ≈ 1/10 000</text><text y="76" text-anchor="middle" font-size="11" fill="#555b73">of atom's diameter</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 1.2</b> Rutherford's gold-foil experiment. Only a nucleus that is tiny, dense, and positively charged can explain why a few α particles bounce back while most pass through undeflected.</figcaption>
+  </figure>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Rutherford's "mostly empty space" is why X-ray and gamma-ray inspection works: radiation passes through metal welds and concrete, and only the dense nuclei scatter it. Non-destructive testing (NDT) of pipelines, pressure vessels, and bridge cables relies directly on this picture of the atom.</div>
+
+  <details class="check"><summary>Check yourself — Which observation forced Thomson's model to be replaced, and why?</summary><div class="a">The back-scattering of a few α particles in Rutherford's experiment. A diffuse, evenly spread positive "pudding" could never reverse a fast, heavy α particle; only a concentrated positive nucleus can. So the positive charge (and nearly all the mass) had to be packed into a very small core.</div></details>
+</section>
+
+<!-- ============ 1.2 NUCLEUS, ATOMIC & MASS NUMBER ============ -->
+<section class="ch" id="s2">
+  <h2><span class="num">1.2</span>Subatomic Particles, Atomic Number, and Mass Number</h2>
+  <p class="lead"><b>Guiding question:</b> What do the numbers around an element symbol tell you about the atom?</p>
+  <div class="tw"><table>
+    <thead><tr><th>Particle</th><th>Symbol</th><th>Relative charge</th><th>Mass (amu)</th><th>Mass (kg)</th><th>Location</th></tr></thead>
+    <tbody>
+      <tr><td><b>Proton</b></td><td>p<sup>+</sup></td><td class="c">+1</td><td class="c">1.00728</td><td class="c">1.6726 × 10<sup>−27</sup></td><td>Nucleus</td></tr>
+      <tr><td><b>Neutron</b></td><td>n<sup>0</sup></td><td class="c">0</td><td class="c">1.00866</td><td class="c">1.6749 × 10<sup>−27</sup></td><td>Nucleus</td></tr>
+      <tr><td><b>Electron</b></td><td>e<sup>−</sup></td><td class="c">−1</td><td class="c">0.000549</td><td class="c">9.109 × 10<sup>−31</sup></td><td>Outside nucleus (orbitals)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Two numbers define an atom:</p>
+  <ul class="checks">
+    <li><span class="keyterm">Atomic number (Z)</span> = number of protons. It identifies the element. In a neutral atom, Z also equals the number of electrons.</li>
+    <li><span class="keyterm">Mass number (A)</span> = protons + neutrons. It is always a whole number and is specific to one isotope.</li>
+    <li>Therefore <span class="formula">number of neutrons = A − Z</span>.</li>
+  </ul>
+
+  <figure>
+    <svg viewBox="0 0 900 360" role="img" aria-label="Anatomy of a nuclear symbol using chlorine-35">
+      <!-- symbol -->
+      <g font-family="Cambria Math,Georgia,serif">
+        <text x="230" y="150" font-size="120" font-weight="700" fill="#040084">Cl</text>
+        <text x="180" y="95" font-size="44" font-weight="700" fill="#FD6600" text-anchor="end">35</text>
+        <text x="180" y="165" font-size="44" font-weight="700" fill="#1B3BC9" text-anchor="end">17</text>
+      </g>
+      <!-- callouts -->
+      <g stroke="#FD6600" stroke-width="2" fill="none"><path d="M120 80 H60 V58 H40"/></g>
+      <text x="35" y="40" text-anchor="end" font-size="13" font-weight="800" fill="#8C3600" style="display:none"></text>
+      <g font-size="13"><text x="40" y="30" font-weight="800" fill="#8C3600">Mass number A = 35</text><text x="40" y="47" fill="#555b73">protons + neutrons</text></g>
+      <g stroke="#1B3BC9" stroke-width="2" fill="none"><path d="M120 155 H60 V230 H40"/></g>
+      <g font-size="13"><text x="40" y="255" font-weight="800" fill="#1B3BC9">Atomic number Z = 17</text><text x="40" y="272" fill="#555b73">protons (= electrons if neutral)</text></g>
+      <g stroke="#040084" stroke-width="2" fill="none"><path d="M335 62 H370 V30"/></g>
+      <g font-size="13"><text x="380" y="22" font-weight="800" fill="#040084">Element symbol</text><text x="380" y="39" fill="#555b73">fixed by Z (17 = chlorine)</text></g>
+      <!-- computed particles -->
+      <g transform="translate(520,50)">
+        <rect width="370" height="150" rx="14" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <text x="20" y="34" font-size="15" font-weight="800" fill="#040084">Particle count for chlorine-35</text>
+        <g font-size="14" fill="#141a33">
+          <text x="20" y="66">Protons</text><text x="240" y="66" font-weight="800" fill="#1B3BC9">= Z = 17</text>
+          <text x="20" y="94">Neutrons</text><text x="240" y="94" font-weight="800" fill="#FD6600">= A − Z = 35 − 17 = 18</text>
+          <text x="20" y="122">Electrons (neutral atom)</text><text x="240" y="122" font-weight="800" fill="#040084">= Z = 17</text>
+        </g>
+      </g>
+      <!-- atom drawing -->
+      <g transform="translate(700,270)">
+        <circle r="24" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/>
+        <text y="-2" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">17 p⁺</text><text y="11" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">18 n⁰</text>
+        <circle r="40" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="56" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="70" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="40" cy="0" r="4"/><circle cx="-40" cy="0" r="4"/><circle cx="0" cy="-56" r="4"/><circle cx="0" cy="56" r="4"/><circle cx="40" cy="-40" r="4"/><circle cx="-40" cy="40" r="4"/><circle cx="-40" cy="-40" r="4"/><circle cx="40" cy="40" r="4"/><circle cx="-70" cy="0" r="4"/><circle cx="70" cy="0" r="4"/><circle cx="0" cy="-70" r="4"/><circle cx="0" cy="70" r="4"/><circle cx="50" cy="-50" r="4"/><circle cx="-50" cy="-50" r="4"/><circle cx="50" cy="50" r="4"/><circle cx="-50" cy="50" r="4"/><circle cx="66" cy="24" r="4"/></g>
+      </g>
+      <text x="700" y="355" text-anchor="middle" font-size="11" fill="#8A8FA8">chlorine atom · shells 2 · 8 · 7 (not to scale)</text>
+    </svg>
+    <figcaption><b>Figure 1.3</b> Reading a nuclear symbol <sup>A</sup><sub>Z</sub>X. The subscript is redundant once you know the element (every chlorine atom has Z = 17), so chemists often write simply <sup>35</sup>Cl or "chlorine-35".</figcaption>
+  </figure>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.1</span> Particles in an atom</div><div class="body">
+    <p>How many protons, neutrons, and electrons are in one atom of iron-56, the most common isotope in structural steel?</p>
+    <div class="gresa">
+      <div>Given</div><div>Iron, symbol Fe, A = 56. From the periodic table, Z = 26.</div>
+      <div>Required</div><div>Number of p<sup>+</sup>, n<sup>0</sup>, e<sup>−</sup></div>
+      <div>Equation</div><div>p<sup>+</sup> = Z; n<sup>0</sup> = A − Z; e<sup>−</sup> = Z for a neutral atom</div>
+      <div>Solution</div><div>p<sup>+</sup> = 26; n<sup>0</sup> = 56 − 26 = 30; e<sup>−</sup> = 26</div>
+      <div>Answer</div><div><span class="ans">26 protons, 30 neutrons, 26 electrons</span></div>
+    </div>
+  </div></div>
+
+  <details class="check"><summary>Check yourself — An atom has 29 protons and 36 neutrons. Write its nuclear symbol.</summary><div class="a">Z = 29 is copper (Cu). A = 29 + 36 = 65. The symbol is <sup>65</sup><sub>29</sub>Cu, or copper-65 — one of the two natural isotopes in the copper wiring of every building.</div></details>
+</section>
+
+<!-- ============ 1.3 ISOTOPES ============ -->
+<section class="ch" id="s3">
+  <h2><span class="num">1.3</span>Isotopes and Average Atomic Mass</h2>
+  <p class="lead"><b>Guiding question:</b> If every atom of carbon has 6 protons, why is carbon's atomic mass on the periodic table 12.01 and not exactly 12?</p>
+  <p><span class="keyterm">Isotopes</span> are atoms of the same element (same Z) with different numbers of neutrons (different A). They behave almost identically in chemical reactions because chemistry is governed by electrons, but they differ in mass and, for some, in nuclear stability.</p>
+
+  <figure>
+    <svg viewBox="0 0 900 230" role="img" aria-label="The three natural isotopes of carbon">
+      <g transform="translate(150,105)">
+        <circle r="62" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="40" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="40" cy="0" r="4"/><circle cx="-40" cy="0" r="4"/><circle cx="0" cy="-62" r="4"/><circle cx="0" cy="62" r="4"/><circle cx="44" cy="-44" r="4"/><circle cx="-44" cy="44" r="4"/></g>
+        <circle r="24" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/>
+        <text y="-2" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">6 p⁺</text><text y="11" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">6 n⁰</text>
+        <text y="92" text-anchor="middle" font-size="16" font-weight="800" fill="#040084">Carbon-12</text>
+        <text y="110" text-anchor="middle" font-size="12" fill="#555b73">98.93 % · 12.000 amu · stable</text>
+      </g>
+      <g transform="translate(450,105)">
+        <circle r="62" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="40" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="40" cy="0" r="4"/><circle cx="-40" cy="0" r="4"/><circle cx="0" cy="-62" r="4"/><circle cx="0" cy="62" r="4"/><circle cx="44" cy="-44" r="4"/><circle cx="-44" cy="44" r="4"/></g>
+        <circle r="24" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/>
+        <text y="-2" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">6 p⁺</text><text y="11" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">7 n⁰</text>
+        <text y="92" text-anchor="middle" font-size="16" font-weight="800" fill="#040084">Carbon-13</text>
+        <text y="110" text-anchor="middle" font-size="12" fill="#555b73">1.07 % · 13.003 amu · stable</text>
+      </g>
+      <g transform="translate(750,105)">
+        <circle r="62" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="40" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="40" cy="0" r="4"/><circle cx="-40" cy="0" r="4"/><circle cx="0" cy="-62" r="4"/><circle cx="0" cy="62" r="4"/><circle cx="44" cy="-44" r="4"/><circle cx="-44" cy="44" r="4"/></g>
+        <circle r="24" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/>
+        <text y="-2" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">6 p⁺</text><text y="11" text-anchor="middle" font-size="10" font-weight="800" fill="#8C3600">8 n⁰</text>
+        <text y="92" text-anchor="middle" font-size="16" font-weight="800" fill="#040084">Carbon-14</text>
+        <text y="110" text-anchor="middle" font-size="12" fill="#555b73">trace · 14.003 amu · radioactive</text>
+      </g>
+      <text x="450" y="222" text-anchor="middle" font-size="12" fill="#8A8FA8">Same protons and electrons → same chemistry. Different neutrons → different mass.</text>
+    </svg>
+    <figcaption><b>Figure 1.4</b> Isotopes of carbon. The periodic-table value 12.01 amu is a weighted average dominated by carbon-12.</figcaption>
+  </figure>
+
+  <h3>Average atomic mass</h3>
+  <p>The value on the periodic table is the <span class="keyterm">weighted average</span> of the isotopic masses, weighted by natural abundance:</p>
+  <span class="eq">Average atomic mass = Σ (fractional abundance × isotopic mass)</span>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.2</span> Average atomic mass of chlorine</div><div class="body">
+    <p>Chlorine — used for water disinfection and in PVC pipe — has two natural isotopes: <sup>35</sup>Cl (34.969 amu, 75.76 %) and <sup>37</sup>Cl (36.966 amu, 24.24 %). Calculate its average atomic mass.</p>
+    <div class="gresa">
+      <div>Given</div><div>m<sub>35</sub> = 34.969 amu, f<sub>35</sub> = 0.7576; m<sub>37</sub> = 36.966 amu, f<sub>37</sub> = 0.2424</div>
+      <div>Required</div><div>Average atomic mass of Cl</div>
+      <div>Equation</div><div>M̄ = f<sub>35</sub>m<sub>35</sub> + f<sub>37</sub>m<sub>37</sub></div>
+      <div>Solution</div><div>M̄ = (0.7576)(34.969) + (0.2424)(36.966) = 26.49 + 8.960 = 35.45 amu</div>
+      <div>Answer</div><div><span class="ans">35.45 amu</span> — matches the periodic table. Note the answer lies closer to 35 because <sup>35</sup>Cl is more abundant.</div>
+    </div>
+  </div></div>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Isotopes are tools. Civil engineers date groundwater and sediments with <sup>14</sup>C and <sup>3</sup>H; nuclear gauges using <sup>137</sup>Cs measure soil compaction and asphalt density on road projects; and <sup>60</sup>Co sources radiograph welds. Chapter 3 returns to these applications.</div>
+
+  <details class="check"><summary>Check yourself — Boron has two isotopes: <sup>10</sup>B (10.013 amu) and <sup>11</sup>B (11.009 amu). Its average mass is 10.81. Which isotope is more abundant, and roughly by how much?</summary><div class="a"><sup>11</sup>B, by a lot. Let f = fraction of <sup>11</sup>B: 10.013(1 − f) + 11.009f = 10.81 → 0.996f = 0.797 → f ≈ 0.80. So about 80 % <sup>11</sup>B and 20 % <sup>10</sup>B. (Boron-10's strong neutron absorption is why boron steel is used for control rods and spent-fuel racks.)</div></details>
+</section>
+
+<!-- ============ 1.4 IONS ============ -->
+<section class="ch" id="s4">
+  <h2><span class="num">1.4</span>Ions: Cations and Anions</h2>
+  <p class="lead"><b>Guiding question:</b> Why does sodium give up an electron while chlorine takes one — and how do you predict the charge?</p>
+  <p>An <span class="keyterm">ion</span> is an atom (or group of atoms) that has gained or lost electrons. Losing electrons leaves excess protons → a positive <span class="keyterm">cation</span>. Gaining electrons → a negative <span class="keyterm">anion</span>. Atoms do this to reach the stable, filled outer shell of the nearest noble gas.</p>
+
+  <figure>
+    <svg viewBox="0 0 900 250" role="img" aria-label="Formation of sodium cation and chloride anion">
+      <!-- Na -->
+      <g transform="translate(110,110)">
+        <circle r="18" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="800" fill="#8C3600">11+</text>
+        <circle r="32" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="50" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="68" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="32" cy="0" r="4"/><circle cx="-32" cy="0" r="4"/>
+        <circle cx="50" cy="0" r="4"/><circle cx="-50" cy="0" r="4"/><circle cx="0" cy="50" r="4"/><circle cx="0" cy="-50" r="4"/><circle cx="35" cy="35" r="4"/><circle cx="-35" cy="-35" r="4"/><circle cx="35" cy="-35" r="4"/><circle cx="-35" cy="35" r="4"/></g>
+        <circle cx="0" cy="-68" r="5" fill="#FD6600"/>
+        <text y="95" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Na atom</text><text y="112" text-anchor="middle" font-size="11" fill="#555b73">2 · 8 · 1 → 11 e⁻</text>
+      </g>
+      <text x="230" y="105" text-anchor="middle" font-size="26" fill="#FD6600" font-weight="800">→</text>
+      <text x="230" y="130" text-anchor="middle" font-size="11" fill="#8C3600">loses 1 e⁻</text>
+      <!-- Na+ -->
+      <g transform="translate(350,110)">
+        <circle r="18" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="800" fill="#8C3600">11+</text>
+        <circle r="32" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="50" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="32" cy="0" r="4"/><circle cx="-32" cy="0" r="4"/>
+        <circle cx="50" cy="0" r="4"/><circle cx="-50" cy="0" r="4"/><circle cx="0" cy="50" r="4"/><circle cx="0" cy="-50" r="4"/><circle cx="35" cy="35" r="4"/><circle cx="-35" cy="-35" r="4"/><circle cx="35" cy="-35" r="4"/><circle cx="-35" cy="35" r="4"/></g>
+        <text y="95" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Na⁺ cation</text><text y="112" text-anchor="middle" font-size="11" fill="#555b73">2 · 8 → 10 e⁻, charge 11 − 10 = +1</text>
+      </g>
+      <!-- Cl -->
+      <g transform="translate(560,110)">
+        <circle r="18" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="800" fill="#8C3600">17+</text>
+        <circle r="32" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="50" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="68" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="32" cy="0" r="4"/><circle cx="-32" cy="0" r="4"/>
+        <circle cx="50" cy="0" r="4"/><circle cx="-50" cy="0" r="4"/><circle cx="0" cy="50" r="4"/><circle cx="0" cy="-50" r="4"/><circle cx="35" cy="35" r="4"/><circle cx="-35" cy="-35" r="4"/><circle cx="35" cy="-35" r="4"/><circle cx="-35" cy="35" r="4"/>
+        <circle cx="68" cy="0" r="4"/><circle cx="-68" cy="0" r="4"/><circle cx="0" cy="68" r="4"/><circle cx="0" cy="-68" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="-48" cy="-48" r="4"/><circle cx="48" cy="-48" r="4"/></g>
+        <circle cx="-48" cy="48" r="5" fill="#FD6600" stroke="#fff" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <text y="95" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Cl atom</text><text y="112" text-anchor="middle" font-size="11" fill="#555b73">2 · 8 · 7 → 17 e⁻</text>
+      </g>
+      <text x="680" y="105" text-anchor="middle" font-size="26" fill="#FD6600" font-weight="800">→</text>
+      <text x="680" y="130" text-anchor="middle" font-size="11" fill="#8C3600">gains 1 e⁻</text>
+      <!-- Cl- -->
+      <g transform="translate(800,110)">
+        <circle r="18" fill="#FFEBDD" stroke="#FD6600" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="800" fill="#8C3600">17+</text>
+        <circle r="32" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="50" fill="none" stroke="#C9CFEC" stroke-width="1.5"/><circle r="68" fill="none" stroke="#C9CFEC" stroke-width="1.5"/>
+        <g fill="#040084"><circle cx="32" cy="0" r="4"/><circle cx="-32" cy="0" r="4"/>
+        <circle cx="50" cy="0" r="4"/><circle cx="-50" cy="0" r="4"/><circle cx="0" cy="50" r="4"/><circle cx="0" cy="-50" r="4"/><circle cx="35" cy="35" r="4"/><circle cx="-35" cy="-35" r="4"/><circle cx="35" cy="-35" r="4"/><circle cx="-35" cy="35" r="4"/>
+        <circle cx="68" cy="0" r="4"/><circle cx="-68" cy="0" r="4"/><circle cx="0" cy="68" r="4"/><circle cx="0" cy="-68" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="-48" cy="-48" r="4"/><circle cx="48" cy="-48" r="4"/></g>
+        <circle cx="-48" cy="48" r="5" fill="#FD6600"/>
+        <text y="95" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Cl⁻ anion</text><text y="112" text-anchor="middle" font-size="11" fill="#555b73">2 · 8 · 8 → 18 e⁻, charge 17 − 18 = −1</text>
+      </g>
+      <text x="450" y="242" text-anchor="middle" font-size="12" fill="#8A8FA8">The transferred electron (orange) leaves Na and completes the outer shell of Cl — the origin of the ionic bond in NaCl.</text>
+    </svg>
+    <figcaption><b>Figure 1.5</b> Ion formation. Sodium loses one electron to reach the neon configuration; chlorine gains one to reach the argon configuration.</figcaption>
+  </figure>
+
+  <h3>Predicting the charge from the periodic table</h3>
+  <figure>
+    <svg viewBox="0 0 900 190" role="img" aria-label="Common ion charges by periodic table group">
+      <g font-size="12" font-weight="800" text-anchor="middle">
+        <rect x="20" y="40" width="90" height="70" rx="8" fill="#FD6600"/><text x="65" y="68" fill="#fff">Group 1</text><text x="65" y="92" fill="#fff" font-size="18">+1</text>
+        <rect x="120" y="40" width="90" height="70" rx="8" fill="#FF8A3D"/><text x="165" y="68" fill="#fff">Group 2</text><text x="165" y="92" fill="#fff" font-size="18">+2</text>
+        <rect x="220" y="40" width="200" height="70" rx="8" fill="#F1F3FC" stroke="#C9CFEC"/><text x="320" y="63" fill="#040084">Transition metals</text><text x="320" y="82" fill="#555b73" font-size="11" font-weight="400">variable: Fe²⁺/Fe³⁺, Cu⁺/Cu²⁺</text><text x="320" y="98" fill="#555b73" font-size="11" font-weight="400">(Zn²⁺, Ag⁺ are fixed)</text>
+        <rect x="430" y="40" width="90" height="70" rx="8" fill="#FFC69C"/><text x="475" y="68" fill="#8C3600">Group 13</text><text x="475" y="92" fill="#8C3600" font-size="18">+3</text>
+        <rect x="530" y="40" width="90" height="70" rx="8" fill="#DDE1F0"/><text x="575" y="68" fill="#555b73">Group 14</text><text x="575" y="92" fill="#555b73" font-size="13">±4 (covalent)</text>
+        <rect x="630" y="40" width="80" height="70" rx="8" fill="#6d7fe0"/><text x="670" y="68" fill="#fff">Group 15</text><text x="670" y="92" fill="#fff" font-size="18">−3</text>
+        <rect x="720" y="40" width="80" height="70" rx="8" fill="#1B3BC9"/><text x="760" y="68" fill="#fff">Group 16</text><text x="760" y="92" fill="#fff" font-size="18">−2</text>
+        <rect x="810" y="40" width="80" height="70" rx="8" fill="#040084"/><text x="850" y="68" fill="#fff">Group 17</text><text x="850" y="92" fill="#fff" font-size="18">−1</text>
+      </g>
+      <text x="65" y="135" text-anchor="middle" font-size="11" fill="#555b73">Li⁺ Na⁺ K⁺</text>
+      <text x="165" y="135" text-anchor="middle" font-size="11" fill="#555b73">Mg²⁺ Ca²⁺ Ba²⁺</text>
+      <text x="475" y="135" text-anchor="middle" font-size="11" fill="#555b73">Al³⁺</text>
+      <text x="670" y="135" text-anchor="middle" font-size="11" fill="#555b73">N³⁻ P³⁻</text>
+      <text x="760" y="135" text-anchor="middle" font-size="11" fill="#555b73">O²⁻ S²⁻</text>
+      <text x="850" y="135" text-anchor="middle" font-size="11" fill="#555b73">F⁻ Cl⁻ Br⁻ I⁻</text>
+      <text x="450" y="172" text-anchor="middle" font-size="12" fill="#8A8FA8">Metals (left) lose electrons → cations · Nonmetals (right) gain electrons → anions · Group 18 noble gases form no ions</text>
+    </svg>
+    <figcaption><b>Figure 1.6</b> Charges of common monatomic ions follow the group number. Main-group metals lose all their valence electrons; nonmetals gain enough to reach eight.</figcaption>
+  </figure>
+
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Definition</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><b>Monatomic cation</b></td><td>Single atom that lost electrons</td><td>Na<sup>+</sup>, Ca<sup>2+</sup>, Al<sup>3+</sup>, Fe<sup>3+</sup></td></tr>
+      <tr><td><b>Monatomic anion</b></td><td>Single atom that gained electrons</td><td>Cl<sup>−</sup>, O<sup>2−</sup>, N<sup>3−</sup></td></tr>
+      <tr><td><b>Polyatomic ion</b></td><td>Group of covalently bonded atoms with a net charge</td><td>NH<sub>4</sub><sup>+</sup>, OH<sup>−</sup>, NO<sub>3</sub><sup>−</sup>, SO<sub>4</sub><sup>2−</sup>, PO<sub>4</sub><sup>3−</sup>, CO<sub>3</sub><sup>2−</sup></td></tr>
+    </tbody>
+  </table></div>
+  <p>In an ionic compound the charges must cancel: the total positive charge equals the total negative charge. That single rule is how formulas are written — Ca<sup>2+</sup> with Cl<sup>−</sup> needs two chlorides, so calcium chloride is CaCl<sub>2</sub>; Al<sup>3+</sup> with O<sup>2−</sup> gives Al<sub>2</sub>O<sub>3</sub> (2 × +3 = 3 × −2).</p>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Ions carry current in solutions, which is why seawater corrodes steel faster than fresh water, why electroplating works, and why concrete reinforcement is attacked by chloride ions (Cl<sup>−</sup>) that migrate through pores. Water hardness is Ca<sup>2+</sup> and Mg<sup>2+</sup>; softeners swap them for Na<sup>+</sup> on an ion-exchange resin.</div>
+
+  <details class="check"><summary>Check yourself — Write formulas for (a) magnesium nitride, (b) iron(III) sulfate, (c) ammonium phosphate.</summary><div class="a">(a) Mg<sup>2+</sup> and N<sup>3−</sup> → Mg<sub>3</sub>N<sub>2</sub> (3 × +2 = 2 × −3). (b) Fe<sup>3+</sup> and SO<sub>4</sub><sup>2−</sup> → Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>. (c) NH<sub>4</sub><sup>+</sup> and PO<sub>4</sub><sup>3−</sup> → (NH<sub>4</sub>)<sub>3</sub>PO<sub>4</sub>.</div></details>
+</section>
+<!-- ============ 1.5 OXIDATION NUMBERS ============ -->
+<section class="ch" id="s5">
+  <h2><span class="num">1.5</span>Oxidation Numbers</h2>
+  <p class="lead"><b>Guiding question:</b> How do we keep track of electrons in compounds where no ions actually exist?</p>
+  <p>An <span class="keyterm">oxidation number</span> (oxidation state) is the charge an atom <em>would</em> have if every bond were fully ionic. It is a bookkeeping device — but a powerful one. It lets you spot which atom lost electrons (oxidized) and which gained (reduced) in any reaction, which is the foundation of Chapter 2 on electrochemistry and corrosion.</p>
+  <h3>Rules, applied in order</h3>
+  <ol class="steps">
+    <li>An atom in its <b>elemental form</b> has oxidation number <b>0</b> (Fe, O<sub>2</sub>, S<sub>8</sub>, Cl<sub>2</sub>).</li>
+    <li>A <b>monatomic ion</b> has an oxidation number equal to its <b>charge</b> (Na<sup>+</sup> = +1, S<sup>2−</sup> = −2).</li>
+    <li><b>Fluorine</b> is always <b>−1</b>. Other halogens are −1 unless bonded to O or a lighter halogen.</li>
+    <li><b>Group 1</b> metals are always <b>+1</b>; <b>Group 2</b> metals always <b>+2</b>; Al is +3.</li>
+    <li><b>Hydrogen</b> is <b>+1</b> with nonmetals, <b>−1</b> in metal hydrides (NaH, CaH<sub>2</sub>).</li>
+    <li><b>Oxygen</b> is <b>−2</b>, except in peroxides (H<sub>2</sub>O<sub>2</sub>: −1) and with fluorine (OF<sub>2</sub>: +2).</li>
+    <li>The <b>sum</b> of oxidation numbers = <b>0</b> for a neutral compound, and = the <b>ion charge</b> for a polyatomic ion.</li>
+  </ol>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.3</span> Assigning oxidation numbers</div><div class="body">
+    <p>Find the oxidation number of the underlined element in (a) K<u>Mn</u>O<sub>4</sub>, (b) <u>Cr</u><sub>2</sub>O<sub>7</sub><sup>2−</sup>, (c) H<sub>2</sub><u>S</u>O<sub>4</sub>, (d) <u>Fe</u><sub>3</sub>O<sub>4</sub>.</p>
+    <div class="gresa">
+      <div>Given</div><div>Formulas above; rules for K (+1), H (+1), O (−2)</div>
+      <div>Required</div><div>Oxidation number of Mn, Cr, S, Fe</div>
+      <div>Equation</div><div>Σ(oxidation numbers) = overall charge</div>
+      <div>Solution</div><div>
+        (a) (+1) + Mn + 4(−2) = 0 → Mn = <b>+7</b><br>
+        (b) 2Cr + 7(−2) = −2 → 2Cr = +12 → Cr = <b>+6</b><br>
+        (c) 2(+1) + S + 4(−2) = 0 → S = <b>+6</b><br>
+        (d) 3Fe + 4(−2) = 0 → Fe = +8/3 ≈ <b>+2.67</b> — an average: magnetite contains one Fe<sup>2+</sup> and two Fe<sup>3+</sup> per formula unit.
+      </div>
+      <div>Answer</div><div><span class="ans">Mn +7 · Cr +6 · S +6 · Fe +8⁄3 (mixed +2/+3)</span></div>
+    </div>
+  </div></div>
+
+  <figure>
+    <svg viewBox="0 0 900 150" role="img" aria-label="Oxidation and reduction as electron transfer, with the iron rusting example">
+      <rect x="30" y="35" width="330" height="80" rx="12" fill="#F1F3FC" stroke="#C9CFEC"/>
+      <text x="195" y="62" text-anchor="middle" font-size="16" font-weight="800" fill="#040084">OXIDATION</text>
+      <text x="195" y="84" text-anchor="middle" font-size="13" fill="#555b73">loses electrons · oxidation number goes UP</text>
+      <text x="195" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#1B3BC9">Fe → Fe³⁺ + 3e⁻   (0 → +3)</text>
+      <rect x="540" y="35" width="330" height="80" rx="12" fill="#FFEBDD" stroke="#FFC69C"/>
+      <text x="705" y="62" text-anchor="middle" font-size="16" font-weight="800" fill="#8C3600">REDUCTION</text>
+      <text x="705" y="84" text-anchor="middle" font-size="13" fill="#555b73">gains electrons · oxidation number goes DOWN</text>
+      <text x="705" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#FD6600">O₂ + 4e⁻ → 2O²⁻   (0 → −2)</text>
+      <g stroke="#FD6600" stroke-width="3" fill="none" marker-end="url(#ah)"><path d="M365 75 H530"/></g>
+      <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FD6600"/></marker></defs>
+      <text x="450" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#8C3600">e⁻ flow</text>
+      <text x="450" y="140" text-anchor="middle" font-size="12" fill="#8A8FA8">Mnemonic: OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons)</text>
+    </svg>
+    <figcaption><b>Figure 1.7</b> Oxidation numbers make electron transfer visible. Rusting is iron being oxidized (0 → +3) while oxygen is reduced (0 → −2): 4Fe + 3O<sub>2</sub> → 2Fe<sub>2</sub>O<sub>3</sub>.</figcaption>
+  </figure>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Every corrosion problem is an oxidation-number problem. A steel pipe (Fe, 0) buried in wet soil slowly becomes Fe<sub>2</sub>O<sub>3</sub> (Fe, +3). Cathodic protection works by attaching a metal that is even easier to oxidize (Zn or Mg "sacrificial anode"), so the electrons flow from the anode instead of from the pipe.</div>
+
+  <details class="check"><summary>Check yourself — In the reaction 2Al + 3CuSO<sub>4</sub> → Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> + 3Cu, which element is oxidized and which is reduced?</summary><div class="a">Al goes from 0 to +3 (oxidized — loses electrons). Cu goes from +2 in CuSO<sub>4</sub> to 0 (reduced — gains electrons). S and O stay at +6 and −2; the sulfate ion is a spectator.</div></details>
+</section>
+
+<!-- ============ 1.6 MATTER AND ITS CHANGES ============ -->
+<section class="ch" id="s6">
+  <h2><span class="num">1.6</span>Matter and Its Changes</h2>
+  <p class="lead"><b>Guiding question:</b> When is a change merely physical, and when has a new substance formed?</p>
+  <h3>Classifying matter</h3>
+  <figure>
+    <svg viewBox="0 0 900 300" role="img" aria-label="Classification of matter flowchart">
+      <defs><marker id="ab" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1B3BC9"/></marker></defs>
+      <rect x="360" y="15" width="180" height="46" rx="10" fill="#040084"/><text x="450" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">MATTER</text>
+      <g stroke="#1B3BC9" stroke-width="2" fill="none" marker-end="url(#ab)"><path d="M420 61 L240 100"/><path d="M480 61 L660 100"/></g>
+      <text x="300" y="80" text-anchor="end" font-size="11" fill="#555b73">uniform composition,</text><text x="300" y="93" text-anchor="end" font-size="11" fill="#555b73">fixed properties</text>
+      <text x="600" y="80" font-size="11" fill="#555b73">variable composition,</text><text x="600" y="93" font-size="11" fill="#555b73">separable physically</text>
+      <rect x="140" y="100" width="200" height="46" rx="10" fill="#1B3BC9"/><text x="240" y="129" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">PURE SUBSTANCE</text>
+      <rect x="560" y="100" width="200" height="46" rx="10" fill="#FD6600"/><text x="660" y="129" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">MIXTURE</text>
+      <g stroke="#1B3BC9" stroke-width="2" fill="none" marker-end="url(#ab)"><path d="M200 146 L130 190"/><path d="M280 146 L350 190"/></g>
+      <g stroke="#FD6600" stroke-width="2" fill="none"><path d="M620 146 L550 190"/><path d="M700 146 L770 190"/></g>
+      <rect x="40" y="190" width="180" height="46" rx="10" fill="#E4E8FA" stroke="#1B3BC9"/><text x="130" y="212" text-anchor="middle" font-size="14" font-weight="800" fill="#040084">ELEMENT</text><text x="130" y="228" text-anchor="middle" font-size="11" fill="#555b73">one kind of atom</text>
+      <rect x="260" y="190" width="180" height="46" rx="10" fill="#E4E8FA" stroke="#1B3BC9"/><text x="350" y="212" text-anchor="middle" font-size="14" font-weight="800" fill="#040084">COMPOUND</text><text x="350" y="228" text-anchor="middle" font-size="11" fill="#555b73">two + elements, fixed ratio</text>
+      <rect x="460" y="190" width="180" height="46" rx="10" fill="#FFEBDD" stroke="#FD6600"/><text x="550" y="212" text-anchor="middle" font-size="14" font-weight="800" fill="#8C3600">HOMOGENEOUS</text><text x="550" y="228" text-anchor="middle" font-size="11" fill="#555b73">uniform throughout (solution)</text>
+      <rect x="680" y="190" width="180" height="46" rx="10" fill="#FFEBDD" stroke="#FD6600"/><text x="770" y="212" text-anchor="middle" font-size="14" font-weight="800" fill="#8C3600">HETEROGENEOUS</text><text x="770" y="228" text-anchor="middle" font-size="11" fill="#555b73">visibly different regions</text>
+      <g font-size="12" fill="#555b73" text-anchor="middle">
+        <text x="130" y="262">Fe, Cu, O₂, Si</text><text x="350" y="262">H₂O, NaCl, CaCO₃, Fe₂O₃</text><text x="550" y="262">brass, steel, air, seawater</text><text x="770" y="262">concrete, soil, crude oil + water</text>
+      </g>
+      <text x="450" y="290" text-anchor="middle" font-size="11" fill="#8A8FA8">Compounds can be decomposed only by chemical change; mixtures can be separated by physical means (filtration, distillation, magnetism, chromatography).</text>
+    </svg>
+    <figcaption><b>Figure 1.8</b> Classification of matter. Note that alloys such as steel and brass are homogeneous mixtures (solid solutions), not compounds — their composition can be tuned continuously.</figcaption>
+  </figure>
+
+  <h3>States of matter</h3>
+  <figure>
+    <svg viewBox="0 0 900 230" role="img" aria-label="Particle diagrams of solid, liquid, and gas">
+      <g transform="translate(60,30)">
+        <rect width="220" height="130" rx="10" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <g fill="#040084">
+          <circle cx="30" cy="30" r="11"/><circle cx="60" cy="30" r="11"/><circle cx="90" cy="30" r="11"/><circle cx="120" cy="30" r="11"/><circle cx="150" cy="30" r="11"/><circle cx="180" cy="30" r="11"/>
+          <circle cx="45" cy="56" r="11"/><circle cx="75" cy="56" r="11"/><circle cx="105" cy="56" r="11"/><circle cx="135" cy="56" r="11"/><circle cx="165" cy="56" r="11"/><circle cx="195" cy="56" r="11"/>
+          <circle cx="30" cy="82" r="11"/><circle cx="60" cy="82" r="11"/><circle cx="90" cy="82" r="11"/><circle cx="120" cy="82" r="11"/><circle cx="150" cy="82" r="11"/><circle cx="180" cy="82" r="11"/>
+          <circle cx="45" cy="108" r="11"/><circle cx="75" cy="108" r="11"/><circle cx="105" cy="108" r="11"/><circle cx="135" cy="108" r="11"/><circle cx="165" cy="108" r="11"/><circle cx="195" cy="108" r="11"/>
+        </g>
+        <text x="110" y="155" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">SOLID</text>
+        <text x="110" y="173" text-anchor="middle" font-size="11" fill="#555b73">fixed shape &amp; volume · particles vibrate in place</text>
+      </g>
+      <g transform="translate(340,30)">
+        <rect width="220" height="130" rx="10" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <g fill="#1B3BC9">
+          <circle cx="34" cy="40" r="11"/><circle cx="66" cy="52" r="11"/><circle cx="100" cy="38" r="11"/><circle cx="134" cy="55" r="11"/><circle cx="170" cy="42" r="11"/><circle cx="196" cy="62" r="11"/>
+          <circle cx="28" cy="72" r="11"/><circle cx="58" cy="86" r="11"/><circle cx="92" cy="70" r="11"/><circle cx="122" cy="88" r="11"/><circle cx="158" cy="76" r="11"/><circle cx="190" cy="96" r="11"/>
+          <circle cx="40" cy="108" r="11"/><circle cx="76" cy="114" r="11"/><circle cx="110" cy="104" r="11"/><circle cx="146" cy="112" r="11"/><circle cx="176" cy="118" r="11"/>
+        </g>
+        <text x="110" y="155" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">LIQUID</text>
+        <text x="110" y="173" text-anchor="middle" font-size="11" fill="#555b73">fixed volume, takes container's shape · particles slide</text>
+      </g>
+      <g transform="translate(620,30)">
+        <rect width="220" height="130" rx="10" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <g fill="#FD6600">
+          <circle cx="40" cy="30" r="9"/><circle cx="150" cy="25" r="9"/><circle cx="95" cy="70" r="9"/><circle cx="190" cy="80" r="9"/><circle cx="30" cy="105" r="9"/><circle cx="130" cy="115" r="9"/>
+        </g>
+        <g stroke="#FD6600" stroke-width="1.5" fill="none"><path d="M40 30 l18 -12"/><path d="M150 25 l-14 14"/><path d="M95 70 l16 10"/><path d="M190 80 l-10 -16"/><path d="M30 105 l16 -10"/><path d="M130 115 l14 -12"/></g>
+        <text x="110" y="155" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">GAS</text>
+        <text x="110" y="173" text-anchor="middle" font-size="11" fill="#555b73">fills any container · particles move freely, far apart</text>
+      </g>
+      <text x="450" y="220" text-anchor="middle" font-size="12" fill="#8A8FA8">Adding energy (heat) → solid ⟶ liquid ⟶ gas. Removing energy reverses it. Particles are unchanged; only their spacing and motion change.</text>
+    </svg>
+    <figcaption><b>Figure 1.9</b> The three common states of matter at the particle level. Changing state is a physical change — the molecules themselves survive.</figcaption>
+  </figure>
+
+  <h3>Physical vs chemical change</h3>
+  <figure>
+    <svg viewBox="0 0 900 220" role="img" aria-label="Physical change (ice melting) versus chemical change (iron rusting)">
+      <g transform="translate(20,20)">
+        <rect width="410" height="180" rx="12" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <text x="205" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">PHYSICAL CHANGE · same substance</text>
+        <!-- ice -->
+        <g fill="#1B3BC9"><circle cx="50" cy="70" r="8"/><circle cx="80" cy="70" r="8"/><circle cx="110" cy="70" r="8"/><circle cx="65" cy="96" r="8"/><circle cx="95" cy="96" r="8"/><circle cx="125" cy="96" r="8"/><circle cx="50" cy="122" r="8"/><circle cx="80" cy="122" r="8"/><circle cx="110" cy="122" r="8"/></g>
+        <text x="88" y="150" text-anchor="middle" font-size="12" fill="#555b73">ice · H₂O(s)</text>
+        <text x="205" y="100" text-anchor="middle" font-size="24" fill="#FD6600" font-weight="800">→</text><text x="205" y="120" text-anchor="middle" font-size="10" fill="#8C3600">+ heat</text>
+        <!-- water -->
+        <g fill="#1B3BC9"><circle cx="270" cy="78" r="8"/><circle cx="300" cy="66" r="8"/><circle cx="332" cy="82" r="8"/><circle cx="360" cy="70" r="8"/><circle cx="280" cy="108" r="8"/><circle cx="312" cy="100" r="8"/><circle cx="346" cy="112" r="8"/><circle cx="292" cy="130" r="8"/><circle cx="330" cy="134" r="8"/></g>
+        <text x="315" y="150" text-anchor="middle" font-size="12" fill="#555b73">liquid water · H₂O(l)</text>
+        <text x="205" y="172" text-anchor="middle" font-size="11" fill="#555b73">Molecules unchanged. Reversible by cooling. Also: dissolving, bending, cutting, boiling.</text>
+      </g>
+      <g transform="translate(470,20)">
+        <rect width="410" height="180" rx="12" fill="#FFEBDD" stroke="#FFC69C"/>
+        <text x="205" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#8C3600">CHEMICAL CHANGE · new substance</text>
+        <g fill="#555b73"><circle cx="50" cy="80" r="9"/><circle cx="76" cy="80" r="9"/><circle cx="102" cy="80" r="9"/><circle cx="63" cy="104" r="9"/><circle cx="89" cy="104" r="9"/></g>
+        <text x="76" y="128" text-anchor="middle" font-size="12" fill="#555b73">iron · Fe(s)</text>
+        <text x="140" y="95" text-anchor="middle" font-size="14" fill="#8C3600" font-weight="800">+</text>
+        <g fill="#FD6600"><circle cx="165" cy="85" r="6"/><circle cx="178" cy="85" r="6"/><circle cx="165" cy="108" r="6"/><circle cx="178" cy="108" r="6"/></g>
+        <text x="172" y="128" text-anchor="middle" font-size="12" fill="#555b73">O₂ + H₂O</text>
+        <text x="215" y="100" text-anchor="middle" font-size="24" fill="#FD6600" font-weight="800">→</text>
+        <g><circle cx="262" cy="78" r="9" fill="#8C3600"/><circle cx="278" cy="90" r="6" fill="#FD6600"/><circle cx="290" cy="74" r="9" fill="#8C3600"/><circle cx="306" cy="86" r="6" fill="#FD6600"/><circle cx="318" cy="70" r="9" fill="#8C3600"/><circle cx="270" cy="110" r="6" fill="#FD6600"/><circle cx="296" cy="112" r="9" fill="#8C3600"/><circle cx="322" cy="104" r="6" fill="#FD6600"/><circle cx="340" cy="94" r="9" fill="#8C3600"/></g>
+        <text x="300" y="128" text-anchor="middle" font-size="12" fill="#555b73">rust · Fe₂O₃·xH₂O</text>
+        <text x="205" y="172" text-anchor="middle" font-size="11" fill="#555b73">Atoms rearranged, new bonds. Signs: color change, gas, precipitate, heat/light, odor.</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 1.10</b> Physical change keeps the same molecules; chemical change rearranges atoms into different substances with different properties.</figcaption>
+  </figure>
+
+  <div class="tw"><table>
+    <thead><tr><th>Property type</th><th>Meaning</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><b>Physical property</b></td><td>Observed without changing identity</td><td>Density, melting point, color, hardness, thermal and electrical conductivity, malleability</td></tr>
+      <tr><td><b>Chemical property</b></td><td>Describes how a substance reacts to form new substances</td><td>Flammability, corrosion resistance, reactivity with acid, toxicity, oxidizing power</td></tr>
+      <tr><td><b>Extensive</b></td><td>Depends on amount of sample</td><td>Mass, volume, length, total energy</td></tr>
+      <tr><td><b>Intensive</b></td><td>Independent of amount — useful for identification</td><td>Density, boiling point, specific heat, concentration</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Material selection is a search through property tables. Choosing aluminum over steel for an aircraft skin is a physical-property decision (density 2.70 vs 7.85 g/cm³); choosing stainless over carbon steel for a chemical tank is a chemical-property decision (corrosion resistance). Curing of concrete is a chemical change (hydration of cement); drying of paint is mostly physical (solvent evaporation) followed by chemical cross-linking.</div>
+
+  <details class="check"><summary>Check yourself — Classify each as physical or chemical: (a) galvanized steel coating dissolving in acid, (b) rolling a copper ingot into wire, (c) natural gas burning in a boiler, (d) dew forming on a pipe.</summary><div class="a">(a) Chemical — Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub>, new substances form. (b) Physical — shape changes, still copper. (c) Chemical — CH<sub>4</sub> becomes CO<sub>2</sub> and H<sub>2</sub>O. (d) Physical — water vapor condenses; still H<sub>2</sub>O.</div></details>
+</section>
+
+<!-- ============ 1.7 CHEMICAL EQUATIONS ============ -->
+<section class="ch" id="s7">
+  <h2><span class="num">1.7</span>Chemical Equations and Balancing</h2>
+  <p class="lead"><b>Guiding question:</b> How does a chemical equation express the law of conservation of mass?</p>
+  <p>A <span class="keyterm">chemical equation</span> is a sentence written in formulas: <em>reactants → products</em>. Because atoms are neither created nor destroyed (Dalton, Lavoisier), the number of atoms of each element must be identical on both sides. We enforce this with <span class="keyterm">coefficients</span> — never by changing subscripts, which would change the substance itself.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Symbol</th><th>Meaning</th><th>Symbol</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>→</td><td>"yields"; reaction direction</td><td>(s)</td><td>solid</td></tr>
+      <tr><td>⇌</td><td>reversible; equilibrium</td><td>(l)</td><td>liquid</td></tr>
+      <tr><td>Δ (over arrow)</td><td>heat supplied</td><td>(g)</td><td>gas</td></tr>
+      <tr><td>Pt (over arrow)</td><td>catalyst</td><td>(aq)</td><td>aqueous — dissolved in water</td></tr>
+    </tbody>
+  </table></div>
+
+  <figure>
+    <svg viewBox="0 0 900 260" role="img" aria-label="Balancing the combustion of methane with atom tally">
+      <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="800" fill="#040084">CH₄ + 2 O₂ → CO₂ + 2 H₂O</text>
+      <!-- molecules -->
+      <g transform="translate(90,110)"><circle r="16" fill="#555b73"/><g fill="#DDE1F0" stroke="#8A8FA8"><circle cx="-22" cy="-18" r="8"/><circle cx="22" cy="-18" r="8"/><circle cx="-22" cy="18" r="8"/><circle cx="22" cy="18" r="8"/></g><text y="50" text-anchor="middle" font-size="12" fill="#555b73">1 CH₄</text></g>
+      <text x="165" y="118" text-anchor="middle" font-size="22" fill="#040084" font-weight="800">+</text>
+      <g transform="translate(220,95)"><circle cx="-12" r="12" fill="#FD6600"/><circle cx="12" r="12" fill="#FD6600"/></g>
+      <g transform="translate(220,135)"><circle cx="-12" r="12" fill="#FD6600"/><circle cx="12" r="12" fill="#FD6600"/><text y="38" text-anchor="middle" font-size="12" fill="#555b73">2 O₂</text></g>
+      <text x="300" y="118" text-anchor="middle" font-size="26" fill="#FD6600" font-weight="800">→</text>
+      <g transform="translate(385,110)"><circle cx="-24" r="12" fill="#FD6600"/><circle r="16" fill="#555b73"/><circle cx="24" r="12" fill="#FD6600"/><text y="50" text-anchor="middle" font-size="12" fill="#555b73">1 CO₂</text></g>
+      <text x="450" y="118" text-anchor="middle" font-size="22" fill="#040084" font-weight="800">+</text>
+      <g transform="translate(520,95)"><circle r="12" fill="#FD6600"/><g fill="#DDE1F0" stroke="#8A8FA8"><circle cx="-16" cy="12" r="7"/><circle cx="16" cy="12" r="7"/></g></g>
+      <g transform="translate(520,140)"><circle r="12" fill="#FD6600"/><g fill="#DDE1F0" stroke="#8A8FA8"><circle cx="-16" cy="12" r="7"/><circle cx="16" cy="12" r="7"/></g><text y="38" text-anchor="middle" font-size="12" fill="#555b73">2 H₂O</text></g>
+      <!-- tally -->
+      <g transform="translate(610,60)">
+        <rect width="270" height="150" rx="12" fill="#F1F3FC" stroke="#C9CFEC"/>
+        <text x="135" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="#040084">Atom tally</text>
+        <g font-size="13"><text x="20" y="55" fill="#141a33">Element</text><text x="130" y="55" fill="#141a33">Left</text><text x="200" y="55" fill="#141a33">Right</text>
+        <line x1="15" y1="62" x2="255" y2="62" stroke="#C9CFEC"/>
+        <text x="20" y="85" font-weight="800" fill="#555b73">C</text><text x="130" y="85">1</text><text x="200" y="85">1</text><text x="240" y="85" fill="#1f7a46" font-weight="800">✓</text>
+        <text x="20" y="110" font-weight="800" fill="#8A8FA8">H</text><text x="130" y="110">4</text><text x="200" y="110">2 × 2 = 4</text><text x="240" y="110" fill="#1f7a46" font-weight="800">✓</text>
+        <text x="20" y="135" font-weight="800" fill="#FD6600">O</text><text x="130" y="135">2 × 2 = 4</text><text x="200" y="135">2 + 2 = 4</text><text x="240" y="135" fill="#1f7a46" font-weight="800">✓</text></g>
+      </g>
+      <text x="450" y="245" text-anchor="middle" font-size="12" fill="#8A8FA8">Mass in = mass out: 16.04 g CH₄ + 64.00 g O₂ = 44.01 g CO₂ + 36.03 g H₂O = 80.04 g on each side.</text>
+    </svg>
+    <figcaption><b>Figure 1.11</b> A balanced equation at the particle level. Coefficients count molecules (or moles); subscripts count atoms inside a molecule and are never changed to balance.</figcaption>
+  </figure>
+
+  <h3>A reliable balancing routine</h3>
+  <ol class="steps">
+    <li>Write correct formulas for all reactants and products (get the chemistry right first).</li>
+    <li>Balance elements that appear in <b>only one</b> reactant and one product first — usually metals, then nonmetals other than H and O.</li>
+    <li>Balance <b>hydrogen</b>, then <b>oxygen</b> last (they often appear in several compounds).</li>
+    <li>If a fraction appears, multiply <b>every</b> coefficient by the denominator to clear it.</li>
+    <li>Check every element again and reduce coefficients to the smallest whole-number ratio.</li>
+  </ol>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.4</span> Combustion of propane (LPG)</div><div class="body">
+    <p>Propane, the main component of LPG used in Philippine kitchens and industrial burners, burns in oxygen to give carbon dioxide and water. Write the balanced equation.</p>
+    <div class="gresa">
+      <div>Given</div><div>C<sub>3</sub>H<sub>8</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O (unbalanced)</div>
+      <div>Required</div><div>Balanced equation with smallest whole-number coefficients</div>
+      <div>Equation</div><div>Conservation of atoms for C, H, O</div>
+      <div>Solution</div><div>
+        Carbon: 3 C on left → <b>3 CO<sub>2</sub></b>.<br>
+        Hydrogen: 8 H on left → <b>4 H<sub>2</sub>O</b>.<br>
+        Oxygen: right side now has 3(2) + 4(1) = 10 O → need <b>5 O<sub>2</sub></b>.<br>
+        Check: C 3=3, H 8=8, O 10=10.
+      </div>
+      <div>Answer</div><div><span class="ans">C<sub>3</sub>H<sub>8</sub>(g) + 5 O<sub>2</sub>(g) → 3 CO<sub>2</sub>(g) + 4 H<sub>2</sub>O(g)</span></div>
+    </div>
+  </div></div>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.5</span> Clearing a fraction</div><div class="body">
+    <p>Balance the rusting of iron to iron(III) oxide: Fe + O<sub>2</sub> → Fe<sub>2</sub>O<sub>3</sub>.</p>
+    <div class="gresa">
+      <div>Solution</div><div>Fe: 2 Fe → Fe<sub>2</sub>O<sub>3</sub>. O: 3 O on right needs 3⁄2 O<sub>2</sub>: 2 Fe + 3⁄2 O<sub>2</sub> → Fe<sub>2</sub>O<sub>3</sub>. Multiply everything by 2.</div>
+      <div>Answer</div><div><span class="ans">4 Fe(s) + 3 O<sub>2</sub>(g) → 2 Fe<sub>2</sub>O<sub>3</sub>(s)</span></div>
+    </div>
+  </div></div>
+
+  <h3>Common reaction types you will meet</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Pattern</th><th>Engineering example</th></tr></thead>
+    <tbody>
+      <tr><td><b>Combination (synthesis)</b></td><td>A + B → AB</td><td>CaO + H<sub>2</sub>O → Ca(OH)<sub>2</sub> (slaking lime for mortar)</td></tr>
+      <tr><td><b>Decomposition</b></td><td>AB → A + B</td><td>CaCO<sub>3</sub> → CaO + CO<sub>2</sub> (cement kiln calcination)</td></tr>
+      <tr><td><b>Single displacement</b></td><td>A + BC → AC + B</td><td>Zn + CuSO<sub>4</sub> → ZnSO<sub>4</sub> + Cu (galvanic corrosion)</td></tr>
+      <tr><td><b>Double displacement</b></td><td>AB + CD → AD + CB</td><td>Ca(OH)<sub>2</sub> + Na<sub>2</sub>CO<sub>3</sub> → CaCO<sub>3</sub>↓ + 2NaOH (water softening)</td></tr>
+      <tr><td><b>Combustion</b></td><td>fuel + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</td><td>2C<sub>8</sub>H<sub>18</sub> + 25O<sub>2</sub> → 16CO<sub>2</sub> + 18H<sub>2</sub>O (gasoline engine)</td></tr>
+      <tr><td><b>Acid–base (neutralization)</b></td><td>HA + BOH → BA + H<sub>2</sub>O</td><td>H<sub>2</sub>SO<sub>4</sub> + 2NaOH → Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O (wastewater pH control)</td></tr>
+    </tbody>
+  </table></div>
+
+  <details class="check"><summary>Check yourself — Balance: Al + HCl → AlCl<sub>3</sub> + H<sub>2</sub>, and NH<sub>3</sub> + O<sub>2</sub> → NO + H<sub>2</sub>O.</summary><div class="a">2 Al + 6 HCl → 2 AlCl<sub>3</sub> + 3 H<sub>2</sub>.<br>4 NH<sub>3</sub> + 5 O<sub>2</sub> → 4 NO + 6 H<sub>2</sub>O (first step of nitric-acid manufacture).</div></details>
+</section>
+
+<!-- ============ 1.8 ENERGY ============ -->
+<section class="ch" id="s8">
+  <h2><span class="num">1.8</span>Energy in Chemical Change</h2>
+  <p class="lead"><b>Guiding question:</b> Where does the heat of a burning fuel come from, and how do we measure it?</p>
+  <p><span class="keyterm">Energy</span> is the capacity to do work or transfer heat. Chemical energy is stored in bonds: breaking bonds <em>costs</em> energy, forming bonds <em>releases</em> it. If the new bonds in the products are stronger than the old bonds in the reactants, the difference is released as heat — the reaction is <span class="keyterm">exothermic</span>. If the reverse is true, energy must be supplied — <span class="keyterm">endothermic</span>.</p>
+  <div class="twocol">
+    <div class="panel"><h4>Units</h4><ul class="checks"><li><b>Joule (J)</b> — SI unit; 1 J = 1 kg·m²/s² = 1 N·m.</li><li><b>Calorie (cal)</b> — 1 cal = 4.184 J (heat to raise 1 g water by 1 °C).</li><li><b>kWh</b> — 1 kWh = 3.6 × 10<sup>6</sup> J (the unit on your Meralco bill).</li><li><b>BTU</b> — 1 BTU ≈ 1055 J (air-conditioner and boiler ratings).</li></ul></div>
+    <div class="panel"><h4>Forms of energy engineers convert</h4><ul class="checks"><li><b>Chemical</b> → thermal (combustion), electrical (batteries, fuel cells)</li><li><b>Thermal</b> → mechanical (turbines, engines)</li><li><b>Electrical</b> → chemical (electrolysis, charging)</li><li><b>Nuclear</b> → thermal (Chapter 3)</li></ul></div>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 280" role="img" aria-label="Energy diagrams for exothermic and endothermic reactions">
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#8C3600"/></marker><marker id="arb" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1B3BC9"/></marker></defs>
+      <!-- exo -->
+      <g transform="translate(40,20)">
+        <text x="190" y="14" text-anchor="middle" font-size="15" font-weight="800" fill="#8C3600">EXOTHERMIC · releases heat (ΔH &lt; 0)</text>
+        <line x1="30" y1="30" x2="30" y2="230" stroke="#555b73" stroke-width="1.5"/><line x1="30" y1="230" x2="380" y2="230" stroke="#555b73" stroke-width="1.5"/>
+        <text x="14" y="130" font-size="11" fill="#555b73" transform="rotate(-90 14 130)" text-anchor="middle">Energy</text><text x="205" y="248" text-anchor="middle" font-size="11" fill="#555b73">Reaction progress</text>
+        <path d="M50 110 H120 C170 110 170 50 205 50 C240 50 240 190 300 190 H360" fill="none" stroke="#FD6600" stroke-width="3"/>
+        <text x="85" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#040084">Reactants</text><text x="330" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#040084">Products</text>
+        <line x1="205" y1="50" x2="205" y2="110" stroke="#1B3BC9" stroke-width="1.5" stroke-dasharray="4 3"/><text x="215" y="85" font-size="11" fill="#1B3BC9">activation energy E<tspan baseline-shift="sub" font-size="8">a</tspan></text>
+        <line x1="120" y1="110" x2="300" y2="110" stroke="#8C3600" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="290" y1="112" x2="290" y2="188" stroke="#8C3600" stroke-width="2" marker-end="url(#ar)"/><text x="248" y="155" font-size="12" font-weight="800" fill="#8C3600">ΔH released</text>
+        <text x="190" y="222" text-anchor="middle" font-size="11" fill="#8A8FA8">e.g., CH₄ + 2O₂ → CO₂ + 2H₂O, ΔH = −890 kJ/mol</text>
+      </g>
+      <!-- endo -->
+      <g transform="translate(480,20)">
+        <text x="190" y="14" text-anchor="middle" font-size="15" font-weight="800" fill="#1B3BC9">ENDOTHERMIC · absorbs heat (ΔH &gt; 0)</text>
+        <line x1="30" y1="30" x2="30" y2="230" stroke="#555b73" stroke-width="1.5"/><line x1="30" y1="230" x2="380" y2="230" stroke="#555b73" stroke-width="1.5"/>
+        <text x="14" y="130" font-size="11" fill="#555b73" transform="rotate(-90 14 130)" text-anchor="middle">Energy</text><text x="205" y="248" text-anchor="middle" font-size="11" fill="#555b73">Reaction progress</text>
+        <path d="M50 190 H120 C170 190 170 50 205 50 C240 50 240 110 300 110 H360" fill="none" stroke="#1B3BC9" stroke-width="3"/>
+        <text x="85" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#040084">Reactants</text><text x="330" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#040084">Products</text>
+        <line x1="120" y1="190" x2="300" y2="190" stroke="#1B3BC9" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="290" y1="188" x2="290" y2="112" stroke="#1B3BC9" stroke-width="2" marker-end="url(#arb)"/><text x="248" y="155" font-size="12" font-weight="800" fill="#1B3BC9">ΔH absorbed</text>
+        <text x="190" y="222" text-anchor="middle" font-size="11" fill="#8A8FA8">e.g., CaCO₃ → CaO + CO₂, ΔH = +178 kJ/mol</text>
+      </g>
+    </svg>
+    <figcaption><b>Figure 1.12</b> Energy profiles. Both reactions need an activation-energy "hill" to start (why a match is needed to light LPG), but only the exothermic one pays back more than it cost.</figcaption>
+  </figure>
+
+  <p>The heat change at constant pressure is the <span class="keyterm">enthalpy change, ΔH</span>, reported per mole of reaction as written. It scales with amount: burning twice as much fuel releases twice the heat. That proportionality is the bridge to stoichiometry in §1.12.</p>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.6</span> Heat from a fuel</div><div class="body">
+    <p>Natural gas is mostly methane. Complete combustion releases 890 kJ per mole of CH<sub>4</sub>. How much heat does 1.00 kg of methane release? Express the answer in MJ and kWh.</p>
+    <div class="gresa">
+      <div>Given</div><div>m = 1.00 kg = 1000 g CH<sub>4</sub>; ΔH = −890 kJ/mol; M(CH<sub>4</sub>) = 16.04 g/mol; 1 kWh = 3600 kJ</div>
+      <div>Required</div><div>Heat released, q</div>
+      <div>Equation</div><div>n = m / M; q = n × |ΔH|</div>
+      <div>Solution</div><div>n = 1000 g ÷ 16.04 g/mol = 62.3 mol<br>q = 62.3 mol × 890 kJ/mol = 5.55 × 10<sup>4</sup> kJ = 55.5 MJ<br>55.5 × 10<sup>3</sup> kJ ÷ 3600 kJ/kWh = 15.4 kWh</div>
+      <div>Answer</div><div><span class="ans">≈ 55.5 MJ ≈ 15.4 kWh per kg of methane</span> (its "calorific value" — Chapter 4 develops this fully)</div>
+    </div>
+  </div></div>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Cement kilns run the endothermic calcination CaCO<sub>3</sub> → CaO + CO<sub>2</sub>, which is why cement manufacture is energy-intensive and a major CO<sub>2</sub> source (both from fuel and from the reaction itself). Concrete curing, by contrast, is exothermic — large dam pours need cooling pipes to stop thermal cracking.</div>
+
+  <details class="check"><summary>Check yourself — Is dissolving ammonium nitrate in water (used in instant cold packs) exothermic or endothermic? What sign does ΔH have?</summary><div class="a">Endothermic — the pack gets cold because the process absorbs heat from its surroundings. ΔH is positive (about +25 kJ/mol).</div></details>
+</section>
+<!-- ============ 1.9 NOMENCLATURE ============ -->
+<section class="ch" id="s9">
+  <h2><span class="num">1.9</span>Nomenclature: Naming Inorganic Compounds</h2>
+  <p class="lead"><b>Guiding question:</b> How can you read a formula on a drum label or a safety data sheet and know what is inside?</p>
+  <p>Chemical names are systematic. Decide first what <em>kind</em> of compound you have, then apply that family's rule.</p>
+
+  <figure>
+    <svg viewBox="0 0 900 250" role="img" aria-label="Decision flow for naming inorganic compounds">
+      <defs><marker id="an" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1B3BC9"/></marker></defs>
+      <rect x="330" y="10" width="240" height="44" rx="10" fill="#040084"/><text x="450" y="38" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Does the formula start with H?</text>
+      <g stroke="#1B3BC9" stroke-width="2" fill="none" marker-end="url(#an)"><path d="M380 54 L200 95"/><path d="M520 54 L700 95"/></g>
+      <text x="270" y="70" font-size="11" fill="#555b73">yes (in water)</text><text x="600" y="70" font-size="11" fill="#555b73">no</text>
+      <rect x="90" y="95" width="220" height="44" rx="10" fill="#FD6600"/><text x="200" y="123" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">ACID</text>
+      <rect x="590" y="95" width="220" height="44" rx="10" fill="#1B3BC9"/><text x="700" y="123" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Metal or NH₄⁺ present?</text>
+      <g stroke="#1B3BC9" stroke-width="2" fill="none" marker-end="url(#an)"><path d="M640 139 L520 180"/><path d="M760 139 L800 180"/></g>
+      <text x="560" y="160" font-size="11" fill="#555b73">yes</text><text x="790" y="160" font-size="11" fill="#555b73">no</text>
+      <rect x="380" y="180" width="240" height="44" rx="10" fill="#E4E8FA" stroke="#1B3BC9"/><text x="500" y="200" text-anchor="middle" font-size="13" font-weight="800" fill="#040084">IONIC</text><text x="500" y="216" text-anchor="middle" font-size="11" fill="#555b73">cation name + anion name</text>
+      <rect x="660" y="180" width="230" height="44" rx="10" fill="#E4E8FA" stroke="#1B3BC9"/><text x="775" y="200" text-anchor="middle" font-size="13" font-weight="800" fill="#040084">MOLECULAR (covalent)</text><text x="775" y="216" text-anchor="middle" font-size="11" fill="#555b73">Greek prefixes, -ide ending</text>
+      <g font-size="11" fill="#555b73" text-anchor="middle">
+        <text x="200" y="160">no oxygen → hydro___ic acid (HCl: hydrochloric)</text>
+        <text x="200" y="176">-ate anion → ___ic acid (H₂SO₄: sulfuric)</text>
+        <text x="200" y="192">-ite anion → ___ous acid (H₂SO₃: sulfurous)</text>
+      </g>
+      <text x="450" y="244" text-anchor="middle" font-size="11" fill="#8A8FA8">Ionic: NaCl sodium chloride · FeCl₃ iron(III) chloride · Ca(OH)₂ calcium hydroxide  ·  Molecular: CO₂ carbon dioxide · N₂O₄ dinitrogen tetroxide · SF₆ sulfur hexafluoride</text>
+    </svg>
+    <figcaption><b>Figure 1.13</b> Three questions decide the naming system: acid? ionic? or molecular?</figcaption>
+  </figure>
+
+  <h3>Ionic compounds</h3>
+  <p>Name the <b>cation</b> then the <b>anion</b>. Do not use prefixes — the charges already fix the ratio. If the metal can have more than one charge (most transition metals, plus Sn and Pb), show the charge with a Roman numeral.</p>
+  <div class="twocol">
+    <div class="tw"><table>
+      <thead><tr><th colspan="2">Common cations</th></tr></thead>
+      <tbody>
+        <tr><td>Na<sup>+</sup> sodium · K<sup>+</sup> potassium</td><td>Ca<sup>2+</sup> calcium · Mg<sup>2+</sup> magnesium</td></tr>
+        <tr><td>Al<sup>3+</sup> aluminum · Zn<sup>2+</sup> zinc · Ag<sup>+</sup> silver</td><td>NH<sub>4</sub><sup>+</sup> ammonium</td></tr>
+        <tr><td>Fe<sup>2+</sup> iron(II) · Fe<sup>3+</sup> iron(III)</td><td>Cu<sup>+</sup> copper(I) · Cu<sup>2+</sup> copper(II)</td></tr>
+        <tr><td>Sn<sup>2+</sup> tin(II) · Sn<sup>4+</sup> tin(IV)</td><td>Pb<sup>2+</sup> lead(II) · Pb<sup>4+</sup> lead(IV)</td></tr>
+        <tr><td>Cr<sup>3+</sup> chromium(III)</td><td>Mn<sup>2+</sup> manganese(II) · Hg<sup>2+</sup> mercury(II)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw"><table>
+      <thead><tr><th colspan="2">Common anions</th></tr></thead>
+      <tbody>
+        <tr><td>F<sup>−</sup> fluoride · Cl<sup>−</sup> chloride · Br<sup>−</sup> bromide · I<sup>−</sup> iodide</td><td>O<sup>2−</sup> oxide · S<sup>2−</sup> sulfide · N<sup>3−</sup> nitride</td></tr>
+        <tr><td>OH<sup>−</sup> hydroxide · CN<sup>−</sup> cyanide</td><td>NO<sub>3</sub><sup>−</sup> nitrate · NO<sub>2</sub><sup>−</sup> nitrite</td></tr>
+        <tr><td>SO<sub>4</sub><sup>2−</sup> sulfate · SO<sub>3</sub><sup>2−</sup> sulfite</td><td>CO<sub>3</sub><sup>2−</sup> carbonate · HCO<sub>3</sub><sup>−</sup> hydrogen carbonate (bicarbonate)</td></tr>
+        <tr><td>PO<sub>4</sub><sup>3−</sup> phosphate · HPO<sub>4</sub><sup>2−</sup> hydrogen phosphate</td><td>ClO<sub>4</sub><sup>−</sup> perchlorate · ClO<sub>3</sub><sup>−</sup> chlorate · ClO<sub>2</sub><sup>−</sup> chlorite · ClO<sup>−</sup> hypochlorite</td></tr>
+        <tr><td>MnO<sub>4</sub><sup>−</sup> permanganate · CrO<sub>4</sub><sup>2−</sup> chromate · Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> dichromate</td><td>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup> acetate · O<sub>2</sub><sup>2−</sup> peroxide</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="callout blue"><span class="label">Pattern for oxoanions</span>per-___-ate (most O) → ___-ate → ___-ite → hypo-___-ite (least O). Charge stays the same down the series: ClO<sub>4</sub><sup>−</sup>, ClO<sub>3</sub><sup>−</sup>, ClO<sub>2</sub><sup>−</sup>, ClO<sup>−</sup>. Adding H<sup>+</sup> gives "hydrogen ___" and raises the charge by one: HSO<sub>4</sub><sup>−</sup> hydrogen sulfate.</div>
+
+  <h3>Molecular (covalent) compounds — two nonmetals</h3>
+  <p>Name the first element as is, the second with an <b>-ide</b> ending, and use Greek prefixes for the number of each atom. <em>Mono-</em> is dropped on the first element only.</p>
+  <div class="tw"><table>
+    <thead><tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
+    <tbody><tr><td>mono-</td><td>di-</td><td>tri-</td><td>tetra-</td><td>penta-</td><td>hexa-</td><td>hepta-</td><td>octa-</td><td>nona-</td><td>deca-</td></tr></tbody>
+  </table></div>
+  <p>Examples: CO carbon monoxide · CO<sub>2</sub> carbon dioxide · N<sub>2</sub>O dinitrogen monoxide · P<sub>4</sub>O<sub>10</sub> tetraphosphorus decoxide · SO<sub>3</sub> sulfur trioxide · PCl<sub>5</sub> phosphorus pentachloride. A few keep common names: H<sub>2</sub>O water, NH<sub>3</sub> ammonia, CH<sub>4</sub> methane.</p>
+
+  <h3>Acids</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Anion ending</th><th>Acid name</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>-ide (no oxygen)</td><td><b>hydro</b>___<b>ic</b> acid</td><td>HCl hydrochloric acid · H<sub>2</sub>S hydrosulfuric acid · HF hydrofluoric acid</td></tr>
+      <tr><td>-ate</td><td>___<b>ic</b> acid</td><td>HNO<sub>3</sub> nitric acid · H<sub>2</sub>SO<sub>4</sub> sulfuric acid · H<sub>3</sub>PO<sub>4</sub> phosphoric acid · HClO<sub>4</sub> perchloric acid</td></tr>
+      <tr><td>-ite</td><td>___<b>ous</b> acid</td><td>HNO<sub>2</sub> nitrous acid · H<sub>2</sub>SO<sub>3</sub> sulfurous acid · HClO hypochlorous acid</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Hydrates</b> carry water in the crystal: CuSO<sub>4</sub>·5H<sub>2</sub>O is copper(II) sulfate pentahydrate; CaSO<sub>4</sub>·2H<sub>2</sub>O (gypsum) is calcium sulfate dihydrate — the raw material of plasterboard.</p>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Reading names correctly is a safety skill. "Sodium hypochlorite" (NaOCl, bleach) and "sodium chlorate" (NaClO<sub>3</sub>, a strong oxidizer) differ by one oxygen and one syllable; "iron(II) sulfate" and "iron(III) sulfate" behave differently as coagulants in water treatment. Chapter 8 returns to labels and Safety Data Sheets.</div>
+
+  <details class="check"><summary>Check yourself — Name: (a) Cu(NO<sub>3</sub>)<sub>2</sub>, (b) N<sub>2</sub>O<sub>5</sub>, (c) HBr(aq), (d) K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>. Write formulas: (e) tin(IV) oxide, (f) dinitrogen tetroxide, (g) phosphorous acid.</summary><div class="a">(a) copper(II) nitrate (b) dinitrogen pentoxide (c) hydrobromic acid (d) potassium dichromate (e) SnO<sub>2</sub> (f) N<sub>2</sub>O<sub>4</sub> (g) H<sub>3</sub>PO<sub>3</sub> (from phosphite, PO<sub>3</sub><sup>3−</sup>).</div></details>
+</section>
+
+<!-- ============ 1.10 MEASUREMENT ============ -->
+<section class="ch" id="s10">
+  <h2><span class="num">1.10</span>Measurement, Units, and Dimensional Analysis</h2>
+  <p class="lead"><b>Guiding question:</b> How do engineers move confidently between grams and kilograms, liters and cubic meters, kilojoules and kilowatt-hours without losing a factor of a thousand?</p>
+  <div class="twocol">
+    <div class="tw"><table>
+      <thead><tr><th>Quantity</th><th>SI base unit</th><th>Symbol</th></tr></thead>
+      <tbody>
+        <tr><td>Length</td><td>meter</td><td class="c">m</td></tr>
+        <tr><td>Mass</td><td>kilogram</td><td class="c">kg</td></tr>
+        <tr><td>Time</td><td>second</td><td class="c">s</td></tr>
+        <tr><td>Temperature</td><td>kelvin</td><td class="c">K</td></tr>
+        <tr><td>Amount of substance</td><td>mole</td><td class="c">mol</td></tr>
+        <tr><td>Electric current</td><td>ampere</td><td class="c">A</td></tr>
+        <tr><td>Luminous intensity</td><td>candela</td><td class="c">cd</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw"><table>
+      <thead><tr><th>Prefix</th><th>Symbol</th><th>Factor</th><th>Prefix</th><th>Symbol</th><th>Factor</th></tr></thead>
+      <tbody>
+        <tr><td>giga</td><td class="c">G</td><td>10<sup>9</sup></td><td>centi</td><td class="c">c</td><td>10<sup>−2</sup></td></tr>
+        <tr><td>mega</td><td class="c">M</td><td>10<sup>6</sup></td><td>milli</td><td class="c">m</td><td>10<sup>−3</sup></td></tr>
+        <tr><td>kilo</td><td class="c">k</td><td>10<sup>3</sup></td><td>micro</td><td class="c">μ</td><td>10<sup>−6</sup></td></tr>
+        <tr><td>deci</td><td class="c">d</td><td>10<sup>−1</sup></td><td>nano</td><td class="c">n</td><td>10<sup>−9</sup></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <h3>Derived units you will use constantly</h3>
+  <ul class="checks">
+    <li><b>Volume:</b> 1 L = 1 dm³ = 1000 mL = 1000 cm³; 1 m³ = 1000 L.</li>
+    <li><b>Density:</b> ρ = m/V — g/cm³ (= g/mL) in the lab, kg/m³ in design. 1 g/cm³ = 1000 kg/m³. Water ≈ 1.00 g/cm³; steel ≈ 7.85; aluminum ≈ 2.70; concrete ≈ 2.4.</li>
+    <li><b>Temperature:</b> K = °C + 273.15; °F = 1.8(°C) + 32. Only kelvin is used in gas-law and thermodynamic equations.</li>
+    <li><b>Pressure:</b> 1 atm = 101.325 kPa = 760 mmHg = 14.7 psi.</li>
+    <li><b>Energy:</b> 1 kWh = 3.6 MJ; 1 cal = 4.184 J.</li>
+  </ul>
+
+  <h3>Significant figures</h3>
+  <p>A measurement's digits carry information about its precision. The rules:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Rule</th><th>Example</th><th>Sig. figs</th></tr></thead>
+    <tbody>
+      <tr><td>All nonzero digits count</td><td>7.85</td><td class="c">3</td></tr>
+      <tr><td>Zeros between nonzero digits count</td><td>2.007</td><td class="c">4</td></tr>
+      <tr><td>Leading zeros never count</td><td>0.0045</td><td class="c">2</td></tr>
+      <tr><td>Trailing zeros count only if there is a decimal point</td><td>150 vs 150. vs 1.50 × 10<sup>2</sup></td><td class="c">2 · 3 · 3</td></tr>
+      <tr><td>Multiplying/dividing: keep the fewest sig figs of any input</td><td>7.85 × 2.0 = 15.7 → 16</td><td class="c">2</td></tr>
+      <tr><td>Adding/subtracting: keep the fewest decimal places</td><td>12.11 + 0.3 = 12.41 → 12.4</td><td class="c">1 d.p.</td></tr>
+      <tr><td>Exact numbers (counts, defined conversions) are unlimited</td><td>1000 g/kg, 2 in "2 H<sub>2</sub>O"</td><td class="c">∞</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Dimensional analysis (the factor-label method)</h3>
+  <p>Multiply the given quantity by <span class="keyterm">conversion factors</span> — fractions equal to 1 — arranged so that unwanted units cancel diagonally. If the units come out right, the arithmetic is usually right too.</p>
+  <figure>
+    <svg viewBox="0 0 900 190" role="img" aria-label="Dimensional analysis chain converting 80 km/h to m/s">
+      <text x="450" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">Convert a highway speed of 80 km/h to m/s</text>
+      <g font-family="Cambria Math,Georgia,serif" font-size="20" fill="#141a33">
+        <text x="60" y="100">80 km</text><line x1="55" y1="107" x2="130" y2="107" stroke="#141a33" stroke-width="1.5"/><text x="80" y="132">h</text>
+        <text x="150" y="108" font-size="22">×</text>
+        <text x="185" y="100">1000 m</text><line x1="180" y1="107" x2="270" y2="107" stroke="#141a33" stroke-width="1.5"/><text x="205" y="132">1 km</text>
+        <text x="290" y="108" font-size="22">×</text>
+        <text x="330" y="100">1 h</text><line x1="320" y1="107" x2="420" y2="107" stroke="#141a33" stroke-width="1.5"/><text x="330" y="132">3600 s</text>
+        <text x="445" y="108" font-size="22">=</text>
+        <text x="480" y="108" font-weight="700" fill="#8C3600">22.2 m/s</text>
+      </g>
+      <!-- cancel strokes -->
+      <g stroke="#FD6600" stroke-width="2.5"><line x1="95" y1="86" x2="122" y2="104"/><line x1="237" y1="121" x2="262" y2="139"/><line x1="72" y1="118" x2="94" y2="136"/><line x1="327" y1="86" x2="350" y2="104"/></g>
+      <g font-size="11" fill="#555b73" text-anchor="middle"><text x="225" y="165">km cancels</text><text x="370" y="165">h cancels</text><text x="540" y="165">m/s remain ✓</text></g>
+      <rect x="620" y="55" width="260" height="95" rx="12" fill="#F1F3FC" stroke="#C9CFEC"/>
+      <text x="750" y="80" text-anchor="middle" font-size="13" font-weight="800" fill="#040084">Habit to build</text>
+      <text x="750" y="102" text-anchor="middle" font-size="11" fill="#555b73">1 · Write the given with its unit</text>
+      <text x="750" y="118" text-anchor="middle" font-size="11" fill="#555b73">2 · Put the unit to cancel on the opposite side</text>
+      <text x="750" y="134" text-anchor="middle" font-size="11" fill="#555b73">3 · Check units before computing numbers</text>
+    </svg>
+    <figcaption><b>Figure 1.14</b> A conversion chain. Each factor equals 1, so the quantity is unchanged — only its units are. Orange strokes show the cancellations.</figcaption>
+  </figure>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.7</span> Density and unit conversion</div><div class="body">
+    <p>A cylindrical steel shaft has diameter 40.0 mm and length 1.20 m. Steel density is 7.85 g/cm³. Find its mass in kg.</p>
+    <div class="gresa">
+      <div>Given</div><div>d = 40.0 mm = 4.00 cm; L = 1.20 m = 120 cm; ρ = 7.85 g/cm³</div>
+      <div>Required</div><div>Mass, m, in kg</div>
+      <div>Equation</div><div>V = πr²L; m = ρV</div>
+      <div>Solution</div><div>r = 2.00 cm → V = π(2.00 cm)²(120 cm) = 1508 cm³<br>m = 7.85 g/cm³ × 1508 cm³ = 11 840 g × (1 kg / 1000 g) = 11.8 kg</div>
+      <div>Answer</div><div><span class="ans">11.8 kg</span> (3 sig figs, set by 7.85, 4.00, and 1.20)</div>
+    </div>
+  </div></div>
+
+  <details class="check"><summary>Check yourself — A water tank holds 2.50 m³. Express this in liters and, using ρ = 1.00 g/mL, find the mass of water in tonnes (1 t = 1000 kg).</summary><div class="a">2.50 m³ × (1000 L / 1 m³) = 2500 L = 2.50 × 10³ L. Mass = 2500 L × 1000 mL/L × 1.00 g/mL = 2.50 × 10<sup>6</sup> g = 2500 kg = 2.50 t. (Rule of thumb: 1 m³ of water ≈ 1 tonne.)</div></details>
+</section>
+
+<!-- ============ 1.11 MOLE ============ -->
+<section class="ch" id="s11">
+  <h2><span class="num">1.11</span>The Mole Concept and Molar Mass</h2>
+  <p class="lead"><b>Guiding question:</b> Atoms are far too small to count — so how do we count them by weighing?</p>
+  <p>The <span class="keyterm">mole</span> is chemistry's counting unit, like a dozen but enormous: one mole contains <b>6.022 × 10<sup>23</sup></b> particles (<span class="keyterm">Avogadro's number, N<sub>A</sub></span>). It is defined so that the mass of one mole of any substance, in grams, equals its atomic or formula mass in amu. That number is the <span class="keyterm">molar mass, M</span> (g/mol).</p>
+  <span class="eq">n = m / M &nbsp;&nbsp;&nbsp;&nbsp; N = n × N<sub>A</sub> &nbsp;&nbsp;&nbsp;&nbsp; V<sub>gas</sub> = n × 22.4 L/mol (at STP: 0 °C, 1 atm)</span>
+
+  <figure>
+    <svg viewBox="0 0 900 250" role="img" aria-label="Mole road map connecting mass, moles, particles, and gas volume">
+      <defs><marker id="am" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1B3BC9"/></marker></defs>
+      <circle cx="450" cy="135" r="58" fill="#040084"/><text x="450" y="130" text-anchor="middle" font-size="18" font-weight="800" fill="#fff">MOLES</text><text x="450" y="150" text-anchor="middle" font-size="12" fill="#FFD9BF">n</text>
+      <rect x="40" y="100" width="190" height="70" rx="12" fill="#FFEBDD" stroke="#FD6600"/><text x="135" y="130" text-anchor="middle" font-size="15" font-weight="800" fill="#8C3600">MASS (g)</text><text x="135" y="150" text-anchor="middle" font-size="11" fill="#555b73">what you weigh</text>
+      <rect x="670" y="100" width="190" height="70" rx="12" fill="#E4E8FA" stroke="#1B3BC9"/><text x="765" y="130" text-anchor="middle" font-size="15" font-weight="800" fill="#040084">PARTICLES</text><text x="765" y="150" text-anchor="middle" font-size="11" fill="#555b73">atoms, molecules, ions</text>
+      <rect x="355" y="6" width="190" height="36" rx="12" fill="#E4E8FA" stroke="#1B3BC9"/><text x="450" y="30" text-anchor="middle" font-size="13" font-weight="800" fill="#040084">GAS VOLUME at STP (L)</text>
+      <g stroke="#1B3BC9" stroke-width="2.5" fill="none"><line x1="235" y1="135" x2="388" y2="135"/><line x1="512" y1="135" x2="665" y2="135"/><line x1="450" y1="44" x2="450" y2="75"/></g>
+      <g font-size="12" font-weight="700" fill="#040084" text-anchor="middle">
+        <text x="311" y="123">÷ M (g/mol) →</text><text x="311" y="155">← × M (g/mol)</text>
+        <text x="588" y="123">× 6.022×10²³ →</text><text x="588" y="155">← ÷ 6.022×10²³</text>
+      </g>
+      <text x="460" y="64" font-size="11" fill="#040084" font-weight="700">× 22.4 L/mol ↑ · ÷ 22.4 ↓</text>
+      <text x="450" y="222" text-anchor="middle" font-size="12" fill="#8A8FA8">Every conversion passes through moles. Mass → moles → particles, never mass → particles directly.</text>
+      <text x="450" y="240" text-anchor="middle" font-size="11" fill="#8A8FA8">Molar mass M = sum of atomic masses in the formula (e.g., H₂O: 2(1.008) + 16.00 = 18.02 g/mol).</text>
+    </svg>
+    <figcaption><b>Figure 1.15</b> The mole road map. Memorize the hub-and-spoke shape: moles sit in the middle of every calculation.</figcaption>
+  </figure>
+
+  <h3>Computing molar mass</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Substance</th><th>Calculation</th><th>M (g/mol)</th></tr></thead>
+    <tbody>
+      <tr><td>Fe</td><td>55.85</td><td class="c">55.85</td></tr>
+      <tr><td>O<sub>2</sub></td><td>2 × 16.00</td><td class="c">32.00</td></tr>
+      <tr><td>CO<sub>2</sub></td><td>12.01 + 2(16.00)</td><td class="c">44.01</td></tr>
+      <tr><td>CaCO<sub>3</sub></td><td>40.08 + 12.01 + 3(16.00)</td><td class="c">100.09</td></tr>
+      <tr><td>Ca(OH)<sub>2</sub></td><td>40.08 + 2(16.00 + 1.008)</td><td class="c">74.10</td></tr>
+      <tr><td>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></td><td>2(26.98) + 3[32.07 + 4(16.00)]</td><td class="c">342.17</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.8</span> Mass → moles → particles</div><div class="body">
+    <p>A 25.0 g sample of limestone is pure CaCO<sub>3</sub>. How many moles and how many formula units does it contain?</p>
+    <div class="gresa">
+      <div>Given</div><div>m = 25.0 g; M(CaCO<sub>3</sub>) = 100.09 g/mol; N<sub>A</sub> = 6.022 × 10<sup>23</sup> mol<sup>−1</sup></div>
+      <div>Required</div><div>n and N</div>
+      <div>Equation</div><div>n = m/M; N = n N<sub>A</sub></div>
+      <div>Solution</div><div>n = 25.0 g ÷ 100.09 g/mol = 0.250 mol<br>N = 0.250 mol × 6.022 × 10<sup>23</sup> mol<sup>−1</sup> = 1.50 × 10<sup>23</sup> formula units</div>
+      <div>Answer</div><div><span class="ans">0.250 mol · 1.50 × 10<sup>23</sup> formula units of CaCO<sub>3</sub></span> (and therefore 1.50 × 10<sup>23</sup> Ca<sup>2+</sup> ions and 4.50 × 10<sup>23</sup> O atoms)</div>
+    </div>
+  </div></div>
+
+  <h3>Percent composition and empirical formulas</h3>
+  <p>Mass percent of an element = (mass of element in 1 mol ÷ molar mass) × 100 %. For Fe<sub>2</sub>O<sub>3</sub>: %Fe = 2(55.85)/159.70 × 100 % = 69.9 % — the theoretical iron yield of hematite ore. Going the other way, dividing each element's mass percent by its atomic mass and reducing to whole-number ratios gives the <span class="keyterm">empirical formula</span>; the molar mass then scales it to the <span class="keyterm">molecular formula</span>.</p>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Plant engineers never count molecules, but they think in moles constantly: the mole ratio in a balanced equation is the only way to scale from a lab beaker to a 500-tonne reactor. Emissions reporting (kg CO<sub>2</sub> per tonne of cement, per kWh) is stoichiometry expressed in moles.</div>
+
+  <details class="check"><summary>Check yourself — How many grams of oxygen gas contain 3.0 × 10<sup>24</sup> molecules of O<sub>2</sub>?</summary><div class="a">n = 3.0 × 10<sup>24</sup> ÷ 6.022 × 10<sup>23</sup> = 4.98 mol; m = 4.98 mol × 32.00 g/mol ≈ 1.6 × 10² g (160 g).</div></details>
+</section>
+
+<!-- ============ 1.12 STOICHIOMETRY ============ -->
+<section class="ch" id="s12">
+  <h2><span class="num">1.12</span>Simple Stoichiometry</h2>
+  <p class="lead"><b>Guiding question:</b> Given a balanced equation and the mass of one substance, how much of everything else is involved?</p>
+  <p><span class="keyterm">Stoichiometry</span> uses the <b>mole ratio</b> from the coefficients of a balanced equation as a conversion factor between substances. The procedure never changes:</p>
+  <figure>
+    <svg viewBox="0 0 900 130" role="img" aria-label="Stoichiometry four-step flow">
+      <defs><marker id="as" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#FD6600"/></marker></defs>
+      <g font-size="13" font-weight="800" text-anchor="middle">
+        <rect x="20" y="30" width="180" height="64" rx="12" fill="#FFEBDD" stroke="#FD6600"/><text x="110" y="57" fill="#8C3600">mass of A (g)</text><text x="110" y="78" fill="#555b73" font-size="11" font-weight="400">given</text>
+        <rect x="250" y="30" width="180" height="64" rx="12" fill="#E4E8FA" stroke="#1B3BC9"/><text x="340" y="57" fill="#040084">moles of A</text><text x="340" y="78" fill="#555b73" font-size="11" font-weight="400">÷ M(A)</text>
+        <rect x="480" y="30" width="180" height="64" rx="12" fill="#040084"/><text x="570" y="57" fill="#fff">moles of B</text><text x="570" y="78" fill="#FFD9BF" font-size="11" font-weight="400">× (coef B / coef A)</text>
+        <rect x="710" y="30" width="180" height="64" rx="12" fill="#FFEBDD" stroke="#FD6600"/><text x="800" y="57" fill="#8C3600">mass of B (g)</text><text x="800" y="78" fill="#555b73" font-size="11" font-weight="400">× M(B)</text>
+      </g>
+      <g stroke="#FD6600" stroke-width="2.5" fill="none" marker-end="url(#as)"><line x1="202" y1="62" x2="244" y2="62"/><line x1="432" y1="62" x2="474" y2="62"/><line x1="662" y1="62" x2="704" y2="62"/></g>
+      <text x="450" y="118" text-anchor="middle" font-size="12" fill="#8A8FA8">The mole ratio in the middle is the only step that uses the chemical equation.</text>
+    </svg>
+    <figcaption><b>Figure 1.16</b> Mass-to-mass stoichiometry. Gram amounts of B can also be replaced by particles or gas volume using the mole road map.</figcaption>
+  </figure>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.9</span> Lime production (mass → mass)</div><div class="body">
+    <p>Quicklime for construction and steelmaking is made by heating limestone: CaCO<sub>3</sub>(s) → CaO(s) + CO<sub>2</sub>(g). How much CaO and how much CO<sub>2</sub> are produced from 500 kg of pure CaCO<sub>3</sub>?</p>
+    <div class="gresa">
+      <div>Given</div><div>m(CaCO<sub>3</sub>) = 500 kg = 5.00 × 10<sup>5</sup> g; M: CaCO<sub>3</sub> 100.09, CaO 56.08, CO<sub>2</sub> 44.01 g/mol; mole ratio 1 : 1 : 1</div>
+      <div>Required</div><div>m(CaO), m(CO<sub>2</sub>)</div>
+      <div>Equation</div><div>n = m/M; n(product) = n(CaCO<sub>3</sub>) × (1/1); m = nM</div>
+      <div>Solution</div><div>n(CaCO<sub>3</sub>) = 5.00 × 10<sup>5</sup> g ÷ 100.09 g/mol = 4996 mol<br>m(CaO) = 4996 mol × 56.08 g/mol = 2.80 × 10<sup>5</sup> g = 280 kg<br>m(CO<sub>2</sub>) = 4996 mol × 44.01 g/mol = 2.20 × 10<sup>5</sup> g = 220 kg<br>Check: 280 + 220 = 500 kg ✓ (mass conserved)</div>
+      <div>Answer</div><div><span class="ans">280 kg CaO and 220 kg CO<sub>2</sub></span> — 44 % of the limestone's mass leaves as carbon dioxide.</div>
+    </div>
+  </div></div>
+
+  <div class="we"><div class="head"><span class="tag">Worked Example 1.10</span> Reactant needed (mass → mass, non-1:1 ratio)</div><div class="body">
+    <p>How many kilograms of oxygen are needed to completely burn 10.0 kg of propane? (C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O)</p>
+    <div class="gresa">
+      <div>Given</div><div>m(C<sub>3</sub>H<sub>8</sub>) = 1.00 × 10<sup>4</sup> g; M(C<sub>3</sub>H<sub>8</sub>) = 44.10; M(O<sub>2</sub>) = 32.00 g/mol; ratio 5 mol O<sub>2</sub> : 1 mol C<sub>3</sub>H<sub>8</sub></div>
+      <div>Required</div><div>m(O<sub>2</sub>)</div>
+      <div>Solution</div><div>n(C<sub>3</sub>H<sub>8</sub>) = 10 000 ÷ 44.10 = 226.8 mol<br>n(O<sub>2</sub>) = 226.8 × 5 = 1134 mol<br>m(O<sub>2</sub>) = 1134 × 32.00 = 3.63 × 10<sup>4</sup> g</div>
+      <div>Answer</div><div><span class="ans">36.3 kg O<sub>2</sub></span> — and since air is only 23 % O<sub>2</sub> by mass, the burner must draw about 158 kg of air. This is the "air–fuel ratio" every combustion engineer designs around.</div>
+    </div>
+  </div></div>
+
+  <h3>Limiting reactant and percent yield</h3>
+  <p>When two reactants are mixed in non-stoichiometric amounts, the one that runs out first — the <span class="keyterm">limiting reactant</span> — fixes the maximum (theoretical) product. To find it, convert each reactant to moles of product; the smaller result wins. Real processes give less than theoretical:</p>
+  <span class="eq">% yield = (actual yield ÷ theoretical yield) × 100 %</span>
+  <div class="callout blue"><span class="label">Quick example</span>4.0 mol Fe and 4.0 mol O<sub>2</sub> react by 4 Fe + 3 O<sub>2</sub> → 2 Fe<sub>2</sub>O<sub>3</sub>. Fe would give 4.0 × (2/4) = 2.0 mol Fe<sub>2</sub>O<sub>3</sub>; O<sub>2</sub> would give 4.0 × (2/3) = 2.67 mol. Iron is limiting; theoretical yield is 2.0 mol Fe<sub>2</sub>O<sub>3</sub>, and 1.0 mol O<sub>2</sub> is left over.</div>
+
+  <div class="callout eng"><span class="label">Engineering connection</span>Stoichiometry sizes everything: the oxygen plant for a steel mill, the lime dosage for neutralizing acid mine drainage, the chlorine feed for a water-treatment plant, and the CO<sub>2</sub> footprint of a cement kiln. The special-topics project in Weeks 16–17 will ask you to do exactly this kind of calculation for your own engineering field.</div>
+
+  <details class="check"><summary>Check yourself — Aluminum is produced by 2 Al<sub>2</sub>O<sub>3</sub> → 4 Al + 3 O<sub>2</sub>. What mass of alumina gives 1.00 tonne of aluminum? (M: Al<sub>2</sub>O<sub>3</sub> 101.96, Al 26.98)</summary><div class="a">n(Al) = 1.00 × 10<sup>6</sup> g ÷ 26.98 = 3.706 × 10<sup>4</sup> mol; n(Al<sub>2</sub>O<sub>3</sub>) = 3.706 × 10<sup>4</sup> × (2/4) = 1.853 × 10<sup>4</sup> mol; m = 1.853 × 10<sup>4</sup> × 101.96 = 1.89 × 10<sup>6</sup> g ≈ <b>1.89 tonnes</b> of Al<sub>2</sub>O<sub>3</sub>.</div></details>
+</section>
+<!-- ============ SUMMARY ============ -->
+<section class="ch accent" id="summary">
+  <h2><span class="num">§</span>Chapter Summary — One-Page Cheat Sheet</h2>
+  <div class="sum">
+    <div class="s"><b>Atom</b><p>Dense positive nucleus (p<sup>+</sup>, n<sup>0</sup>) + electron cloud. Z = protons = identity; A = p + n; neutrons = A − Z.</p></div>
+    <div class="s"><b>Isotopes</b><p>Same Z, different A. Average atomic mass = Σ(fraction × mass).</p></div>
+    <div class="s"><b>Ions</b><p>Metals lose e<sup>−</sup> → cations (+group no.); nonmetals gain → anions (group − 8). Formulas: total charge = 0.</p></div>
+    <div class="s"><b>Oxidation numbers</b><p>Element 0; F −1; Group 1 +1; Group 2 +2; H +1; O −2; sum = charge. Up = oxidized, down = reduced.</p></div>
+    <div class="s"><b>Matter</b><p>Pure (element, compound) vs mixture (homogeneous, heterogeneous). Physical change keeps identity; chemical change makes new substances.</p></div>
+    <div class="s"><b>Equations</b><p>Balance with coefficients, never subscripts. Metals → other nonmetals → H → O; clear fractions.</p></div>
+    <div class="s"><b>Energy</b><p>ΔH &lt; 0 exothermic (combustion), ΔH &gt; 0 endothermic (calcination). 1 kWh = 3.6 MJ; 1 cal = 4.184 J.</p></div>
+    <div class="s"><b>Naming</b><p>Ionic: cation + anion (Roman numeral if variable). Molecular: prefixes + -ide. Acids: hydro-ic / -ate→-ic / -ite→-ous.</p></div>
+    <div class="s"><b>Measurement</b><p>SI units and prefixes; sig figs; dimensional analysis — arrange factors so units cancel.</p></div>
+    <div class="s"><b>Mole</b><p>n = m/M; N = n × 6.022 × 10<sup>23</sup>; 22.4 L/mol at STP. Moles are the hub of every conversion.</p></div>
+    <div class="s"><b>Stoichiometry</b><p>g A → mol A → (mole ratio) → mol B → g B. Limiting reactant gives theoretical yield; % yield = actual/theoretical.</p></div>
+  </div>
+  <h3>Key equations</h3>
+  <span class="eq">neutrons = A − Z &nbsp;·&nbsp; M̄ = Σ f<sub>i</sub>m<sub>i</sub> &nbsp;·&nbsp; ρ = m/V &nbsp;·&nbsp; K = °C + 273.15 &nbsp;·&nbsp; n = m/M &nbsp;·&nbsp; N = nN<sub>A</sub> &nbsp;·&nbsp; q = n|ΔH| &nbsp;·&nbsp; % yield = actual/theoretical × 100</span>
+  <h3>Key terms</h3>
+  <div class="goal"><span>atomic number</span><span>mass number</span><span>isotope</span><span>average atomic mass</span><span>cation</span><span>anion</span><span>polyatomic ion</span><span>oxidation number</span><span>element</span><span>compound</span><span>mixture</span><span>physical change</span><span>chemical change</span><span>coefficient</span><span>exothermic</span><span>endothermic</span><span>enthalpy (ΔH)</span><span>significant figures</span><span>dimensional analysis</span><span>mole</span><span>Avogadro's number</span><span>molar mass</span><span>mole ratio</span><span>limiting reactant</span><span>percent yield</span></div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="ch" id="quiz">
+  <h2><span class="num">✓</span>Self-Assessment Quiz</h2>
+  <p class="lead">Ten items covering the whole chapter. Answer all, then press <b>Check answers</b>. This quiz is for your own review; it is not recorded.</p>
+  <div class="quiz" id="quizbox">
+    <div class="q" data-a="c"><p>1. An atom with 15 protons and 16 neutrons is</p><label><input type="radio" name="q1" value="a"> sulfur-31</label><label><input type="radio" name="q1" value="b"> phosphorus-15</label><label><input type="radio" name="q1" value="c"> phosphorus-31</label><label><input type="radio" name="q1" value="d"> silicon-31</label></div>
+    <div class="q" data-a="b"><p>2. Rutherford concluded that the atom has a small dense nucleus because</p><label><input type="radio" name="q2" value="a"> all α particles passed straight through the foil</label><label><input type="radio" name="q2" value="b"> a few α particles were deflected back toward the source</label><label><input type="radio" name="q2" value="c"> the foil glowed</label><label><input type="radio" name="q2" value="d"> electrons were emitted from the foil</label></div>
+    <div class="q" data-a="d"><p>3. Copper has isotopes <sup>63</sup>Cu (62.93 amu, 69.2 %) and <sup>65</sup>Cu (64.93 amu, 30.8 %). Its average atomic mass is closest to</p><label><input type="radio" name="q3" value="a"> 62.9</label><label><input type="radio" name="q3" value="b"> 63.9</label><label><input type="radio" name="q3" value="c"> 64.5</label><label><input type="radio" name="q3" value="d"> 63.5</label></div>
+    <div class="q" data-a="a"><p>4. The oxidation number of sulfur in Na<sub>2</sub>SO<sub>3</sub> is</p><label><input type="radio" name="q4" value="a"> +4</label><label><input type="radio" name="q4" value="b"> +6</label><label><input type="radio" name="q4" value="c"> −2</label><label><input type="radio" name="q4" value="d"> +2</label></div>
+    <div class="q" data-a="c"><p>5. Which is a chemical change?</p><label><input type="radio" name="q5" value="a"> Molten aluminum solidifying in a mold</label><label><input type="radio" name="q5" value="b"> Salt dissolving in water</label><label><input type="radio" name="q5" value="c"> Cement paste hardening as it hydrates</label><label><input type="radio" name="q5" value="d"> Drawing steel into wire</label></div>
+    <div class="q" data-a="b"><p>6. When Fe<sub>2</sub>O<sub>3</sub> + CO → Fe + CO<sub>2</sub> is balanced with smallest whole numbers, the coefficient of CO is</p><label><input type="radio" name="q6" value="a"> 1</label><label><input type="radio" name="q6" value="b"> 3</label><label><input type="radio" name="q6" value="c"> 2</label><label><input type="radio" name="q6" value="d"> 6</label></div>
+    <div class="q" data-a="d"><p>7. The correct name of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> is</p><label><input type="radio" name="q7" value="a"> diiron trisulfate</label><label><input type="radio" name="q7" value="b"> iron(II) sulfate</label><label><input type="radio" name="q7" value="c"> iron sulfite</label><label><input type="radio" name="q7" value="d"> iron(III) sulfate</label></div>
+    <div class="q" data-a="a"><p>8. 0.00450 kg expressed in grams with the correct number of significant figures is</p><label><input type="radio" name="q8" value="a"> 4.50 g</label><label><input type="radio" name="q8" value="b"> 4.5 g</label><label><input type="radio" name="q8" value="c"> 4.500 g</label><label><input type="radio" name="q8" value="d"> 0.0045 g</label></div>
+    <div class="q" data-a="c"><p>9. How many moles of CO<sub>2</sub> (M = 44.01 g/mol) are in 220 g?</p><label><input type="radio" name="q9" value="a"> 0.20 mol</label><label><input type="radio" name="q9" value="b"> 2.0 × 10<sup>3</sup> mol</label><label><input type="radio" name="q9" value="c"> 5.0 mol</label><label><input type="radio" name="q9" value="d"> 9.7 × 10<sup>3</sup> mol</label></div>
+    <div class="q" data-a="b"><p>10. In 2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O, the mass of water formed from 4.0 g of H<sub>2</sub> with excess O<sub>2</sub> is</p><label><input type="radio" name="q10" value="a"> 18 g</label><label><input type="radio" name="q10" value="b"> 36 g</label><label><input type="radio" name="q10" value="c"> 72 g</label><label><input type="radio" name="q10" value="d"> 4.0 g</label></div>
+  </div>
+  <button class="btn" onclick="gradeQuiz()">Check answers</button> <button class="btn ghost" onclick="resetQuiz()">Reset</button><span id="score"></span>
+</section>
+
+<!-- ============ REFERENCES ============ -->
+<section class="ch" id="refs">
+  <h2><span class="num">§</span>References and Further Reading</h2>
+  <ul>
+    <li>Chang, R., &amp; Goldsby, K. A. (2016). <em>Chemistry</em> (12th ed.). McGraw-Hill. — Chapters 1–3.</li>
+    <li>Silberberg, M. S., &amp; Amateis, P. (2021). <em>Chemistry: The Molecular Nature of Matter and Change</em> (9th ed.). McGraw-Hill. — Chapters 1–3.</li>
+    <li>Brown, L., &amp; Holme, T. (2012). <em>Chemistry for Engineering Students</em> (2nd ed.). Cengage. — Chapters 1–4.</li>
+    <li>Brown, T. L., et al. (2012). <em>Chemistry: The Central Science</em> (12th ed.). Pearson. — Chapters 1–3.</li>
+    <li>Chemistry LibreTexts — General Chemistry: Atoms, Molecules, and Ions; Stoichiometry.</li>
+  </ul>
+  <div class="chnav">
+    <a href="../index.html">⌂ Course Home</a>
+    <a href="chapter-01-exercises.html">✍️ Chapter 1 Exercises</a>
+    <a class="next" href="chapter-02.html">Next: Chapter 2 · Electrochemistry →</a>
+  </div>
+</section>
+</main>
+
+<footer><b>CHEM01 · Chemistry for Engineers</b> — Chapter 1: Foundations of Engineering Chemistry. Department of Chemistry and Physics (CHEMAPHY), Rizal Technological University. Enhanced by Dr. Ryan Manuel D. Guido, August 2026.</footer>
+<button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const progress=document.getElementById('progress'), backtop=document.getElementById('backtop');
+  const links=[...document.querySelectorAll('nav.top a:not(.home)')], sections=[...document.querySelectorAll('main section')];
+  function update(){
+    const h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    progress.style.width=(max?100*h.scrollTop/max:0)+'%';
+    backtop.classList.toggle('show',h.scrollTop>500);
+    let current=sections[0]?.id;
+    for(const s of sections){ if(s.getBoundingClientRect().top<=90) current=s.id; }
+    links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
+  }
+  addEventListener('scroll',update,{passive:true}); addEventListener('resize',update); update();
+
+  function gradeQuiz(){
+    let score=0; const qs=[...document.querySelectorAll('#quizbox .q')];
+    qs.forEach(q=>{ const sel=q.querySelector('input:checked'); q.classList.remove('right','wrong');
+      if(sel && sel.value===q.dataset.a){score++; q.classList.add('right');} else {q.classList.add('wrong');} });
+    const el=document.getElementById('score'); el.textContent=`Score: ${score} / ${qs.length}` + (score===qs.length?' — excellent!':score>=7?' — good, review the ones marked red.':' — re-read the sections for the red items and try again.');
+  }
+  function resetQuiz(){ document.querySelectorAll('#quizbox input').forEach(i=>i.checked=false); document.querySelectorAll('#quizbox .q').forEach(q=>q.classList.remove('right','wrong')); document.getElementById('score').textContent=''; }
+</script>
+</body>
+</html>
