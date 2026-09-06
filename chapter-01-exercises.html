@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CHEM01 Chapter 1 Exercises — 30-item higher-order-thinking multiple-choice test on elements, compounds, mixtures, atomic structure, ions, and basic nomenclature, with answers and explanations.">
+<title>Chapter 1 Exercises · Foundations of Engineering Chemistry · CHEM01</title>
+<style>
+:root{
+  --blue:#040084; --blue-2:#0A1FA8; --blue-3:#1B3BC9; --blue-ink:#030066; --blue-soft:#E4E8FA; --blue-pale:#F1F3FC;
+  --orange:#FD6600; --orange-2:#FF8A3D; --orange-ink:#8C3600; --orange-soft:#FFEBDD; --orange-grad:linear-gradient(135deg,#FF8A3D,#FD6600);
+  --ok:#1f7a46; --ok-bg:#e2f4ea; --ink:#141a33; --ink-soft:#555b73; --line:#DDE1F0; --bg:#F7F8FD; --card:#fff;
+  --shadow:0 1px 2px rgba(4,0,132,.06),0 10px 30px rgba(4,0,132,.08);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+a{color:var(--blue-3);}
+.progress{position:fixed;z-index:100;top:0;left:0;width:0;height:4px;background:var(--orange-grad);box-shadow:0 0 10px rgba(253,102,0,.5);}
+header.hero{position:relative;overflow:hidden;color:#fff;padding:52px 34px 54px;border-radius:0 0 30px 30px;
+  background:radial-gradient(circle at 92% 6%,rgba(253,102,0,.55) 0,transparent 42%),radial-gradient(circle at 4% 96%,rgba(255,138,61,.28) 0,transparent 40%),linear-gradient(135deg,#030066 0%,#040084 48%,#1B3BC9 100%);}
+header.hero::after{content:"01";position:absolute;right:-10px;bottom:-70px;font-size:clamp(8rem,20vw,16rem);font-weight:900;line-height:1;letter-spacing:-.08em;color:rgba(255,255,255,.06);pointer-events:none;}
+.hero .inner{position:relative;max-width:1080px;margin:0 auto;}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.8rem;font-weight:700;margin-bottom:14px;}
+.crumbs a{color:#FFD9BF;text-decoration:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:999px;}
+.crumbs a:hover{background:rgba(255,255,255,.2);}
+.eyebrow{display:inline-block;color:#FFD9BF;font-weight:800;font-size:.74rem;letter-spacing:1.3px;text-transform:uppercase;}
+.hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08;margin:10px 0 10px;letter-spacing:-1px;font-weight:850;}
+.hero h1 em{font-style:normal;color:var(--orange-2);}
+.hero p{max-width:72ch;color:#DDE3FB;font-size:1.05rem;margin:0 0 18px;}
+.hchips{display:flex;flex-wrap:wrap;gap:9px;}
+.hchips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:700;}
+nav.top{position:sticky;top:0;z-index:50;background:rgba(4,0,132,.97);border-bottom:2px solid var(--orange);box-shadow:0 8px 22px rgba(4,0,132,.2);}
+nav.top .in{max-width:1080px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;padding:0 12px;}
+nav.top .in::-webkit-scrollbar{display:none;}
+nav.top a{flex:0 0 auto;color:#DDE3FB;text-decoration:none;padding:14px 12px;font-size:.78rem;font-weight:700;border-bottom:3px solid transparent;white-space:nowrap;}
+nav.top a:hover,nav.top a.active{color:var(--orange-2);border-bottom-color:var(--orange);}
+nav.top a.home{color:#FFD9BF;border-right:1px solid rgba(255,255,255,.18);margin-right:4px;}
+main{max-width:1080px;margin:30px auto 80px;padding:0 20px;}
+section.ch{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:18px;box-shadow:var(--shadow);padding:clamp(22px,4vw,40px);margin:0 0 28px;}
+section.ch.accent{border-top-color:var(--orange);}
+h2{color:var(--blue);font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.15;margin:0 0 6px;letter-spacing:-.4px;display:flex;gap:12px;align-items:baseline;}
+h2 .num{font-size:.8em;color:var(--orange);font-weight:900;}
+h3{color:var(--blue-2);font-size:1.15rem;margin:26px 0 8px;}
+p{margin:8px 0 12px;}
+.lead{font-size:1.05rem;color:#3a4160;}
+sub,sup{line-height:0;}
+.callout{margin:16px 0;padding:14px 18px;border-left:5px solid var(--orange);background:var(--orange-soft);border-radius:0 12px 12px 0;}
+.callout.blue{border-color:var(--blue-3);background:var(--blue-pale);}
+.callout .label{display:block;color:var(--blue);font-weight:900;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:12px 0;font-size:.9rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+th{background:var(--blue);color:#fff;padding:10px 12px;text-align:left;line-height:1.3;}
+td{padding:9px 12px;vertical-align:top;border-top:1px solid var(--line);border-right:1px solid var(--line);background:#fff;}
+td:last-child,th:last-child{border-right:0;}
+tbody tr:nth-child(even) td{background:#F6F7FD;}
+/* Problem cards */
+.prob{margin:18px 0;border:1px solid #C9CFEC;border-radius:14px;background:#fff;overflow:hidden;box-shadow:var(--shadow);}
+.prob .head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--blue-pale);border-bottom:1px solid #C9CFEC;padding:10px 16px;}
+.prob .head .n{font-weight:900;color:var(--blue);font-size:1rem;}
+.prob .head .t{font-weight:800;color:var(--blue-ink);flex:1;}
+.tag{font-size:.64rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+.tag.analyze{background:#E4E8FA;color:var(--blue-ink);border:1px solid #C9CFEC;}
+.tag.evaluate{background:#FFEBDD;color:var(--orange-ink);border:1px solid #FFC69C;}
+.tag.create{background:var(--blue);color:#FFD9BF;}
+.tag.pts{background:#fff;color:var(--ink-soft);border:1px solid var(--line);}
+.prob .body{padding:14px 18px 6px;}
+.prob .body ol{padding-left:22px;margin:6px 0 10px;}
+.prob .body li{margin:4px 0;}
+.data{display:inline-block;background:var(--blue-soft);color:var(--blue-ink);padding:2px 8px;border-radius:6px;font-size:.9em;margin:2px 2px 2px 0;}
+details.ans{margin:0 18px 16px;border:1px solid #FFC69C;border-radius:12px;background:#FFF8F3;}
+details.ans summary{cursor:pointer;padding:11px 16px 11px 48px;font-weight:800;color:var(--orange-ink);list-style:none;position:relative;}
+details.ans summary::-webkit-details-marker{display:none;}
+details.ans summary::before{content:"▸";position:absolute;left:16px;top:9px;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:.8rem;}
+details.ans[open] summary::before{content:"▾";background:var(--ok);}
+details.ans .a{padding:0 18px 16px 18px;color:#2f3650;border-top:1px dashed #FFC69C;padding-top:12px;}
+details.ans .a p{margin:6px 0 10px;}
+.final{display:inline-block;background:var(--orange-soft);color:var(--orange-ink);font-weight:800;padding:3px 10px;border-radius:8px;margin:4px 0;}
+.why{margin-top:10px;padding:10px 14px;background:var(--blue-pale);border-left:4px solid var(--blue-3);border-radius:0 10px 10px 0;font-size:.92rem;}
+.why b{color:var(--blue);}
+.eq{display:block;text-align:center;margin:10px auto;padding:10px 14px;background:var(--blue-pale);border:1px solid #C9CFEC;border-radius:12px;font-family:"Cambria Math",Cambria,Georgia,serif;font-size:1.05rem;color:var(--blue-ink);overflow-x:auto;}
+ul.checks{list-style:none;padding:0;margin:8px 0;}
+.checks li{position:relative;padding:5px 0 5px 28px;}
+.checks li::before{content:"✓";position:absolute;left:0;top:6px;width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:var(--blue);color:#FFD9BF;font-size:.68rem;font-weight:900;}
+.chnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.chnav a{text-decoration:none;font-weight:800;padding:12px 18px;border-radius:12px;background:var(--blue-soft);color:var(--blue-ink);}
+.chnav a.next{background:var(--orange-grad);color:#fff;}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;}
+.btn{display:inline-block;border:0;border-radius:11px;background:var(--orange-grad);color:#fff;font-weight:800;padding:10px 18px;cursor:pointer;font-size:.9rem;box-shadow:0 8px 22px rgba(253,102,0,.3);}
+.btn.ghost{background:var(--blue-soft);color:var(--blue-ink);box-shadow:none;}
+footer{max-width:1080px;margin:0 auto;padding:0 20px 40px;color:var(--ink-soft);font-size:.84rem;}
+.backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border:0;border-radius:50%;background:var(--orange);color:#fff;font-size:1.2rem;font-weight:900;box-shadow:0 10px 24px rgba(4,0,132,.25);cursor:pointer;opacity:0;transform:translateY(10px);transition:.25s;}
+.backtop.show{opacity:1;transform:none;}
+@media print{.progress,nav.top,.backtop,.btnrow{display:none!important;} body{background:#fff;font-size:11pt;} section.ch,.prob{box-shadow:none;break-inside:avoid;} details.ans .a{display:block;}}
+
+/* MCQ */
+.q{margin:14px 0;border:1px solid #C9CFEC;border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;}
+.q .head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--blue-pale);border-bottom:1px solid #C9CFEC;padding:9px 16px;}
+.q .head .n{font-weight:900;color:var(--blue);}
+.q .head .topic{font-weight:700;color:var(--blue-ink);flex:1;font-size:.9rem;}
+.q .stem{padding:14px 18px 6px;}
+.q .stem p{margin:0 0 8px;}
+.opts{padding:0 18px 8px;display:grid;gap:6px;}
+.opts label{display:flex;gap:10px;align-items:flex-start;padding:8px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fff;}
+.opts label:hover{background:var(--blue-pale);}
+.opts input{margin-top:5px;accent-color:var(--orange);}
+.opts b{color:var(--blue);min-width:18px;}
+.q.right{border-color:#9fd4b6;} .q.right .head{background:#e2f4ea;}
+.q.wrong{border-color:#e6a9b1;} .q.wrong .head{background:#fde7e9;}
+.q.wrong .opts label.correct{border-color:#9fd4b6;background:#f3fbf6;}
+.q.wrong .opts label.chosen{border-color:#e6a9b1;background:#fff5f6;}
+#score{font-weight:800;color:var(--blue);margin-left:12px;}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="hero"><div class="inner">
+  <div class="crumbs"><a href="../index.html">⌂ Course Home</a><a href="../CHEM01_syllabus.html">📄 Syllabus</a><a href="chapter-01.html">📖 Chapter 1 Lecture</a></div>
+  <span class="eyebrow">CHEM01 · Chemistry for Engineers · Unit 1 · Weeks 1–3</span>
+  <h1>Chapter 1 Exercises · <em>30-Item HOTS Test</em></h1>
+  <p>Thirty multiple-choice items on the introductory core of the chapter: elements, compounds, and mixtures; the structure of atoms and isotopes; ions and formulas; and basic nomenclature. None of the items can be answered by recall alone — each asks you to apply, analyze, or evaluate. Choose an answer first, then open the dropdown to check the answer and read why.</p>
+  <div class="hchips"><span>🧠 Apply · Analyze · Evaluate</span><span>✍️ 30 items · 4 topic blocks</span><span>🔽 Answer + explanation per item</span><span>📊 Optional self-score</span></div>
+</div></header>
+
+<nav class="top" aria-label="Test sections"><div class="in">
+  <a href="../index.html" class="home">⌂ Home</a>
+  <a href="#how">Directions</a><a href="#t1">I · Matter</a><a href="#t2">II · Atoms &amp; Isotopes</a><a href="#t3">III · Ions &amp; Formulas</a><a href="#t4">IV · Nomenclature</a><a href="#score-box">Score</a>
+</div></nav>
+
+<main>
+<section class="ch accent" id="how">
+  <h2><span class="num">§</span>Directions</h2>
+  <ul class="checks">
+    <li>Each item has exactly <b>one</b> best answer. Read all four options before choosing — several are designed to be "almost right".</li>
+    <li>Decide and mark your answer <b>before</b> opening the dropdown. The explanation tells you why the correct option is right <em>and</em> why the popular wrong ones are wrong.</li>
+    <li>Use the periodic table for atomic numbers and masses. No calculator is needed except light arithmetic.</li>
+    <li>Press <b>Check my answers</b> at the end for a score. This is for self-review; it is not recorded.</li>
+  </ul>
+  <div class="btnrow"><button class="btn ghost" onclick="toggleAll(true)">Open all explanations</button><button class="btn ghost" onclick="toggleAll(false)">Close all</button><button class="btn" onclick="window.print()">Print / PDF</button></div>
+</section>
+
+<!-- ================= I ================= -->
+<section class="ch" id="t1">
+  <h2><span class="num">I</span>Elements, Compounds, Mixtures, and Change <span class="tag pts">Items 1–8</span></h2>
+  <div class="q" data-a="B"><div class="head"><span class="n">1.</span><span class="topic">Classifying a substance</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>A white solid melts sharply at 801 °C, does not conduct electricity as a solid but conducts well when molten, and cannot be separated into simpler substances by filtration, distillation, or magnetism. It <em>can</em> be decomposed by passing electricity through the melt. The sample is best classified as</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q1" value="A"><b>A.</b><span>an element</span></label>
+      <label data-v="B"><input type="radio" name="q1" value="B"><b>B.</b><span>a compound</span></label>
+      <label data-v="C"><input type="radio" name="q1" value="C"><b>C.</b><span>a homogeneous mixture</span></label>
+      <label data-v="D"><input type="radio" name="q1" value="D"><b>D.</b><span>a heterogeneous mixture</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>A sharp melting point and resistance to every <em>physical</em> separation method rule out mixtures (A mixture would show a melting range and could be separated physically). Decomposition by electricity — a <em>chemical</em> change — rules out an element, which cannot be broken into simpler substances. A pure substance that can be chemically decomposed is a compound; the conductivity pattern (only when molten) is typical of an ionic compound such as NaCl.</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">2.</span><span class="topic">Alloys and variable composition</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>Two brass samples from different suppliers are analyzed: one is 70 % Cu / 30 % Zn, the other 60 % Cu / 40 % Zn. Both are legitimately sold as "brass." Which conclusion is <b>best</b> supported?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q2" value="A"><b>A.</b><span>Brass is a compound with the formula Cu<sub>7</sub>Zn<sub>3</sub></span></label>
+      <label data-v="B"><input type="radio" name="q2" value="B"><b>B.</b><span>One of the suppliers is selling a mislabeled product</span></label>
+      <label data-v="C"><input type="radio" name="q2" value="C"><b>C.</b><span>Brass is a mixture, because its composition can vary continuously</span></label>
+      <label data-v="D"><input type="radio" name="q2" value="D"><b>D.</b><span>Brass is an element that exists in two allotropes</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>The law of definite proportions says a compound always has the same composition by mass. Two different, equally valid compositions for "brass" show that it does <em>not</em> obey that law — so it is a mixture (specifically a homogeneous solid solution, or alloy). Option A invents a formula from one sample; B assumes a fixed composition that mixtures do not have; D confuses allotropes (different forms of one element, like graphite and diamond) with a two-element material.</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">3.</span><span class="topic">Physical vs chemical change</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>A magnesium ribbon is held in a flame. It bursts into a brilliant white light and leaves a crumbly white powder that weighs <em>more</em> than the original ribbon. Which observation is the <b>strongest</b> evidence that a chemical change occurred?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q3" value="A"><b>A.</b><span>The ribbon became hot</span></label>
+      <label data-v="B"><input type="radio" name="q3" value="B"><b>B.</b><span>The product has a different color and texture</span></label>
+      <label data-v="C"><input type="radio" name="q3" value="C"><b>C.</b><span>The product weighs more than the ribbon, showing new atoms were incorporated</span></label>
+      <label data-v="D"><input type="radio" name="q3" value="D"><b>D.</b><span>Light was emitted</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>Heat, light, and color change are common <em>signs</em> of chemical change, but each can also accompany physical changes (a heated wire glows; freezing water changes appearance). A mass <em>increase</em> in an open system can only be explained if the magnesium combined with something from the air — oxygen — forming a new substance, MgO. That is a direct consequence of atoms rearranging into a new compound, which is the definition of chemical change.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">4.</span><span class="topic">Interpreting electrolysis</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>When electricity is passed through water, two gases collect in a 2 : 1 volume ratio and the water level drops. One gas burns; the other makes a glowing splint burst into flame. What does this experiment demonstrate about water?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q4" value="A"><b>A.</b><span>Water is a homogeneous mixture of hydrogen and oxygen gases</span></label>
+      <label data-v="B"><input type="radio" name="q4" value="B"><b>B.</b><span>Water is a compound, because it was decomposed into two different elements in a fixed ratio</span></label>
+      <label data-v="C"><input type="radio" name="q4" value="C"><b>C.</b><span>Water is an element, because it conducts electricity</span></label>
+      <label data-v="D"><input type="radio" name="q4" value="D"><b>D.</b><span>Water is a heterogeneous mixture, because two different gases came out</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>If water were a mixture of H<sub>2</sub> and O<sub>2</sub>, the gases could be separated by physical means and would not require electricity; they would also be present in variable proportions. The <em>fixed</em> 2 : 1 ratio and the need for a chemical process (electrolysis) to obtain them are the fingerprints of a compound with definite composition — H<sub>2</sub>O. (Pure water barely conducts; a little electrolyte is added — but conductivity is not a test for elements anyway.)</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">5.</span><span class="topic">Reading a particle diagram</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>A closed box is described at the particle level: it contains many pairs of identical red spheres bonded together (red–red) and many pairs of identical blue spheres bonded together (blue–blue), moving about randomly. No red–blue pairs exist. The box contains</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q5" value="A"><b>A.</b><span>a pure compound</span></label>
+      <label data-v="B"><input type="radio" name="q5" value="B"><b>B.</b><span>a single pure element</span></label>
+      <label data-v="C"><input type="radio" name="q5" value="C"><b>C.</b><span>a mixture of two elements</span></label>
+      <label data-v="D"><input type="radio" name="q5" value="D"><b>D.</b><span>a mixture of two compounds</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>A compound requires <em>different</em> kinds of atoms bonded together in one particle (red–blue). Here every molecule contains only one kind of atom, so each molecule is an element (like O<sub>2</sub> and N<sub>2</sub>). Because two different kinds of molecules share the box without being bonded to each other, the sample is a mixture — of two elements. Air is a real example.</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">6.</span><span class="topic">Choosing a distinguishing property</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>A technician has two unlabeled bottles of colorless liquid, known to be pure ethanol and pure water. She may run only one test and must not destroy the samples. Which measurement will identify them <b>and</b> leave them unchanged?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q6" value="A"><b>A.</b><span>Mass of each bottle</span></label>
+      <label data-v="B"><input type="radio" name="q6" value="B"><b>B.</b><span>Volume of each bottle</span></label>
+      <label data-v="C"><input type="radio" name="q6" value="C"><b>C.</b><span>Boiling point of a small portion</span></label>
+      <label data-v="D"><input type="radio" name="q6" value="D"><b>D.</b><span>Flammability of a small portion</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>Mass and volume are extensive properties — they depend on how much was poured, not on what the liquid is — so they identify nothing. Flammability is a <em>chemical</em> property: testing it burns the sample. Boiling point is an intensive <em>physical</em> property (ethanol 78 °C, water 100 °C): it identifies the liquid and the vapor can be condensed back unchanged.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">7.</span><span class="topic">Separation logic</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>A sample contains sand, table salt, and iron filings. Which sequence separates all three, and what does the success of the sequence prove about the sample?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q7" value="A"><b>A.</b><span>Distill, then filter — proving the sample is a compound</span></label>
+      <label data-v="B"><input type="radio" name="q7" value="B"><b>B.</b><span>Use a magnet, dissolve in water and filter, then evaporate the water — proving the sample is a mixture</span></label>
+      <label data-v="C"><input type="radio" name="q7" value="C"><b>C.</b><span>Heat strongly until everything melts — proving the sample is an element</span></label>
+      <label data-v="D"><input type="radio" name="q7" value="D"><b>D.</b><span>Add acid to dissolve everything — proving the sample is homogeneous</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>A magnet removes iron; water dissolves salt but not sand, so filtration removes sand; evaporation recovers the salt. Every step is <em>physical</em> — no new substances form — and only mixtures can be separated by physical means, so the sample is a mixture (a heterogeneous one, since the parts are visible). Distillation (A) separates liquids, not this solid mix; melting (C) and acid (D) would not separate the components and acid would chemically change them.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">8.</span><span class="topic">Intensive vs extensive reasoning</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>A 500-g block of aluminum has a density of 2.70 g/cm³. A student cuts it into ten equal pieces and claims, "Each piece now has one-tenth the density." A classmate replies, "No — density is the same, but each piece has one-tenth the mass and one-tenth the volume." Who is right, and why?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q8" value="A"><b>A.</b><span>The student, because density is proportional to mass</span></label>
+      <label data-v="B"><input type="radio" name="q8" value="B"><b>B.</b><span>The classmate, because density is an intensive property while mass and volume are extensive</span></label>
+      <label data-v="C"><input type="radio" name="q8" value="C"><b>C.</b><span>Both, because density and mass are both extensive</span></label>
+      <label data-v="D"><input type="radio" name="q8" value="D"><b>D.</b><span>Neither, because cutting is a chemical change that alters density</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Density = mass ÷ volume. Cutting divides both mass and volume by ten, so their ratio is unchanged: the pieces are still 2.70 g/cm³. Properties that do not depend on sample size are intensive (density, melting point, color); those that do are extensive (mass, volume). Cutting is a physical change, so option D is wrong on two counts.</p></div></details>
+  </div>
+</section>
+<section class="ch" id="t2">
+  <h2><span class="num">II</span>Atomic Structure and Isotopes <span class="tag pts">Items 9–16</span></h2>
+  <div class="q" data-a="A"><div class="head"><span class="n">9.</span><span class="topic">Testing the plum-pudding model</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>Suppose Thomson's model — positive charge spread evenly through the whole atom, with electrons embedded in it — were correct. What would Rutherford have observed when α particles hit the gold foil?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q9" value="A"><b>A.</b><span>Most α particles pass straight through with, at most, very small deflections — and none bounce back</span></label>
+      <label data-v="B"><input type="radio" name="q9" value="B"><b>B.</b><span>About half of the α particles bounce straight back</span></label>
+      <label data-v="C"><input type="radio" name="q9" value="C"><b>C.</b><span>All α particles are absorbed by the foil</span></label>
+      <label data-v="D"><input type="radio" name="q9" value="D"><b>D.</b><span>α particles pass through only where electrons are absent</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: A</span></p><p>A thin, evenly spread positive "pudding" has no concentrated charge or mass anywhere, so it could only nudge a fast, heavy α particle slightly; large-angle scattering would be impossible. Rutherford <em>did</em> see most particles pass through — but the rare ones that bounced back could only be explained by a tiny, dense, positive nucleus. This item tests whether you can predict a model's consequences, which is how models are actually tested.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">10.</span><span class="topic">What defines an element</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>Four particles are described: (P) 6 protons, 6 neutrons, 6 electrons; (Q) 6 protons, 8 neutrons, 6 electrons; (R) 7 protons, 7 neutrons, 7 electrons; (S) 6 protons, 6 neutrons, 4 electrons. Which particles are atoms or ions of the <b>same element</b>?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q10" value="A"><b>A.</b><span>P and R only</span></label>
+      <label data-v="B"><input type="radio" name="q10" value="B"><b>B.</b><span>P, Q, and S</span></label>
+      <label data-v="C"><input type="radio" name="q10" value="C"><b>C.</b><span>Q and R only</span></label>
+      <label data-v="D"><input type="radio" name="q10" value="D"><b>D.</b><span>P and Q only, because S is charged</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>An element is defined by its proton count (atomic number). P, Q, and S all have 6 protons, so all are carbon: P is carbon-12, Q is carbon-14 (an isotope — different neutrons), and S is a C<sup>2+</sup> ion (fewer electrons). Neither neutron number nor electron number changes the element. R has 7 protons and is nitrogen.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">11.</span><span class="topic">Building a nuclear symbol</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>A neutral atom has 12 electrons and a mass number of 25. Its nuclear symbol is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q11" value="A"><b>A.</b><span><sup>25</sup><sub>13</sub>Al</span></label>
+      <label data-v="B"><input type="radio" name="q11" value="B"><b>B.</b><span><sup>25</sup><sub>12</sub>Mg</span></label>
+      <label data-v="C"><input type="radio" name="q11" value="C"><b>C.</b><span><sup>12</sup><sub>25</sub>Mg</span></label>
+      <label data-v="D"><input type="radio" name="q11" value="D"><b>D.</b><span><sup>37</sup><sub>12</sub>Mg</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>In a neutral atom, electrons = protons, so Z = 12, which is magnesium. The mass number A = 25 is written as the superscript, atomic number as the subscript: <sup>25</sup><sub>12</sub>Mg, with 25 − 12 = 13 neutrons. Option A confuses the neutron count (13) with Z; C swaps A and Z; D adds neutrons to the mass number twice.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">12.</span><span class="topic">Why atomic masses are not whole numbers</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>The periodic table lists chlorine as 35.45, yet no chlorine atom has a mass of 35.45 amu — every atom is either about 35 or about 37 amu. The best explanation is that</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q12" value="A"><b>A.</b><span>the table lists mass number, and 35.45 is a rounding error</span></label>
+      <label data-v="B"><input type="radio" name="q12" value="B"><b>B.</b><span>35.45 is a weighted average of the isotope masses, closer to 35 because chlorine-35 is about three times as abundant as chlorine-37</span></label>
+      <label data-v="C"><input type="radio" name="q12" value="C"><b>C.</b><span>chlorine atoms continuously gain and lose neutrons</span></label>
+      <label data-v="D"><input type="radio" name="q12" value="D"><b>D.</b><span>the electrons contribute the extra 0.45 amu</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Natural chlorine is ~76 % <sup>35</sup>Cl and ~24 % <sup>37</sup>Cl. The tabulated atomic mass is Σ(abundance × isotopic mass) = 0.76(34.97) + 0.24(36.97) ≈ 35.45. It is an average over a population, not the mass of any single atom. Mass numbers are always integers (A); nuclei do not swap neutrons in normal matter (C); electrons contribute only ~0.0005 amu each (D).</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">13.</span><span class="topic">Same mass number, different element</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>Potassium-40 and calcium-40 both have mass number 40. A student concludes they are isotopes of each other. Evaluate the claim.</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q13" value="A"><b>A.</b><span>Correct — isotopes are atoms with the same mass number</span></label>
+      <label data-v="B"><input type="radio" name="q13" value="B"><b>B.</b><span>Incorrect — isotopes must have the same number of protons; these have 19 and 20 protons, so they are different elements that happen to have the same mass number</span></label>
+      <label data-v="C"><input type="radio" name="q13" value="C"><b>C.</b><span>Correct — they have the same number of neutrons</span></label>
+      <label data-v="D"><input type="radio" name="q13" value="D"><b>D.</b><span>Incorrect — isotopes must have different mass numbers, so two atoms with A = 40 can never be isotopes</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Isotopes share an atomic number (same element) and differ in neutron number, hence in mass number. K-40 (19 p, 21 n) and Ca-40 (20 p, 20 n) share neither Z nor neutron count; they are <em>isobars</em> — different elements with equal A. Option D reverses the definition; two atoms with the same A can only be isotopes if they are the same element, which requires different Z — impossible, so D's reasoning is confused, not its verdict.</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">14.</span><span class="topic">Identifying an element from isotope data</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>A mass spectrometer shows an element has two isotopes: mass 78.9 amu (50.7 %) and mass 80.9 amu (49.3 %). Using a periodic table, the element is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q14" value="A"><b>A.</b><span>selenium (78.96)</span></label>
+      <label data-v="B"><input type="radio" name="q14" value="B"><b>B.</b><span>krypton (83.80)</span></label>
+      <label data-v="C"><input type="radio" name="q14" value="C"><b>C.</b><span>bromine (79.90)</span></label>
+      <label data-v="D"><input type="radio" name="q14" value="D"><b>D.</b><span>rubidium (85.47)</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>With nearly equal abundances, the average lies almost midway: 0.507(78.9) + 0.493(80.9) ≈ 79.9 amu. That matches bromine. Selenium (A) is close but would require the lighter isotope to dominate strongly; krypton and rubidium are far too heavy. This is the reverse of the usual "compute the average" exercise — it asks you to use the average to identify the element.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">15.</span><span class="topic">Predicting neutron count from the table</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>Which statement about the most common isotope of iron, <sup>56</sup>Fe, is correct?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q15" value="A"><b>A.</b><span>It has 56 protons and 26 neutrons</span></label>
+      <label data-v="B"><input type="radio" name="q15" value="B"><b>B.</b><span>It has 26 protons, 30 neutrons, and 26 electrons when neutral</span></label>
+      <label data-v="C"><input type="radio" name="q15" value="C"><b>C.</b><span>It has 26 protons and 56 neutrons</span></label>
+      <label data-v="D"><input type="radio" name="q15" value="D"><b>D.</b><span>It has 30 protons and 26 electrons</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Iron's atomic number is 26 (from the periodic table), so 26 protons. Neutrons = A − Z = 56 − 26 = 30. A neutral atom has electrons equal to protons: 26. The other options misassign the mass number as a proton or neutron count, or break the neutrality condition.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">16.</span><span class="topic">Scale of the atom</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>A nucleus is roughly 1/10 000 the diameter of its atom. A student says, "So the nucleus occupies about 1/10 000 of the atom's volume, and the electrons fill the rest." Which correction is needed?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q16" value="A"><b>A.</b><span>No correction — the statement is accurate</span></label>
+      <label data-v="B"><input type="radio" name="q16" value="B"><b>B.</b><span>The nucleus occupies far <em>less</em> than 1/10 000 of the volume (about 10<sup>−12</sup>), and the electrons do not "fill" the space — the atom is mostly empty</span></label>
+      <label data-v="C"><input type="radio" name="q16" value="C"><b>C.</b><span>The nucleus occupies far <em>more</em> than 1/10 000 of the volume because it contains nearly all the mass</span></label>
+      <label data-v="D"><input type="radio" name="q16" value="D"><b>D.</b><span>Electrons occupy the nucleus, so the comparison is meaningless</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Volume scales with the cube of diameter: (1/10 000)³ = 10<sup>−12</sup>. The nucleus is thus a trillionth of the atom's volume yet holds ~99.97 % of its mass — which is exactly why α particles mostly pass through (Rutherford). Electrons are tiny and spread as probability clouds; they define the atom's size but do not fill it like a liquid. Mass concentration (C) says nothing about volume.</p></div></details>
+  </div>
+</section>
+<section class="ch" id="t3">
+  <h2><span class="num">III</span>Ions and Chemical Formulas <span class="tag pts">Items 17–23</span></h2>
+  <div class="q" data-a="B"><div class="head"><span class="n">17.</span><span class="topic">Predicting the ion</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>Element X has 19 protons. In a compound with chlorine, X is most likely present as</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q17" value="A"><b>A.</b><span>X<sup>−</sup>, because it gains one electron to complete its shell</span></label>
+      <label data-v="B"><input type="radio" name="q17" value="B"><b>B.</b><span>X<sup>+</sup>, because it loses its single outer electron to reach the argon configuration</span></label>
+      <label data-v="C"><input type="radio" name="q17" value="C"><b>C.</b><span>X<sup>2+</sup>, because it is in Period 4</span></label>
+      <label data-v="D"><input type="radio" name="q17" value="D"><b>D.</b><span>X<sup>7+</sup>, because it has 7 more electrons than argon</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Z = 19 is potassium, Group 1, configuration 2·8·8·1. Losing one electron leaves the stable 2·8·8 (argon) arrangement; gaining seven (A) or losing more than one (C, D) would cost far more energy. Group number, not period, predicts the charge of main-group ions.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">18.</span><span class="topic">Ion from particle counts</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>A particle has 16 protons, 16 neutrons, and 18 electrons. It is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q18" value="A"><b>A.</b><span>an argon atom</span></label>
+      <label data-v="B"><input type="radio" name="q18" value="B"><b>B.</b><span>a sulfide ion, S<sup>2−</sup></span></label>
+      <label data-v="C"><input type="radio" name="q18" value="C"><b>C.</b><span>a sulfur atom that is an isotope of argon</span></label>
+      <label data-v="D"><input type="radio" name="q18" value="D"><b>D.</b><span>a sulfur cation, S<sup>2+</sup></span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Sixteen protons make it sulfur, regardless of electron count. Eighteen electrons means two more negative charges than positive: charge = 16 − 18 = −2, so S<sup>2−</sup>. It has the <em>same electron count</em> as argon (isoelectronic) but is not argon (A) and cannot be an isotope of a different element (C).</p></div></details>
+  </div>
+  <div class="q" data-a="C"><div class="head"><span class="n">19.</span><span class="topic">Writing a formula from charges</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>The compound formed between Al<sup>3+</sup> and sulfate, SO<sub>4</sub><sup>2−</sup>, has the formula</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q19" value="A"><b>A.</b><span>AlSO<sub>4</sub></span></label>
+      <label data-v="B"><input type="radio" name="q19" value="B"><b>B.</b><span>Al<sub>2</sub>SO<sub>4</sub></span></label>
+      <label data-v="C"><input type="radio" name="q19" value="C"><b>C.</b><span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span></label>
+      <label data-v="D"><input type="radio" name="q19" value="D"><b>D.</b><span>Al<sub>3</sub>(SO<sub>4</sub>)<sub>2</sub></span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: C</span></p><p>Total positive charge must equal total negative charge. The least common multiple of 3 and 2 is 6: two Al<sup>3+</sup> (+6) balance three SO<sub>4</sub><sup>2−</sup> (−6). Parentheses are required because the polyatomic ion appears more than once. Option D swaps the subscripts — a common error that gives +9 vs −4.</p></div></details>
+  </div>
+  <div class="q" data-a="A"><div class="head"><span class="n">20.</span><span class="topic">Inferring a metal's charge</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>An unknown metal M forms the compounds MCl<sub>2</sub> and M(NO<sub>3</sub>)<sub>2</sub>. The formula of its oxide is most likely</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q20" value="A"><b>A.</b><span>MO</span></label>
+      <label data-v="B"><input type="radio" name="q20" value="B"><b>B.</b><span>M<sub>2</sub>O</span></label>
+      <label data-v="C"><input type="radio" name="q20" value="C"><b>C.</b><span>MO<sub>2</sub></span></label>
+      <label data-v="D"><input type="radio" name="q20" value="D"><b>D.</b><span>M<sub>2</sub>O<sub>3</sub></span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: A</span></p><p>Chloride is −1, so two Cl<sup>−</sup> imply M<sup>2+</sup>; nitrate is −1, and two NO<sub>3</sub><sup>−</sup> confirm M<sup>2+</sup>. Oxide is O<sup>2−</sup>, so one M<sup>2+</sup> balances one O<sup>2−</sup>: MO (like CaO or MgO). MO<sub>2</sub> would need M<sup>4+</sup>; M<sub>2</sub>O needs M<sup>+</sup>; M<sub>2</sub>O<sub>3</sub> needs M<sup>3+</sup>.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">21.</span><span class="topic">Ionic vs molecular bonding</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>Which pair of elements is most likely to form an <em>ionic</em> compound, and why?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q21" value="A"><b>A.</b><span>N and O — both are nonmetals that readily share electrons</span></label>
+      <label data-v="B"><input type="radio" name="q21" value="B"><b>B.</b><span>Ca and Cl — a metal that loses electrons easily and a nonmetal that gains them</span></label>
+      <label data-v="C"><input type="radio" name="q21" value="C"><b>C.</b><span>C and H — they form the most compounds of any pair</span></label>
+      <label data-v="D"><input type="radio" name="q21" value="D"><b>D.</b><span>Ne and Ar — both have full outer shells</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Ionic compounds arise from electron <em>transfer</em>, which needs an electron donor (a metal, low ionization energy) and an electron acceptor (a nonmetal, high electron affinity). Two nonmetals (A, C) share electrons and form molecular compounds. Noble gases (D) have no tendency to gain or lose electrons and form essentially no compounds.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">22.</span><span class="topic">Why noble gases stay neutral</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>Sodium (2·8·1) forms Na<sup>+</sup> easily, and chlorine (2·8·7) forms Cl<sup>−</sup> easily, but neon (2·8) forms no ions at all. The best explanation is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q22" value="A"><b>A.</b><span>neon has too few electrons to lose</span></label>
+      <label data-v="B"><input type="radio" name="q22" value="B"><b>B.</b><span>neon already has a filled outer shell, so gaining or losing electrons would move it <em>away</em> from stability</span></label>
+      <label data-v="C"><input type="radio" name="q22" value="C"><b>C.</b><span>neon is a gas, and gases cannot form ions</span></label>
+      <label data-v="D"><input type="radio" name="q22" value="D"><b>D.</b><span>neon's nucleus is too small to hold ions</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Ion formation is driven by reaching a filled outer shell (an octet). Sodium loses one electron to reach 2·8; chlorine gains one to reach 2·8·8. Neon is <em>already</em> at 2·8; any change would break that stable arrangement, so there is no energetic payoff. Physical state (C) is irrelevant — chlorine is also a gas and forms ions readily.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">23.</span><span class="topic">Formula units vs molecules</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>A student writes: "Table salt is made of NaCl molecules, each containing one sodium atom bonded to one chlorine atom." What is the most accurate correction?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q23" value="A"><b>A.</b><span>No correction needed</span></label>
+      <label data-v="B"><input type="radio" name="q23" value="B"><b>B.</b><span>Salt contains Na<sup>+</sup> and Cl<sup>−</sup> <em>ions</em> arranged in a lattice; NaCl is a formula unit showing the 1 : 1 ratio, not a discrete molecule</span></label>
+      <label data-v="C"><input type="radio" name="q23" value="C"><b>C.</b><span>Salt contains Na<sub>2</sub>Cl<sub>2</sub> molecules</span></label>
+      <label data-v="D"><input type="radio" name="q23" value="D"><b>D.</b><span>Salt is a mixture of sodium metal and chlorine gas</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Ionic compounds do not exist as separate molecules. Each Na<sup>+</sup> in solid NaCl is surrounded by six Cl<sup>−</sup> and vice versa in an extended three-dimensional lattice. "NaCl" is the simplest whole-number ratio (empirical formula / formula unit). Option D describes the elements before reaction, not the compound; C invents a molecule that does not exist.</p></div></details>
+  </div>
+</section>
+<section class="ch" id="t4">
+  <h2><span class="num">IV</span>Basic Nomenclature <span class="tag pts">Items 24–30</span></h2>
+  <div class="q" data-a="B"><div class="head"><span class="n">24.</span><span class="topic">When a Roman numeral is required</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>Which compound <b>must</b> include a Roman numeral in its name, and why?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q24" value="A"><b>A.</b><span>CaCl<sub>2</sub>, because it contains two chlorides</span></label>
+      <label data-v="B"><input type="radio" name="q24" value="B"><b>B.</b><span>FeCl<sub>3</sub>, because iron can form more than one stable cation (Fe<sup>2+</sup> and Fe<sup>3+</sup>), so the charge must be stated</span></label>
+      <label data-v="C"><input type="radio" name="q24" value="C"><b>C.</b><span>NaCl, because sodium is a metal</span></label>
+      <label data-v="D"><input type="radio" name="q24" value="D"><b>D.</b><span>AlCl<sub>3</sub>, because aluminum has a +3 charge</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Roman numerals exist to remove ambiguity for metals with variable charge. Calcium is always +2, sodium always +1, aluminum always +3 — the name already implies the formula, so no numeral is used (calcium chloride, sodium chloride, aluminum chloride). Iron can be +2 or +3, so "iron chloride" would be ambiguous: FeCl<sub>3</sub> is iron(III) chloride, FeCl<sub>2</sub> iron(II) chloride.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">25.</span><span class="topic">Prefixes: molecular vs ionic</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>N<sub>2</sub>O<sub>4</sub> is named <em>dinitrogen tetroxide</em>, but CaCl<sub>2</sub> is <em>calcium chloride</em>, not "calcium dichloride." Why the difference?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q25" value="A"><b>A.</b><span>Prefixes are used only for gases</span></label>
+      <label data-v="B"><input type="radio" name="q25" value="B"><b>B.</b><span>Prefixes are used for molecular compounds of two nonmetals, where several ratios are possible; in ionic compounds the ion charges fix the ratio, so prefixes are unnecessary</span></label>
+      <label data-v="C"><input type="radio" name="q25" value="C"><b>C.</b><span>Prefixes are used only when both elements are in the same period</span></label>
+      <label data-v="D"><input type="radio" name="q25" value="D"><b>D.</b><span>It is an inconsistency in the rules with no reason</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Nitrogen and oxygen form NO, NO<sub>2</sub>, N<sub>2</sub>O, N<sub>2</sub>O<sub>3</sub>, N<sub>2</sub>O<sub>4</sub>, N<sub>2</sub>O<sub>5</sub> — only prefixes can tell them apart. For an ionic compound, Ca<sup>2+</sup> and Cl<sup>−</sup> can combine in only one neutral ratio, 1 : 2, so "calcium chloride" is already unambiguous. The naming system is not arbitrary: it uses exactly as much information as needed.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">26.</span><span class="topic">Formula from a name</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>The formula of <em>copper(I) oxide</em> is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q26" value="A"><b>A.</b><span>CuO</span></label>
+      <label data-v="B"><input type="radio" name="q26" value="B"><b>B.</b><span>Cu<sub>2</sub>O</span></label>
+      <label data-v="C"><input type="radio" name="q26" value="C"><b>C.</b><span>CuO<sub>2</sub></span></label>
+      <label data-v="D"><input type="radio" name="q26" value="D"><b>D.</b><span>Cu<sub>2</sub>O<sub>2</sub></span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Copper(I) means Cu<sup>+</sup>; oxide is O<sup>2−</sup>. Two Cu<sup>+</sup> balance one O<sup>2−</sup>: Cu<sub>2</sub>O (the red mineral cuprite). CuO is copper(II) oxide (black). Option D is not reduced to the simplest ratio and would not be written for an ionic compound.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">27.</span><span class="topic">The -ous / -ic acid pattern</span><span class="tag analyze">Analyze</span></div>
+    <div class="stem"><p>HNO<sub>3</sub> is nitric acid. By the same rule, HNO<sub>2</sub> is named</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q27" value="A"><b>A.</b><span>hydronitric acid</span></label>
+      <label data-v="B"><input type="radio" name="q27" value="B"><b>B.</b><span>nitrous acid</span></label>
+      <label data-v="C"><input type="radio" name="q27" value="C"><b>C.</b><span>nitride acid</span></label>
+      <label data-v="D"><input type="radio" name="q27" value="D"><b>D.</b><span>dinitrogen acid</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Oxoacid names come from the anion: nitr<b>ate</b> (NO<sub>3</sub><sup>−</sup>) → nitr<b>ic</b> acid; nitr<b>ite</b> (NO<sub>2</sub><sup>−</sup>, one fewer oxygen) → nitr<b>ous</b> acid. The prefix "hydro-" (A) is reserved for binary acids with <em>no</em> oxygen (HCl → hydrochloric). Recognizing the pattern lets you name any -ate/-ite pair: sulfate/sulfuric, sulfite/sulfurous; chlorate/chloric, chlorite/chlorous.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">28.</span><span class="topic">Spotting the one correct name</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>Which name–formula pair is <b>correct</b>?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q28" value="A"><b>A.</b><span>K<sub>2</sub>SO<sub>3</sub> — potassium sulfate</span></label>
+      <label data-v="B"><input type="radio" name="q28" value="B"><b>B.</b><span>NaHCO<sub>3</sub> — sodium hydrogen carbonate</span></label>
+      <label data-v="C"><input type="radio" name="q28" value="C"><b>C.</b><span>FeO — iron(III) oxide</span></label>
+      <label data-v="D"><input type="radio" name="q28" value="D"><b>D.</b><span>PCl<sub>5</sub> — phosphorus chloride</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>NaHCO<sub>3</sub> contains the hydrogen carbonate (bicarbonate) ion HCO<sub>3</sub><sup>−</sup>: sodium hydrogen carbonate — correct. K<sub>2</sub>SO<sub>3</sub> contains sulf<b>ite</b> (SO<sub>3</sub><sup>2−</sup>), so it is potassium sulfite, not sulfate. In FeO, one O<sup>2−</sup> means Fe<sup>2+</sup>: iron(II) oxide. PCl<sub>5</sub> is molecular and needs prefixes: phosphorus pentachloride.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">29.</span><span class="topic">Formula with a polyatomic cation</span><span class="tag analyze">Apply</span></div>
+    <div class="stem"><p>The formula of <em>ammonium phosphate</em> is</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q29" value="A"><b>A.</b><span>NH<sub>4</sub>PO<sub>4</sub></span></label>
+      <label data-v="B"><input type="radio" name="q29" value="B"><b>B.</b><span>(NH<sub>4</sub>)<sub>3</sub>PO<sub>4</sub></span></label>
+      <label data-v="C"><input type="radio" name="q29" value="C"><b>C.</b><span>NH<sub>4</sub>(PO<sub>4</sub>)<sub>3</sub></span></label>
+      <label data-v="D"><input type="radio" name="q29" value="D"><b>D.</b><span>N<sub>3</sub>H<sub>12</sub>PO<sub>4</sub></span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Ammonium is NH<sub>4</sub><sup>+</sup>; phosphate is PO<sub>4</sub><sup>3−</sup>. Three +1 ions balance one −3 ion, and the polyatomic cation is kept intact in parentheses. Option D collapses the atoms into a single formula, hiding the ions and making it unreadable; A ignores charge balance; C reverses the ratio.</p></div></details>
+  </div>
+  <div class="q" data-a="B"><div class="head"><span class="n">30.</span><span class="topic">Reading a hazard label</span><span class="tag evaluate">Evaluate</span></div>
+    <div class="stem"><p>A drum at a water-treatment plant is labelled <em>calcium hypochlorite</em>, a disinfectant. A trainee writes its formula as CaClO. Which is the correct formula, and what was the trainee's error?</p></div>
+    <div class="opts">
+      <label data-v="A"><input type="radio" name="q30" value="A"><b>A.</b><span>CaClO is correct</span></label>
+      <label data-v="B"><input type="radio" name="q30" value="B"><b>B.</b><span>Ca(OCl)<sub>2</sub> — the trainee forgot that Ca<sup>2+</sup> needs two hypochlorite ions (OCl<sup>−</sup>) to balance charge</span></label>
+      <label data-v="C"><input type="radio" name="q30" value="C"><b>C.</b><span>CaClO<sub>3</sub> — the trainee confused hypochlorite with chlorate</span></label>
+      <label data-v="D"><input type="radio" name="q30" value="D"><b>D.</b><span>CaCl<sub>2</sub> — hypochlorite is just another name for chloride</span></label>
+    </div>
+    <details class="ans"><summary>Reveal answer and explanation</summary><div class="a"><p><span class="final">Correct answer: B</span></p><p>Hypochlorite is OCl<sup>−</sup> (chlorine +1, the least-oxygen member of the chlorine oxoanion series). Calcium is always +2, so two OCl<sup>−</sup> are needed: Ca(OCl)<sub>2</sub>. CaClO<sub>3</sub> (C) would be wrong on two counts — chlorate is a different ion, and the charges would not balance. Option D confuses two different anions; chloride does not disinfect. On a real label, that mistake could mean dosing the wrong chemical.</p></div></details>
+  </div>
+</section>
+
+<section class="ch accent" id="score-box">
+  <h2><span class="num">§</span>Check Your Score</h2>
+  <p class="lead">Answer all thirty items, then press the button. Items are marked green (correct) or red (incorrect, with the correct option outlined) so you know which explanations to study.</p>
+  <div class="btnrow"><button class="btn" onclick="gradeAll()">Check my answers</button><button class="btn ghost" onclick="resetAll()">Reset</button><span id="score"></span></div>
+  <div class="tw"><table>
+    <thead><tr><th>Score</th><th>Interpretation</th><th>Suggested next step</th></tr></thead>
+    <tbody>
+      <tr><td><b>27–30</b></td><td>Mastery of the introductory core</td><td>Move on to the Chapter 1 stoichiometry sections and Chapter 2</td></tr>
+      <tr><td><b>21–26</b></td><td>Solid, with a few specific gaps</td><td>Re-read the lecture sections for the items you missed; redo those items after a day</td></tr>
+      <tr><td><b>15–20</b></td><td>Concepts partly formed</td><td>Review §1.1–1.4, §1.6, and §1.9 of the lecture with the figures; bring questions to consultation (Tue 3–6 PM, Thu 4–6 PM)</td></tr>
+      <tr><td><b>&lt; 15</b></td><td>Foundations need rebuilding</td><td>Work through the lecture's Check-yourself items first, then retake this test</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout blue"><span class="label">Topic map</span>Items 1–8 · elements, compounds, mixtures, physical and chemical change, intensive and extensive properties (§1.6). Items 9–16 · atomic models, subatomic particles, Z and A, isotopes, average atomic mass (§1.1–1.3). Items 17–23 · cations and anions, predicting charge, formula writing, ionic vs molecular (§1.4). Items 24–30 · Roman numerals, prefixes, acids, polyatomic ions, reading labels (§1.9).</div>
+  <div class="chnav">
+    <a href="chapter-01.html">← Chapter 1 Lecture</a>
+    <a href="../index.html">⌂ Course Home</a>
+    <a class="next" href="chapter-02.html">Next: Chapter 2 · Electrochemistry →</a>
+  </div>
+</section>
+</main>
+
+<footer><b>CHEM01 · Chemistry for Engineers</b> — Chapter 1 Exercises: 30-Item HOTS Test. Department of Chemistry and Physics (CHEMAPHY), Rizal Technological University. Enhanced by Dr. Ryan Manuel D. Guido, August 2026.</footer>
+<button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+  const progress=document.getElementById('progress'), backtop=document.getElementById('backtop');
+  const links=[...document.querySelectorAll('nav.top a:not(.home)')], sections=[...document.querySelectorAll('main section')];
+  function update(){
+    const h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    progress.style.width=(max?100*h.scrollTop/max:0)+'%';
+    backtop.classList.toggle('show',h.scrollTop>500);
+    let current=sections[0]?.id;
+    for(const s of sections){ if(s.getBoundingClientRect().top<=90) current=s.id; }
+    links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
+  }
+  addEventListener('scroll',update,{passive:true}); addEventListener('resize',update); update();
+  function toggleAll(open){ document.querySelectorAll('details.ans').forEach(d=>d.open=open); }
+  function gradeAll(){
+    const qs=[...document.querySelectorAll('.q')]; let score=0, answered=0;
+    qs.forEach(q=>{ q.classList.remove('right','wrong'); q.querySelectorAll('label').forEach(l=>l.classList.remove('correct','chosen'));
+      const sel=q.querySelector('input:checked'); if(sel) answered++;
+      if(sel && sel.value===q.dataset.a){ score++; q.classList.add('right'); }
+      else { q.classList.add('wrong'); q.querySelector('label[data-v="'+q.dataset.a+'"]').classList.add('correct'); if(sel) sel.closest('label').classList.add('chosen'); } });
+    const el=document.getElementById('score');
+    el.textContent=`Score: ${score} / ${qs.length}` + (answered<qs.length?` (${qs.length-answered} unanswered)`:'') + (score>=27?' — mastery':score>=21?' — solid':score>=15?' — review needed':' — rebuild foundations');
+  }
+  function resetAll(){ document.querySelectorAll('.q input').forEach(i=>i.checked=false); document.querySelectorAll('.q').forEach(q=>{q.classList.remove('right','wrong'); q.querySelectorAll('label').forEach(l=>l.classList.remove('correct','chosen'));}); document.getElementById('score').textContent=''; }
+</script>
+</body>
+</html>
