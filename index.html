@@ -75,6 +75,10 @@ h2.section::before{content:"";width:26px;height:26px;border-radius:8px;backgroun
 .cl.blue{background:var(--blue-soft);color:var(--blue-ink);}
 .cl:hover{filter:brightness(.97);}
 .cl.disabled{background:#F0F1F6;color:#9A9DB0;cursor:not-allowed;border:1px dashed #D0D3E2;pointer-events:none;}
+/* Sub-chapters (optional extra lectures inside a chapter card) */
+.subs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;padding-top:10px;border-top:1px dashed var(--line);}
+.subs-lbl{font-size:.7rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-soft);width:100%;}
+.cl.sub{background:var(--orange-soft);color:var(--orange-ink);border:1px solid rgba(253,102,0,.25);font-size:.82rem;padding:7px 13px;}
 
 /* ---------- Outcomes ---------- */
 .co-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
@@ -151,6 +155,12 @@ footer b{color:var(--blue-ink);}
       <div class="clinks">
         <a class="cl orange lec" href="chapters/chapter-01.html">📖 Lecture</a>
         <a class="cl blue exo" href="chapters/chapter-01-exercises.html">✍️ Exercises</a>
+      </div>
+      <!-- Sub-chapters: optional extra lectures. Any chapter card may include a
+           .subs block like this one; the status checker ignores these links. -->
+      <div class="subs">
+        <span class="subs-lbl">Additional lectures</span>
+        <a class="cl sub" href="chapter-01-2-periodic-table.html">🧪 1.2 · The Periodic Table: A Mastery Lecture</a>
       </div>
     </article>
     <article class="chapter" data-num="02">
